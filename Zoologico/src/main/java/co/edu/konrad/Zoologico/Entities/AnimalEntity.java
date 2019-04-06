@@ -32,10 +32,11 @@ public class AnimalEntity implements Serializable {
     private Long id;
 
     /*
-    *atributo tipo animal
+    *atributo tipo animalID
      */
     @Column(name = "animalID")
-    private String animal;
+    @OneToMany
+    private TipoAnimalID animal;
 
     /*
     *atributo cantidad en habitad
