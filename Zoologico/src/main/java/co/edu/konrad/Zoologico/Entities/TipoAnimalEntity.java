@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
  * @author Sergio Riveros
  */
 @Entity
-class TipoAnimalEntity implements Serializable {
+public class TipoAnimalEntity implements Serializable {
 
     /*
     * llave primaria

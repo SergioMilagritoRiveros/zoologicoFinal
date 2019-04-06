@@ -13,7 +13,7 @@ import javax.persistence.Id;
  * @author Usuario
  */
 @Entity
-class RatingEntity implements Serializable {
+public class RatingEntity implements Serializable {
     /*
     * llave primaria
      */

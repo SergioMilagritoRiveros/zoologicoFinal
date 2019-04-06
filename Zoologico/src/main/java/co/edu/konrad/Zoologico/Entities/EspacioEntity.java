@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
  * @author Sergio Riveros
  */
 @Entity
-class EspacioEntity implements Serializable {
+public class EspacioEntity implements Serializable {
 
    /*
     * llave primaria

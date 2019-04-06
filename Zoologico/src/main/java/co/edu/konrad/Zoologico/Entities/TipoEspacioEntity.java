@@ -17,7 +17,7 @@ import javax.persistence.Id;
  * @author Sergio Riveros
  */
 @Entity
-class TipoEspacioEntity implements Serializable {
+public class TipoEspacioEntity implements Serializable {
 
     /*
     * llave primaria
