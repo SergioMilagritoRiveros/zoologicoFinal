@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.Zoologico.Persistence;
 
-import co.edu.konrad.Zoologico.Entities.EspecieEntity;
+import co.edu.konrad.Zoologico.Entities.EspacioEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,11 +14,11 @@ import javax.persistence.Query;
 
 /**
  *
- * @author Sergio Riveros
+ * @author Usuario
  */
 @Stateless
-public class EspeciePersistance {
-      /*
+public class EspacioPersistence {
+     /*
     *manejador de entidad
     */
     @PersistenceContext(unitName="zoologicoPU")
@@ -26,34 +26,34 @@ public class EspeciePersistance {
    /*
     *Buscar todas las entidades
     */
-    public List<EspecieEntity> encontrarTodos(){
-        Query todos =em.createQuery("select p from EspecieEntity p");
+    public List<EspacioEntity> encontrarTodos(){
+        Query todos =em.createQuery("select p from EspacioEntity p");
         return todos.getResultList();
     }
     /*
     *buscar una entidad por su id
     */
-    public EspecieEntity encontrarPorId(Long id ){
-        return em.find(EspecieEntity.class, id);
+    public EspacioEntity encontrarPorId(Long id ){
+        return em.find(EspacioEntity.class, id);
     }
     /*
     *insertar un registro a la tabla 
     */
-    public EspecieEntity inserta(EspecieEntity entity){
+    public EspacioEntity inserta(EspacioEntity entity){
         em.persist(entity);
         return entity;
     }
     /*
     *actualizar los datos de una endtidad
     */
-    public EspecieEntity actualizar(EspecieEntity entity){
+    public EspacioEntity actualizar(EspacioEntity entity){
         return em.merge(entity);
     }
     /*
     *eliminar por id una entidad
     */
     public void eliminar(Long Id){
-    EspecieEntity productoEliminar=em.find(EspecieEntity.class, Id);
+    EspacioEntity productoEliminar=em.find(EspacioEntity.class, Id);
     em.remove(productoEliminar);
     }
 }

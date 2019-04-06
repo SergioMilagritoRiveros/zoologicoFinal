@@ -78,4 +78,5 @@ class TipoAnimalEntity implements Serializable {
         this.Descripcion = Descripcion;
     }
 
+    
 }

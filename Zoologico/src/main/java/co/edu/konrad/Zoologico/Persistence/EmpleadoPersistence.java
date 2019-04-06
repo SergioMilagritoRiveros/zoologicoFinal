@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.Zoologico.Persistence;
 
-import co.edu.konrad.Zoologico.entities.AnimalEntity;
+import co.edu.konrad.Zoologico.entities.EmpleadoEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,46 +14,46 @@ import javax.persistence.Query;
 
 /**
  *
- * @author SergioRiveros
+ * @author Sergio Riveros
  */
 @Stateless
-public class AnimalPersistance {
-     /*
+public class EmpleadoPersistence {
+    /*
     *manejador de entidad
     */
-    @PersistenceContext(unitName="zoologicoOU")
+    @PersistenceContext(unitName="zoologicoPU")
     protected EntityManager em;
    /*
     *Buscar todas las entidades
     */
-    public List<AnimalEntity> encontrarTodos(){
-        Query todos =em.createQuery("select p from AnimalEntity p");
+    public List<EmpleadoEntity> encontrarTodos(){
+        Query todos =em.createQuery("select p from EmpleadoEntity p");
         return todos.getResultList();
     }
     /*
     *buscar una entidad por su id
     */
-    public AnimalEntity encontrarPorId(Long id ){
-        return em.find(AnimalEntity.class, id);
+    public EmpleadoEntity encontrarPorId(Long id ){
+        return em.find(EmpleadoEntity.class, id);
     }
     /*
     *insertar un registro a la tabla 
     */
-    public AnimalEntity inserta(AnimalEntity entity){
+    public EmpleadoEntity inserta(EmpleadoEntity entity){
         em.persist(entity);
         return entity;
     }
     /*
     *actualizar los datos de una endtidad
     */
-    public AnimalEntity actualizar(AnimalEntity entity){
+    public EmpleadoEntity actualizar(EmpleadoEntity entity){
         return em.merge(entity);
     }
     /*
     *eliminar por id una entidad
     */
     public void eliminar(Long Id){
-    AnimalEntity animalEliminar=em.find(AnimalEntity.class, Id);
-    em.remove(animalEliminar);
+    EmpleadoEntity productoEliminar=em.find(EmpleadoEntity.class, Id);
+    em.remove(productoEliminar);
     }
 }

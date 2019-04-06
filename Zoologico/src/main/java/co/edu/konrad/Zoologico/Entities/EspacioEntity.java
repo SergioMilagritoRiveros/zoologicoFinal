@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
@@ -11,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -20,38 +17,39 @@ import javax.persistence.ManyToOne;
 @Entity
 class EspacioEntity implements Serializable {
 
-    /*
+   /*
     * llave primaria
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "EspacioID")
     private Long id;
-
     /*
-    *atributo nombre espacio
+    *atributo nombre del espacio
      */
-    @Column(name = "NombreEspacio")
+    @Column(name = "nombre_espacio")
     private String nombreEspacio;
-
     /*
-    *atributo nombre ubicacion
+    *atributo ubibcacion
      */
-    @Column(name = "NombreEspacio")
+    @Column(name = "Ubicacion")
     private String ubicacion;
-
     /*
-    *atributo nombre disponibilidad
+    *atributo disponibilidad
      */
+    @JoinColumn
     @Column(name = "Disponibilidad")
-    private boolean disponibilidad;
-
+    private Boolean disponibilidad;
     /*
     *atributo tipo de espacio
      */
-    @Column(name = "AnimalID")
+
+    @Column(name = "TipoEspacioID")
     @ManyToOne
-    private TipoEspacioEntity animalID;
+    private TipoEspacioEntity tipoEspacioID;
+
+    public EspacioEntity() {
+    }
 
     public Long getId() {
         return id;
@@ -73,11 +71,11 @@ class EspacioEntity implements Serializable {
         return ubicacion;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setUbicacion(String Ubicacion) {
+        this.ubicacion = Ubicacion;
     }
 
-    public boolean isDisponibilidad() {
+    public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
@@ -85,12 +83,13 @@ class EspacioEntity implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioEntity getAnimalID() {
-        return animalID;
+    public TipoEspacioEntity getTipoEspacioID() {
+        return tipoEspacioID;
     }
 
-    public void setAnimalID(TipoEspacioEntity animalID) {
-        this.animalID = animalID;
+    public void setTipoEspacioID(TipoEspacioEntity tipoEspacioID) {
+        this.tipoEspacioID = tipoEspacioID;
     }
 
 } 
+

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.edu.konrad.Zoologico.entities;
 
 import java.io.Serializable;
@@ -16,27 +12,27 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+
 /**
  *
- * @author Usuario
+ * @author SergioRiveros
  */
 @Entity
 public class AnimalEntity implements Serializable {
 
     /*
-    * llave primaria
+    * llave primaria 
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "AnimalID")
     private Long id;
-
     /*
     *atributo tipo animalID
      */
     @Column(name = "animalID")
     @OneToMany
-    private TipoAnimalID animal;
+    private TipoAnimalEntity animal;
 
     /*
     *atributo cantidad en habitad
