@@ -66,7 +66,7 @@ public class AnimalEntity implements Serializable {
 
     @Column(name = "NombreCientifico")
     private String nombreCientifico;
-    
+
     @ManyToOne
     @JoinColumn
     @Column(name="empleadoID")
@@ -143,6 +143,6 @@ public class AnimalEntity implements Serializable {
     public void setEmpleadoEntityID(EmpleadoEntity EmpleadoEntityID) {
         this.EmpleadoEntityID = EmpleadoEntityID;
     }
-    
-    
+
+
 }

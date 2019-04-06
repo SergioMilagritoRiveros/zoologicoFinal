@@ -39,13 +39,13 @@ class EspacioEntity implements Serializable {
      */
     @Column(name = "NombreEspacio")
     private String ubicacion;
-    
+
     /*
     *atributo nombre disponibilidad
      */
     @Column(name = "Disponibilidad")
     private boolean disponibilidad;
-    
+
     /*
     *atributo tipo de espacio
      */
@@ -92,5 +92,5 @@ class EspacioEntity implements Serializable {
     public void setAnimalID(TipoEspacioEntity animalID) {
         this.animalID = animalID;
     }
-    
-}
+
+} 

@@ -74,5 +74,5 @@ class TipoEspacioEntity implements Serializable {
     public void setDsponibilidadPersonas(Long dsponibilidadPersonas) {
         this.dsponibilidadPersonas = dsponibilidadPersonas;
     }
-    
-}
+
+} 

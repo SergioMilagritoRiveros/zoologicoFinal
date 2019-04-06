@@ -23,7 +23,7 @@ public class ZoologicoEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ZoologicoID")
     private Long id;
-    
+
     /*
     *atributo asignacion de espacios
     */
@@ -35,7 +35,7 @@ public class ZoologicoEntity implements Serializable{
      @Column(name="ShowID")
     @OneToMany
     private ShowEntity ShowID;
-     
+
     @Column(name="AnimalID")
     @OneToMany
     private AnimalEntity AnimalID;
@@ -71,7 +71,7 @@ public class ZoologicoEntity implements Serializable{
     public void setAnimalID(AnimalEntity AnimalID) {
         this.AnimalID = AnimalID;
     }
-     
-    
-    
+
+
+
 }

@@ -13,7 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Temporal;
 
 /**
@@ -29,21 +29,21 @@ public class EmpleadoEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "EmpleadoID")
     private Long id;
-    
+
      @Column(name="TipoEmpleadoID")
     @ManyToOne
     private TipoEmpleadoEntity tipoEmpleadoID;
-    
+
      @Column(name="Nombre")
     private String nombreEmpleado;
-     
+
       @Column(name="TipoIdentificacionID")
     @ManyToOne
     private TipoEmpleadoEntity tipoIdentificacionID;
-      
+
       @Column(name="NumeroIdentificacion")
     private long numeroIdentificacion;
-      
+
       /*
     *atributo numero telefono
     */
@@ -111,6 +111,6 @@ public class EmpleadoEntity implements Serializable{
     public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
     }
-    
-    
+
+
 }

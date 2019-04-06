@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
@@ -25,7 +21,7 @@ class RatingEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RatingID")
     private Long id;
-    
+
     /*
     *atributo puntuacion
      */
@@ -60,5 +56,5 @@ class RatingEntity implements Serializable {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-    
-}
+
+} 

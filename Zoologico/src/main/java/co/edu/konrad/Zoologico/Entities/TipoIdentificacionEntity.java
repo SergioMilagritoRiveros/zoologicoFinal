@@ -49,6 +49,6 @@ public class TipoIdentificacionEntity implements Serializable {
     public void setTipoIdentificacion(String TipoIdentificacion) {
         this.TipoIdentificacion = TipoIdentificacion;
     }
-    
-    
+
+
 }

@@ -76,6 +76,6 @@ public class TipoEmpleadoEntity implements Serializable {
     public void setSalario(double Salario) {
         this.Salario = Salario;
     }
-    
-    
+
+
 }
