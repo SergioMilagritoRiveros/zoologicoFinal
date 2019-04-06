@@ -1,5 +1,5 @@
 
-package co.edu.konrad.Zoologico.entities;
+package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 
 /**
  *
- * @author SErgio Riveros
+ * @author Sergio Riveros
  */
 @Entity
 public class EmpleadoEntity implements Serializable{
@@ -56,6 +56,14 @@ public class EmpleadoEntity implements Serializable{
         return id;
     }
 
+    public TipoEmpleadoEntity getTipoIdentificacionID() {
+        return tipoIdentificacionID;
+    }
+
+    public void setTipoIdentificacionID(TipoEmpleadoEntity tipoIdentificacionID) {
+        this.tipoIdentificacionID = tipoIdentificacionID;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -76,13 +84,7 @@ public class EmpleadoEntity implements Serializable{
         this.nombreEmpleado = nombreEmpleado;
     }
 
-    public TipoIdentificacionEntity getTipoIdentificacionID() {
-        return tipoIdentificacionID;
-    }
-
-    public void setTipoIdentificacionID(TipoIdentificacionEntity tipoIdentificacionID) {
-        this.tipoIdentificacionID = tipoIdentificacionID;
-    }
+    
 
     public long getNumeroIdentificacion() {
         return numeroIdentificacion;

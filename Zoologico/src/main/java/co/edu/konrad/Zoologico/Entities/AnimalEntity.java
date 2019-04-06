@@ -1,5 +1,5 @@
 
-package co.edu.konrad.Zoologico.entities;
+package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -77,13 +77,15 @@ public class AnimalEntity implements Serializable {
         this.id = id;
     }
 
-    public String getAnimal() {
+    public TipoAnimalEntity getAnimal() {
         return animal;
     }
 
-    public void setAnimal(String animal) {
+    public void setAnimal(TipoAnimalEntity animal) {
         this.animal = animal;
     }
+
+   
 
     public Long getCantidadHabitad() {
         return cantidadHabitad;

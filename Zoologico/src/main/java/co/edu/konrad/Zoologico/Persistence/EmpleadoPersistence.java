@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.Zoologico.Persistence;
 
-import co.edu.konrad.Zoologico.entities.EmpleadoEntity;
+import co.edu.konrad.Zoologico.Entities.EmpleadoEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

@@ -1,5 +1,5 @@
 
-package co.edu.konrad.zoologico.entities;
+package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
 import java.util.Date;

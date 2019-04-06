@@ -13,7 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
+import co.edu.konrad.Zoologico.Entities.AnimalEntity;
 /**
  *
  * @author Sergio Riveros
@@ -40,7 +40,7 @@ public class ShowEntity implements Serializable {
      */
     @Column(name = "EmpleadoID")
     @ManyToOne
-    private EmpleadoEntity animalID;
+    private EmpleadoEntity empleadoID;
 
     /*
     *atributo animalID
@@ -81,12 +81,12 @@ public class ShowEntity implements Serializable {
         this.RatingID = RatingID;
     }
 
-    public EmpleadoEntity getAnimalID() {
-        return animalID;
+    public EmpleadoEntity getEmpleadoID() {
+        return empleadoID;
     }
 
-    public void setAnimalID(EmpleadoEntity animalID) {
-        this.animalID = animalID;
+    public void setEmpleadoID(EmpleadoEntity empleadoID) {
+        this.empleadoID = empleadoID;
     }
 
     public AnimalEntity getAnimalID() {
@@ -96,6 +96,8 @@ public class ShowEntity implements Serializable {
     public void setAnimalID(AnimalEntity animalID) {
         this.animalID = animalID;
     }
+
+ 
 
     public String getEspacio() {
         return espacio;
