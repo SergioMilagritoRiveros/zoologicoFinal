@@ -32,14 +32,14 @@ public class EmpleadoEntity implements Serializable{
     
      @Column(name="TipoEmpleadoID")
     @ManyToOne
-    private tipoEmpleadoEntity tipoEmpleadoID;
+    private TipoEmpleadoEntity tipoEmpleadoID;
     
      @Column(name="Nombre")
     private String nombreEmpleado;
      
       @Column(name="TipoIdentificacionID")
     @ManyToOne
-    private tipoIdentificacionEntity tipoIdentificacionID;
+    private TipoEmpleadoEntity tipoIdentificacionID;
       
       @Column(name="NumeroIdentificacion")
     private long numeroIdentificacion;
@@ -64,11 +64,11 @@ public class EmpleadoEntity implements Serializable{
         this.id = id;
     }
 
-    public tipoEmpleadoEntity getTipoEmpleadoID() {
+    public TipoEmpleadoEntity getTipoEmpleadoID() {
         return tipoEmpleadoID;
     }
 
-    public void setTipoEmpleadoID(tipoEmpleadoEntity tipoEmpleadoID) {
+    public void setTipoEmpleadoID(TipoEmpleadoEntity tipoEmpleadoID) {
         this.tipoEmpleadoID = tipoEmpleadoID;
     }
 
@@ -80,11 +80,11 @@ public class EmpleadoEntity implements Serializable{
         this.nombreEmpleado = nombreEmpleado;
     }
 
-    public tipoIdentificacionEntity getTipoIdentificacionID() {
+    public TipoIdentificacionEntity getTipoIdentificacionID() {
         return tipoIdentificacionID;
     }
 
-    public void setTipoIdentificacionID(tipoIdentificacionEntity tipoIdentificacionID) {
+    public void setTipoIdentificacionID(TipoIdentificacionEntity tipoIdentificacionID) {
         this.tipoIdentificacionID = tipoIdentificacionID;
     }
 
