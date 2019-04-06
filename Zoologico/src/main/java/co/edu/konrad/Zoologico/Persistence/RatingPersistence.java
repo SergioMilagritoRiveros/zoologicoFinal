@@ -5,56 +5,60 @@
  */
 package co.edu.konrad.Zoologico.Persistence;
 
-import co.edu.konrad.Zoologico.Entities.EspacioEntity;
+import co.edu.konrad.Zoologico.Entities.RatingEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
 /**
  *
  * @author Sergio Riveros
  */
 @Stateless
-public class EspacioPersistence {
-     /*
+public class RatingPersistence {
+       /*
     *manejador de entidad
-    */
-    @PersistenceContext(unitName="zoologicoPU")
+     */
+    @PersistenceContext(unitName = "zoologicoPU")
     protected EntityManager em;
-   /*
+
+    /*
     *Buscar todas las entidades
-    */
-    public List<EspacioEntity> encontrarTodos(){
-        Query todos =em.createQuery("select p from EspacioEntity p");
+     */
+    public List<RatingEntity> encontrarTodos() {
+        Query todos = em.createQuery("select p from RatingEntity ");
         return todos.getResultList();
     }
+
     /*
     *buscar una entidad por su id
-    */
-    public EspacioEntity encontrarPorId(Long id ){
-        return em.find(EspacioEntity.class, id);
+     */
+    public RatingEntity encontrarPorId(Long id) {
+        return em.find(RatingEntity.class, id);
     }
+
     /*
     *insertar un registro a la tabla 
-    */
-    public EspacioEntity inserta(EspacioEntity entity){
+     */
+    public RatingEntity inserta(RatingEntity entity) {
         em.persist(entity);
         return entity;
     }
+
     /*
     *actualizar los datos de una endtidad
-    */
-    public EspacioEntity actualizar(EspacioEntity entity){
+     */
+    public RatingEntity actualizar(RatingEntity entity) {
         return em.merge(entity);
     }
+
     /*
     *eliminar por id una entidad
-    */
-    public void eliminar(Long Id){
-    EspacioEntity productoEliminar=em.find(EspacioEntity.class, Id);
-    em.remove(productoEliminar);
-    }
+     */
+    public void eliminar(Long Id) {
+        RatingEntity productoEliminar = em.find(RatingEntity.class, Id);
+        em.remove(productoEliminar);
+    } 
 }
