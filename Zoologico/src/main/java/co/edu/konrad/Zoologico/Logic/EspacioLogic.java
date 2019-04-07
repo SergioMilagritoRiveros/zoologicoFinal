@@ -47,8 +47,8 @@ public class EspacioLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public EspacioEntity actualizarAnimal(Long Id, EspacioEntity empleado) {
-        EspacioEntity espacioActualizar = persistance.actualizar(empleado);
+    public EspacioEntity actualizarAnimal(Long Id, EspacioEntity espacio) {
+        EspacioEntity espacioActualizar = persistance.actualizar(espacio);
         return espacioActualizar;
 
     }
