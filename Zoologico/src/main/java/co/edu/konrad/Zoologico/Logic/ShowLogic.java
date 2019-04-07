@@ -29,7 +29,7 @@ public class ShowLogic {
      public ShowEntity obtenerShowPorId(Long Id) throws IllegalAccessException {
         ShowEntity show = persistance.encontrarPorId(Id);
         if (show == null) {
-            throw new IllegalAccessException("el rating no existe");
+            throw new IllegalAccessException("el show no existe");
         }
         return show;
     }
