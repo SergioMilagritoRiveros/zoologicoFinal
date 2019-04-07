@@ -29,7 +29,7 @@ public class EspacioLogic {
      public EspacioEntity obtenerEspacioPorId(Long Id) throws IllegalAccessException {
         EspacioEntity espacio = persistance.encontrarPorId(Id);
         if (espacio == null) {
-            throw new IllegalAccessException("el producto no existe");
+            throw new IllegalAccessException("el espacio no existe");
         }
         return espacio;
     }

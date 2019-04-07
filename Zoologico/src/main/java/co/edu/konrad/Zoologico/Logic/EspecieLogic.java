@@ -29,7 +29,7 @@ public class EspecieLogic {
      public EspecieEntity obtenerEspeciePorId(Long Id) throws IllegalAccessException {
         EspecieEntity especie = persistance.encontrarPorId(Id);
         if (especie == null) {
-            throw new IllegalAccessException("el producto no existe");
+            throw new IllegalAccessException("la especie no existe");
         }
         return especie;
     }

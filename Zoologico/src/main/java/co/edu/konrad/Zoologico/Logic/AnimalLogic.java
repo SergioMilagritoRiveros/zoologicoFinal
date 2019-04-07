@@ -29,7 +29,7 @@ public class AnimalLogic {
      public AnimalEntity obtenerAnimalPorId(Long Id) throws IllegalAccessException {
         AnimalEntity animal = persistance.encontrarPorId(Id);
         if (animal == null) {
-            throw new IllegalAccessException("el producto no existe");
+            throw new IllegalAccessException("el animal no existe");
         }
         return animal;
     }

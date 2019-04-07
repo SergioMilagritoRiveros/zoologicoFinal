@@ -29,7 +29,7 @@ public class GeneroLogic {
      public GeneroEntity obtenerGeneroPorId(Long Id) throws IllegalAccessException {
         GeneroEntity genero = persistance.encontrarPorId(Id);
         if (genero == null) {
-            throw new IllegalAccessException("el producto no existe");
+            throw new IllegalAccessException("el genero no existe");
         }
         return genero;
     }
@@ -47,7 +47,7 @@ public class GeneroLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public GeneroEntity actualizarAnimal(Long Id, GeneroEntity genero) {
+    public GeneroEntity actualizarGenero(Long Id, GeneroEntity genero) {
         GeneroEntity generoActualizar = persistance.actualizar(genero);
         return generoActualizar;
 

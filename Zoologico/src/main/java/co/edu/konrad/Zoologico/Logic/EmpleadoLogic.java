@@ -30,7 +30,7 @@ public class EmpleadoLogic {
      public EmpleadoEntity obtenerEmpleadoPorId(Long Id) throws IllegalAccessException {
         EmpleadoEntity empleado = persistance.encontrarPorId(Id);
         if (empleado == null) {
-            throw new IllegalAccessException("el producto no existe");
+            throw new IllegalAccessException("el empleado no existe");
         }
         return empleado;
     }
