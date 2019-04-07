@@ -58,7 +58,7 @@ public class RegistroAlimentoLogic {
  * @param Id
  * 
  */
-    public void eliminarHorarioRegistroAlimento(Long Id) {
+    public void eliminarRegistroAlimento(Long Id) {
         persistance.eliminar(Id);
 
     }

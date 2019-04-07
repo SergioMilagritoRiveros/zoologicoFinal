@@ -58,7 +58,7 @@ public class TipoEspacioLogic {
  * @param Id
  * 
  */
-    public void eliminarHorarioTipoEmpleado(Long Id) {
+    public void eliminarTipoEspacio(Long Id) {
         persistance.eliminar(Id);
 
     }

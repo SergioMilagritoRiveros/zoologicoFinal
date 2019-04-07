@@ -58,7 +58,7 @@ public class ShowLogic {
  * @param Id
  * 
  */
-    public void eliminarHorarioShow(Long Id) {
+    public void eliminarShow(Long Id) {
         persistance.eliminar(Id);
 
     }
