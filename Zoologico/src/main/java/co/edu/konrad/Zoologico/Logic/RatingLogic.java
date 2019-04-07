@@ -22,14 +22,14 @@ public class RatingLogic {
     @Inject
     private RatingPersistence persistance;
 
-    public List<RatingEntity> obtenerHorarioAlimentacion() {
+    public List<RatingEntity> obtenerRating() {
         List<RatingEntity> rating=persistance.encontrarTodos();
         return rating;
     }
      public RatingEntity obtenerRatingPorId(Long Id) throws IllegalAccessException {
         RatingEntity rating = persistance.encontrarPorId(Id);
         if (rating == null) {
-            throw new IllegalAccessException("el horario de alimentacion no existe");
+            throw new IllegalAccessException("el rating no existe");
         }
         return rating;
     }
