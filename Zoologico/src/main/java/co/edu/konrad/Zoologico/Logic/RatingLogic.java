@@ -38,7 +38,7 @@ public class RatingLogic {
  *crear producto
  *@return prod
  */
-    public RatingEntity crearHorarioAlimentacion(RatingEntity rating) {
+    public RatingEntity crearRating(RatingEntity rating) {
         persistance.inserta(rating);
         return rating;
     }
@@ -47,7 +47,7 @@ public class RatingLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public RatingEntity actualizarHorarioAlimentacion(Long Id, RatingEntity rating) {
+    public RatingEntity actualizarRatingn(Long Id, RatingEntity rating) {
         RatingEntity ratingActualizar = persistance.actualizar(rating);
         return ratingActualizar;
 
