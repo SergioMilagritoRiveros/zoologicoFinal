@@ -30,7 +30,7 @@ public class AnimalEntity implements Serializable {
     /*
     *atributo tipo animalID
      */
-    @Column(name = "animalID")
+    @Column(name = "tipoAnimalID")
     @OneToMany
     private TipoAnimalEntity animal;
 
