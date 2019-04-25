@@ -29,6 +29,18 @@ public class ShowDTO {
         this.EspaciosID = show.getEspaciosID();
         this.cantidad = show.getCantidad();
     }
+    
+    public ShowEntity toEntity(){
+        ShowEntity entity = new ShowEntity();
+        entity.setId(this.id);
+        entity.setAnimalID(this.animalID);
+        entity.setCantidad(this.cantidad);
+        entity.setEmpleadoID(this.empleadoID);
+        entity.setEspacio(this.espacio);
+        entity.setEspaciosID(this.EspaciosID);
+        entity.setRatingID(this.RatingID);
+        return entity;
+    }
 
     public Long getId() {
         return id;

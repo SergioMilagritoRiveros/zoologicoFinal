@@ -24,6 +24,15 @@ public class RegistroAlimentoDTO {
         this.TipoAlimento = reg.getTipoAlimento();
         this.tipoAnimalID = reg.getTipoAnimalID();
     }
+    
+    public RegistroAlimentoEntity toEntity(){
+        RegistroAlimentoEntity entity = new RegistroAlimentoEntity();
+        entity.setId(this.id);
+        entity.setCantidadAlimento(this.cantidadAlimento);
+        entity.setTipoAlimento(this.TipoAlimento);
+        entity.setTipoAnimalID(this.tipoAnimalID);
+        return entity;
+    }
 
     public Long getId() {
         return id;

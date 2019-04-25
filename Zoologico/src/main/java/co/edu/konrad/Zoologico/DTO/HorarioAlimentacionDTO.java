@@ -22,6 +22,14 @@ public class HorarioAlimentacionDTO {
         this.horaDesayuno = hor.getHoraDesayuno();
         this.horaComida = hor.getHoraComida();
     }
+    
+    public HorarioAlimentacionEntity toEntity(){
+        HorarioAlimentacionEntity entity = new HorarioAlimentacionEntity();
+        entity.setHoraComida(this.horaComida);
+        entity.setId(this.id);
+        entity.setHoraDesayuno(this.horaDesayuno);
+        return entity;
+    }
 
     public Long getId() {
         return id;

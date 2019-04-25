@@ -19,6 +19,13 @@ public class GeneroDTO {
         this.id = genero.getId();
         this.Genero = genero.getGenero();
     }
+    
+    public GeneroEntity toEntity(){
+        GeneroEntity entity = new GeneroEntity();
+        entity.setGenero(this.Genero);
+        entity.setId(this.id);
+        return entity;
+    }
 
     public Long getId() {
         return id;

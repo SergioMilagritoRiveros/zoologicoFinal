@@ -19,6 +19,13 @@ public class TipoIdentificacionDTO {
         this.id = tip.getId();
         this.TipoIdentificacion = tip.getTipoIdentificacion();
     }
+    
+    public TipoIdentificacionEntity toEntity(){
+        TipoIdentificacionEntity entity = new TipoIdentificacionEntity();
+        entity.setId(this.id);
+        entity.setTipoIdentificacion(this.TipoIdentificacion);
+        return entity;
+    }
 
     public Long getId() {
         return id;
