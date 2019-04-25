@@ -23,6 +23,15 @@ public class TipoEspacioDTO {
         this.tamaño = tip.getTamaño();
         this.dsponibilidadPersonas = tip.getDsponibilidadPersonas();
     }
+    
+    public TipoEspacioEntity toEntity(){
+        TipoEspacioEntity entity = new TipoEspacioEntity();
+        entity.setId(this.id);
+        entity.setDsponibilidadPersonas(this.dsponibilidadPersonas);
+        entity.setNombreEspacio(this.nombreEspacio);
+        entity.setTamaño(this.tamaño);
+        return entity;
+    }
 
     public Long getId() {
         return id;

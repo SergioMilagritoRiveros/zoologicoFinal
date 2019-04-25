@@ -24,6 +24,15 @@ public class TipoEmpleadoDTO {
         this.Salario = tip.getSalario();
     }
 
+    public TipoEmpleadoEntity toEntity(){
+       TipoEmpleadoEntity entity = new TipoEmpleadoEntity();
+        entity.setId(this.id);
+        entity.setHorasDiarias(this.HorasDiarias);
+        entity.setOcupacion(this.Ocupacion);
+        entity.setSalario(this.Salario);
+        return entity;
+    }
+    
     public Long getId() {
         return id;
     }

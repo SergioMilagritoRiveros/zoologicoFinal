@@ -25,6 +25,16 @@ public class EspacioDTO {
         this.disponibilidad = espacio.getDisponibilidad();
         this.tipoEspacioID = espacio.getTipoEspacioID();
     }
+    
+    public EspacioEntity toEntity(){
+        EspacioEntity entity = new EspacioEntity();
+        entity.setDisponibilidad(this.disponibilidad);
+        entity.setId(this.id);
+        entity.setNombreEspacio(this.nombreEspacio);
+        entity.setTipoEspacioID(this.tipoEspacioID);
+        entity.setUbicacion(this.ubicacion);
+        return entity;
+    }
 
     public Long getId() {
         return id;

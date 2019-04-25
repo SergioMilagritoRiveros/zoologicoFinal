@@ -21,6 +21,14 @@ public class RatingDTO {
         this.puntuacion = rating.getPuntuacion();
         this.comentario = rating.getComentario();
     }
+    
+    public RatingEntity toEntity(){
+        RatingEntity entity = new RatingEntity(); 
+        entity.setId(this.id);
+        entity.setComentario(this.comentario);
+        entity.setPuntuacion(this.puntuacion);
+        return entity;
+    }
 
     public Long getId() {
         return id;

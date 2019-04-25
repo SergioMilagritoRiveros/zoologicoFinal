@@ -31,6 +31,18 @@ public class EmpleadoDTO {
         this.numeroTelefono = empleado.getNumeroTelefono();
         this.nacimiento = empleado.getNacimiento();
     }
+    
+    public EmpleadoEntity toEntity(){
+        EmpleadoEntity entity = new EmpleadoEntity();
+        entity.setId(this.id);
+        entity.setNacimiento(this.nacimiento);
+        entity.setNombreEmpleado(this.nombreEmpleado);
+        entity.setNumeroIdentificacion(this.numeroIdentificacion);
+        entity.setNumeroTelefono(this.numeroTelefono);
+        entity.setTipoEmpleadoID(this.tipoEmpleadoID);
+        entity.setTipoIdentificacionID(this.tipoIdentificacionID);
+        return entity;
+    }
 
     public Long getId() {
         return id;

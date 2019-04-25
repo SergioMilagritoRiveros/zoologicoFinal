@@ -22,6 +22,7 @@ public class AnimalDTO {
     private EspacioEntity espaciosID;
     private RatingEntity RatingID;
     private EmpleadoEntity EmpleadoEntityID;
+    private String nombreCientifico;
 
     public AnimalDTO(AnimalEntity animal) {
         this.AnimalID = animal.getId();
@@ -30,8 +31,22 @@ public class AnimalDTO {
         this.cantidadTotal = animal.getCantidadTotal();
         this.horarioAlimentacionID = animal.getHorarioAlimentacionID();
         this.espaciosID = animal.getEspaciosID();
-        this.RatingID = animal.getRatingID();
+        this.RatingID = animal.getRatingID();        
         this.EmpleadoEntityID = animal.getEmpleadoEntityID();
+        this.nombreCientifico = animal.getNombreCientifico();
+    }
+    
+    public AnimalEntity toEntity(){
+        AnimalEntity entity = new AnimalEntity();
+        entity.setAnimal(this.tipoAnimalID);
+        entity.setCantidadHabitad(this.cantidadHabitad);
+        entity.setCantidadTotal(this.cantidadTotal);
+        entity.setEmpleadoEntityID(this.EmpleadoEntityID);
+        entity.setEspaciosID(this.espaciosID);
+        entity.setHorarioAlimentacionID(horarioAlimentacionID);
+        entity.setId(this.AnimalID);
+        entity.setNombreCientifico(this.nombreCientifico);
+        return entity;
     }
      public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimal){
         List<AnimalDTO> listaAnimalDTO = new ArrayList<>();

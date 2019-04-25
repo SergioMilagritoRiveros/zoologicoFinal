@@ -19,6 +19,13 @@ public class EspecieDTO {
         this.id = especie.getId();
         this.Especie = especie.getEspecie();
     }
+    
+    public EspecieEntity toEntity(){
+        EspecieEntity entity = new EspecieEntity();
+        entity.setEspecie(this.Especie);
+        entity.setId(this.id);
+        return entity;
+    }
 
     public Long getId() {
         return id;

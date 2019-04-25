@@ -23,6 +23,15 @@ public class ZoologicoDTO {
         this.ShowID = zoo.getShowID();
         this.AnimalID = zoo.getAnimalID();
     }
+    
+    public ZoologicoEntity toEntity(){
+        ZoologicoEntity entity = new ZoologicoEntity();
+        entity.setId(this.id);
+        entity.setAsignacionEspaciosID(this.AsignacionEspaciosID);
+        entity.setAnimalID(this.AnimalID);
+        entity.setShowID(this.ShowID);
+        return entity;
+    }
 
     public Long getId() {
         return id;
