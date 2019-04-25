@@ -6,6 +6,8 @@
 package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -31,6 +33,14 @@ public class ZoologicoDTO {
         entity.setAnimalID(this.AnimalID);
         entity.setShowID(this.ShowID);
         return entity;
+    }
+    
+    public static List<ZoologicoDTO> toZoologicoList(List<ZoologicoEntity> listaZoologico){
+        List<ZoologicoDTO> listaZoologicoDTO = new ArrayList<>();
+        for(ZoologicoEntity entity : listaZoologico){
+            listaZoologicoDTO.add(new ZoologicoDTO(entity));
+        }
+        return listaZoologicoDTO;
     }
 
     public Long getId() {

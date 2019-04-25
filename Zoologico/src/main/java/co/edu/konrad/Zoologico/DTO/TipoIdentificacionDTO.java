@@ -6,6 +6,9 @@
 package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.TipoIdentificacionEntity;
+import co.edu.konrad.Zoologico.Entities.ZoologicoEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,6 +28,14 @@ public class TipoIdentificacionDTO {
         entity.setId(this.id);
         entity.setTipoIdentificacion(this.TipoIdentificacion);
         return entity;
+    }
+    
+    public static List<TipoIdentificacionDTO> toTipoIdentificacionList(List<TipoIdentificacionEntity> listaTipoIdentificacion){
+        List<TipoIdentificacionDTO> listaTipoIdentificacionDTO = new ArrayList<>();
+        for(TipoIdentificacionEntity entity : listaTipoIdentificacion){
+            listaTipoIdentificacionDTO.add(new TipoIdentificacionDTO(entity));
+        }
+        return listaTipoIdentificacionDTO;
     }
 
     public Long getId() {

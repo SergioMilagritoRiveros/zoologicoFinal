@@ -5,7 +5,10 @@
  */
 package co.edu.konrad.Zoologico.DTO;
 
+import co.edu.konrad.Zoologico.Entities.EspecieEntity;
 import co.edu.konrad.Zoologico.Entities.GeneroEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,6 +28,14 @@ public class GeneroDTO {
         entity.setGenero(this.Genero);
         entity.setId(this.id);
         return entity;
+    }
+    
+    public static List<GeneroDTO> toGeneroList(List<GeneroEntity> listaGenero){
+        List<GeneroDTO> listaGeneroDTO = new ArrayList<>();
+        for(GeneroEntity entity : listaGenero){
+            listaGeneroDTO.add(new GeneroDTO(entity));
+        }
+        return listaGeneroDTO;
     }
 
     public Long getId() {

@@ -6,7 +6,9 @@
 package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -32,8 +34,8 @@ public class EmpleadoDTO {
         this.nacimiento = empleado.getNacimiento();
     }
     
-    public EmpleadoEntity toEntity(){
-        EmpleadoEntity entity = new EmpleadoEntity();
+    public  EmpleadoEntity toEntity(){
+         EmpleadoEntity entity = new  EmpleadoEntity();
         entity.setId(this.id);
         entity.setNacimiento(this.nacimiento);
         entity.setNombreEmpleado(this.nombreEmpleado);
@@ -42,6 +44,14 @@ public class EmpleadoDTO {
         entity.setTipoEmpleadoID(this.tipoEmpleadoID);
         entity.setTipoIdentificacionID(this.tipoIdentificacionID);
         return entity;
+    }
+    
+    public static List<EmpleadoDTO> toEmpleadoList(List<EmpleadoEntity> listaEmpleado){
+        List<EmpleadoDTO> listaEmpleadoDTO = new ArrayList<>();
+        for(EmpleadoEntity entity : listaEmpleado){
+            listaEmpleadoDTO.add(new EmpleadoDTO(entity));
+        }
+        return listaEmpleadoDTO;
     }
 
     public Long getId() {

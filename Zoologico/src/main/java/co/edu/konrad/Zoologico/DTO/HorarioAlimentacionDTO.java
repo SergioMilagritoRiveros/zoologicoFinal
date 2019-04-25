@@ -5,8 +5,11 @@
  */
 package co.edu.konrad.Zoologico.DTO;
 
+import co.edu.konrad.Zoologico.Entities.EspecieEntity;
 import co.edu.konrad.Zoologico.Entities.HorarioAlimentacionEntity;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -29,6 +32,14 @@ public class HorarioAlimentacionDTO {
         entity.setId(this.id);
         entity.setHoraDesayuno(this.horaDesayuno);
         return entity;
+    }
+    
+    public static List<HorarioAlimentacionDTO> toHorarioAlimentacionList(List<HorarioAlimentacionEntity> listaHorarioAlimentacion){
+        List<HorarioAlimentacionDTO> listaHorarioAlimentacionDTO = new ArrayList<>();
+        for(HorarioAlimentacionEntity entity : listaHorarioAlimentacion){
+            listaHorarioAlimentacionDTO.add(new HorarioAlimentacionDTO(entity));
+        }
+        return listaHorarioAlimentacionDTO;
     }
 
     public Long getId() {

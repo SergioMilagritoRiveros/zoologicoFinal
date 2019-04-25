@@ -5,7 +5,10 @@
  */
 package co.edu.konrad.Zoologico.DTO;
 
+import co.edu.konrad.Zoologico.Entities.EspecieEntity;
 import co.edu.konrad.Zoologico.Entities.TipoEspacioEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -31,6 +34,14 @@ public class TipoEspacioDTO {
         entity.setNombreEspacio(this.nombreEspacio);
         entity.setTamaño(this.tamaño);
         return entity;
+    }
+    
+    public static List<TipoEspacioDTO> toTipoEspacioList(List<TipoEspacioEntity> listaTipoEspacio){
+        List<TipoEspacioDTO> listaTipoEspacioDTO = new ArrayList<>();
+        for(TipoEspacioEntity entity : listaTipoEspacio){
+            listaTipoEspacioDTO.add(new TipoEspacioDTO(entity));
+        }
+        return listaTipoEspacioDTO;
     }
 
     public Long getId() {

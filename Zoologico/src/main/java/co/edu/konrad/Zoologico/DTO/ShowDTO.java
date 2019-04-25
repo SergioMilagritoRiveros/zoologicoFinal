@@ -6,6 +6,8 @@
 package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -28,6 +30,14 @@ public class ShowDTO {
         this.espacio = show.getEspacio();
         this.EspaciosID = show.getEspaciosID();
         this.cantidad = show.getCantidad();
+    }
+    
+    public static List<ShowDTO> toShowList(List<ShowEntity> listaShow){
+        List<ShowDTO> listaShowDTO = new ArrayList<>();
+        for(ShowEntity entity : listaShow){
+            listaShowDTO.add(new ShowDTO(entity));
+        }
+        return listaShowDTO;
     }
     
     public ShowEntity toEntity(){

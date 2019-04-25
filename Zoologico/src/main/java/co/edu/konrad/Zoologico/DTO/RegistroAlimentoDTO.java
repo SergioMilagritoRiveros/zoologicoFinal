@@ -5,8 +5,11 @@
  */
 package co.edu.konrad.Zoologico.DTO;
 
+import co.edu.konrad.Zoologico.Entities.EspecieEntity;
 import co.edu.konrad.Zoologico.Entities.RegistroAlimentoEntity;
 import co.edu.konrad.Zoologico.Entities.TipoAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -32,6 +35,14 @@ public class RegistroAlimentoDTO {
         entity.setTipoAlimento(this.TipoAlimento);
         entity.setTipoAnimalID(this.tipoAnimalID);
         return entity;
+    }
+    
+    public static List<RegistroAlimentoDTO> toRegistroAlimentoList(List<RegistroAlimentoEntity> listaRegistroAlimento){
+        List<RegistroAlimentoDTO> listaRegistroAlimentoDTO = new ArrayList<>();
+        for(RegistroAlimentoEntity entity : listaRegistroAlimento){
+            listaRegistroAlimentoDTO.add(new RegistroAlimentoDTO(entity));
+        }
+        return listaRegistroAlimentoDTO;
     }
 
     public Long getId() {
