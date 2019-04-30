@@ -22,11 +22,11 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * Recurso de Producto
- * @author Cindy H.
+ * @author JulianT.
  */
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/Animal")
+@Path("/Animal")    
 public class AnimalResource {
     
     @EJB
@@ -81,7 +81,7 @@ public class AnimalResource {
     
     @DELETE
     @Path("{AnimalID: \\d+}")
-    public void deleteProducto(@PathParam("AnimalID") Long id) throws IllegalAccessException{
+    public void deleteAnimal(@PathParam("AnimalID") Long id) throws IllegalAccessException{
         AnimalEntity animalEntity = animalLogic.obtenerAnimalPorId(id);
         if(animalEntity == null){
             throw new RuntimeException("El animal no existe.");
