@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class TipoAnimalDTO {
     private Long id; 
-    private List<EspecieEntity> EspecieID;
+    private EspecieEntity EspecieID;
     private List<GeneroEntity> GeneroID;
     private String Descripcion;
 
@@ -51,13 +51,15 @@ public class TipoAnimalDTO {
         this.id = id;
     }
 
-    public List<EspecieEntity> getEspecieID() {
+    public EspecieEntity getEspecieID() {
         return EspecieID;
     }
 
-    public void setEspecieID(List<EspecieEntity> EspecieID) {
+    public void setEspecieID(EspecieEntity EspecieID) {
         this.EspecieID = EspecieID;
     }
+
+  
 
     public List<GeneroEntity> getGeneroID() {
         return GeneroID;

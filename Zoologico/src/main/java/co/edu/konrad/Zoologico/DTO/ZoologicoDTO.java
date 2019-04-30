@@ -16,8 +16,8 @@ import java.util.List;
 public class ZoologicoDTO {
     private Long id;
     private Long AsignacionEspaciosID;
-    private ShowEntity ShowID;
-    private AnimalEntity AnimalID;
+    private List<ShowEntity> ShowID;
+    private List<AnimalEntity> AnimalID;
 
     public ZoologicoDTO(ZoologicoEntity zoo) {
         this.id = zoo.getId();
@@ -59,21 +59,23 @@ public class ZoologicoDTO {
         this.AsignacionEspaciosID = AsignacionEspaciosID;
     }
 
-    public ShowEntity getShowID() {
+    public List<ShowEntity> getShowID() {
         return ShowID;
     }
 
-    public void setShowID(ShowEntity ShowID) {
+    public void setShowID(List<ShowEntity> ShowID) {
         this.ShowID = ShowID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public List<AnimalEntity> getAnimalID() {
         return AnimalID;
     }
 
-    public void setAnimalID(AnimalEntity AnimalID) {
+    public void setAnimalID(List<AnimalEntity> AnimalID) {
         this.AnimalID = AnimalID;
     }
+
+    
     
     
 }

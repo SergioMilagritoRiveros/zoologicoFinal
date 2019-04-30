@@ -18,9 +18,9 @@ public class AnimalDTO {
     private TipoAnimalEntity tipoAnimalID;
     private Long cantidadHabitad;
     private Long cantidadTotal;
-    private HorarioAlimentacionEntity horarioAlimentacionID;
+    private List<HorarioAlimentacionEntity> horarioAlimentacionID;
     private EspacioEntity espaciosID;
-    private RatingEntity RatingID;
+    private List<RatingEntity> RatingID;
     private EmpleadoEntity EmpleadoEntityID;
     private String nombreCientifico;
 
@@ -88,13 +88,15 @@ public class AnimalDTO {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public HorarioAlimentacionEntity getHorarioAlimentacionID() {
+    public List<HorarioAlimentacionEntity> getHorarioAlimentacionID() {
         return horarioAlimentacionID;
     }
 
-    public void setHorarioAlimentacionID(HorarioAlimentacionEntity horarioAlimentacionID) {
+    public void setHorarioAlimentacionID(List<HorarioAlimentacionEntity> horarioAlimentacionID) {
         this.horarioAlimentacionID = horarioAlimentacionID;
     }
+
+    
 
     public EspacioEntity getEspaciosID() {
         return espaciosID;
@@ -104,13 +106,23 @@ public class AnimalDTO {
         this.espaciosID = espaciosID;
     }
 
-    public RatingEntity getRatingID() {
+    public List<RatingEntity> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(RatingEntity RatingID) {
+    public void setRatingID(List<RatingEntity> RatingID) {
         this.RatingID = RatingID;
     }
+
+    public String getNombreCientifico() {
+        return nombreCientifico;
+    }
+
+    public void setNombreCientifico(String nombreCientifico) {
+        this.nombreCientifico = nombreCientifico;
+    }
+
+   
 
     public EmpleadoEntity getEmpleadoEntityID() {
         return EmpleadoEntityID;

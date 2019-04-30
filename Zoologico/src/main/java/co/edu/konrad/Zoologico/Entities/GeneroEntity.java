@@ -27,7 +27,7 @@ public class GeneroEntity implements Serializable {
     private Long id;
 
     /*
-    *atributo tipo empleado
+    *atributo tipo genero
     */
     @Column(name="Genero")
     private String Genero;

@@ -6,11 +6,14 @@
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -31,14 +34,14 @@ public class ZoologicoEntity implements Serializable{
     private Long AsignacionEspaciosID;
     /*
     *atributo show ID
-    */    
-     @Column(name="ShowID")
+    */   
     @OneToMany
-    private ShowEntity ShowID;
-
-    @Column(name="AnimalID")
+     @JoinColumn(name="ShowID")
+    private List<ShowEntity> ShowID;
+    
     @OneToMany
-    private AnimalEntity AnimalID;
+    @JoinColumn(name="AnimalID")
+    private List<AnimalEntity> AnimalID;
 
     public Long getId() {
         return id;
@@ -56,22 +59,23 @@ public class ZoologicoEntity implements Serializable{
         this.AsignacionEspaciosID = AsignacionEspaciosID;
     }
 
-    public ShowEntity getShowID() {
+    public List<ShowEntity> getShowID() {
         return ShowID;
     }
 
-    public void setShowID(ShowEntity ShowID) {
+    public void setShowID(List<ShowEntity> ShowID) {
         this.ShowID = ShowID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public List<AnimalEntity> getAnimalID() {
         return AnimalID;
     }
 
-    public void setAnimalID(AnimalEntity AnimalID) {
+    public void setAnimalID(List<AnimalEntity> AnimalID) {
         this.AnimalID = AnimalID;
     }
 
+   
 
 
 }

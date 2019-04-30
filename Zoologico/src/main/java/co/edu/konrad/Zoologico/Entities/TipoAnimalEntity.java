@@ -32,13 +32,11 @@ public class TipoAnimalEntity implements Serializable {
     private Long id;
 
     @ManyToOne
-    @JoinColumn
-    @Column(name = "EspecieID")
-    private List<EspecieEntity> EspecieID;
+    @JoinColumn(name = "EspecieID")
+    private EspecieEntity EspecieID;
 
     @OneToMany
-    @JoinColumn
-    @Column(name = "GeneroID")
+    @JoinColumn(name = "GeneroID")
     private List<GeneroEntity> GeneroID;
     /*
     *atributo descripcion
@@ -54,13 +52,15 @@ public class TipoAnimalEntity implements Serializable {
         this.id = id;
     }
 
-    public List<EspecieEntity> getEspecieID() {
+    public EspecieEntity getEspecieID() {
         return EspecieID;
     }
 
-    public void setEspecieID(List<EspecieEntity> EspecieID) {
+    public void setEspecieID(EspecieEntity EspecieID) {
         this.EspecieID = EspecieID;
     }
+
+   
 
     public List<GeneroEntity> getGeneroID() {
         return GeneroID;

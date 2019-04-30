@@ -1,4 +1,3 @@
-
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
@@ -8,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import javax.persistence.Temporal;
@@ -17,7 +17,8 @@ import javax.persistence.Temporal;
  * @author Sergio Riveros
  */
 @Entity
-public class EmpleadoEntity implements Serializable{
+public class EmpleadoEntity implements Serializable {
+
     /*
     * llave primaria
      */
@@ -26,29 +27,29 @@ public class EmpleadoEntity implements Serializable{
     @Column(name = "EmpleadoID")
     private Long id;
 
-     @Column(name="TipoEmpleadoID")
     @ManyToOne
+    @JoinColumn(name = "TipoEmpleadoID")
     private TipoEmpleadoEntity tipoEmpleadoID;
 
-     @Column(name="Nombre")
+    @Column(name = "Nombre")
     private String nombreEmpleado;
 
-      @Column(name="TipoIdentificacionID")
     @ManyToOne
+    @JoinColumn(name = "TipoIdentificacionID")
     private TipoEmpleadoEntity tipoIdentificacionID;
 
-      @Column(name="NumeroIdentificacion")
+    @Column(name = "NumeroIdentificacion")
     private long numeroIdentificacion;
 
-      /*
+    /*
     *atributo numero telefono
-    */
-    @Column(name="NumeroTelefono")
+     */
+    @Column(name = "NumeroTelefono")
     private long numeroTelefono;
     /*
     *atributo fecha nacimiento
-    */
-    @Column(name="FechaNacimiento")
+     */
+    @Column(name = "FechaNacimiento")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date nacimiento;
 
@@ -84,8 +85,6 @@ public class EmpleadoEntity implements Serializable{
         this.nombreEmpleado = nombreEmpleado;
     }
 
-    
-
     public long getNumeroIdentificacion() {
         return numeroIdentificacion;
     }
@@ -109,6 +108,5 @@ public class EmpleadoEntity implements Serializable{
     public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
     }
-
 
 }

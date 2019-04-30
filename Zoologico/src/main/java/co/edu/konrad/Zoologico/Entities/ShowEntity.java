@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import co.edu.konrad.Zoologico.Entities.AnimalEntity;
+import java.util.List;
+import javax.persistence.JoinColumn;
 /**
  *
  * @author Sergio Riveros
@@ -30,23 +32,22 @@ public class ShowEntity implements Serializable {
     private Long id;
     /*
     *atributo ratingID
-     */
-    @Column(name = "RatingID")
+     */ 
     @OneToMany
-    private RatingEntity RatingID;
+    @JoinColumn(name = "RatingID")
+    private List<RatingEntity> RatingID;
 
     /*
     *atributo EmpleadoID
      */
-    @Column(name = "EmpleadoID")
     @ManyToOne
+    @JoinColumn(name = "EmpleadoID")
     private EmpleadoEntity empleadoID;
 
     /*
     *atributo animalID
-     */
-    @Column(name = "AnimalID")
-    @ManyToOne
+     */@ManyToOne
+    @JoinColumn(name = "AnimalID")
     private AnimalEntity animalID;
     /*
     *atributo espacio
@@ -55,9 +56,8 @@ public class ShowEntity implements Serializable {
     private String espacio;
     /*
     *atributo espacioID
-     */
-    @Column(name = "EspaciosID")
-    @ManyToOne
+     */ @ManyToOne
+    @JoinColumn(name = "EspaciosID")
     private EspacioEntity EspaciosID;
     /*
     *atributo cantidad
@@ -73,11 +73,11 @@ public class ShowEntity implements Serializable {
         this.id = id;
     }
 
-    public RatingEntity getRatingID() {
+    public List<RatingEntity> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(RatingEntity RatingID) {
+    public void setRatingID(List<RatingEntity> RatingID) {
         this.RatingID = RatingID;
     }
 

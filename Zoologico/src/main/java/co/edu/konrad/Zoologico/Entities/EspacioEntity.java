@@ -37,15 +37,14 @@ public class EspacioEntity implements Serializable {
     /*
     *atributo disponibilidad
      */
-    @JoinColumn
+  
     @Column(name = "Disponibilidad")
     private Boolean disponibilidad;
     /*
     *atributo tipo de espacio
      */
-
-    @Column(name = "TipoEspacioID")
-    @ManyToOne
+ @ManyToOne
+    @JoinColumn(name = "TipoEspacioID")
     private TipoEspacioEntity tipoEspacioID;
 
     public EspacioEntity() {

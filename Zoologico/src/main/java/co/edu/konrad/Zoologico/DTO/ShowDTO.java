@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ShowDTO {
     private Long id;
-    private RatingEntity RatingID;
+    private List<RatingEntity> RatingID;
     private EmpleadoEntity empleadoID;
     private AnimalEntity animalID;
     private String espacio;
@@ -60,11 +60,11 @@ public class ShowDTO {
         this.id = id;
     }
 
-    public RatingEntity getRatingID() {
+    public List<RatingEntity> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(RatingEntity RatingID) {
+    public void setRatingID(List<RatingEntity> RatingID) {
         this.RatingID = RatingID;
     }
 

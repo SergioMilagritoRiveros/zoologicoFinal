@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -34,14 +35,16 @@ public class RegistroAlimentoEntity implements Serializable {
     
     @Column(name="CantidadAlimento")
     private double cantidadAlimento;
+    
     /*
     *atributo tipo alimento 
     */   
     @Column(name="TipoAlimentoID")
     private String TipoAlimento;
-    @JoinColumn
-    @OneToMany
-    @Column(name="TipoAnimalID")
+    
+    
+    @ManyToOne  
+    @JoinColumn(name="TipoAnimalID")
     private TipoAnimalEntity tipoAnimalID;
 
     public Long getId() {

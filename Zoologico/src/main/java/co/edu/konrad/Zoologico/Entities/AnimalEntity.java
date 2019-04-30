@@ -2,6 +2,7 @@
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,8 +31,8 @@ public class AnimalEntity implements Serializable {
     /*
     *atributo tipo animalID
      */
-    @Column(name = "tipoAnimalID")
-    @OneToMany
+    @OneToOne
+    @JoinColumn(name = "tipoAnimalID")
     private TipoAnimalEntity animal;
 
     /*
@@ -46,27 +47,26 @@ public class AnimalEntity implements Serializable {
     private Long cantidadTotal;
     /*
     *atributo horario de alimentacionID
-     */
-    @Column(name = "HorarioAlimentacionID")
+     */ 
     @OneToMany
-    private HorarioAlimentacionEntity horarioAlimentacionID;
+    @JoinColumn(name = "HorarioAlimentacionID")
+    private List<HorarioAlimentacionEntity> horarioAlimentacionID;
     /*
     *atributo espaciosID
      */
-    @Column(name = "espaciosID")
     @OneToOne
+    @JoinColumn(name = "espaciosID")
     private EspacioEntity espaciosID;
-
-    @Column(name = "RatingID")
+   
     @OneToMany
-    private RatingEntity RatingID;
+    @JoinColumn(name = "RatingID")
+    private List<RatingEntity> RatingID;
 
     @Column(name = "NombreCientifico")
     private String nombreCientifico;
 
     @ManyToOne
-    @JoinColumn
-    @Column(name="empleadoID")
+    @JoinColumn(name="empleadoID")
     private EmpleadoEntity EmpleadoEntityID;
 
     public Long getId() {
@@ -103,14 +103,14 @@ public class AnimalEntity implements Serializable {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public HorarioAlimentacionEntity getHorarioAlimentacionID() {
+    public List<HorarioAlimentacionEntity> getHorarioAlimentacionID() {
         return horarioAlimentacionID;
     }
 
-    public void setHorarioAlimentacionID(HorarioAlimentacionEntity horarioAlimentacionID) {
+    public void setHorarioAlimentacionID(List<HorarioAlimentacionEntity> horarioAlimentacionID) {
         this.horarioAlimentacionID = horarioAlimentacionID;
     }
-
+    
     public EspacioEntity getEspaciosID() {
         return espaciosID;
     }
@@ -119,13 +119,15 @@ public class AnimalEntity implements Serializable {
         this.espaciosID = espaciosID;
     }
 
-    public RatingEntity getRatingID() {
+    public List<RatingEntity> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(RatingEntity RatingID) {
+    public void setRatingID(List<RatingEntity> RatingID) {
         this.RatingID = RatingID;
     }
+
+   
 
     public String getNombreCientifico() {
         return nombreCientifico;

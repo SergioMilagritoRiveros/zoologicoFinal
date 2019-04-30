@@ -21,7 +21,7 @@ public class AnimalPersistence {
      /*
     *manejador de entidad
     */
-    @PersistenceContext(unitName="zoologicoOU")
+    @PersistenceContext(unitName="zoologicoPU")
     protected EntityManager em;
    /*
     *Buscar todas las entidades
