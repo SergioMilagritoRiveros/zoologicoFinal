@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * entidad de horario de alimentacion
@@ -31,6 +33,7 @@ public class HorarioAlimentacionEntity implements Serializable {
     *atributo hora comida
     */
     @Column(name="HoraComida")
+    @Temporal(TemporalType.DATE)
     private Date horaComida;
 
     public HorarioAlimentacionEntity() {
