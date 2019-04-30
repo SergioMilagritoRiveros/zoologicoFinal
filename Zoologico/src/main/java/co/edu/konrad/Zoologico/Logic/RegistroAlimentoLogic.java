@@ -7,7 +7,7 @@ package co.edu.konrad.Zoologico.Logic;
 
 /**
  *
- * @author julian
+ * @author ArturoC
  */
 import co.edu.konrad.Zoologico.Entities.RegistroAlimentoEntity;
 import co.edu.konrad.Zoologico.Persistence.RegistroAlimentoPersistence;
@@ -26,7 +26,7 @@ public class RegistroAlimentoLogic {
         List<RegistroAlimentoEntity> registroalimento=persistance.encontrarTodos();
         return registroalimento;
     }
-     public RegistroAlimentoEntity obtenerRatingPorId(Long Id) throws IllegalAccessException {
+     public RegistroAlimentoEntity obtenerRegistroAlimentoPorId(Long Id) throws IllegalAccessException {
         RegistroAlimentoEntity registroalimento = persistance.encontrarPorId(Id);
         if (registroalimento == null) {
             throw new IllegalAccessException("el registro de alimentacion no existe");
@@ -38,7 +38,7 @@ public class RegistroAlimentoLogic {
  *crear producto
  *@return prod
  */
-    public RegistroAlimentoEntity crearHorarioAlimentacion(RegistroAlimentoEntity registroAlimento) {
+    public RegistroAlimentoEntity crearRegistroAlimento(RegistroAlimentoEntity registroAlimento) {
         persistance.inserta(registroAlimento);
         return registroAlimento;
     }
@@ -47,7 +47,7 @@ public class RegistroAlimentoLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public RegistroAlimentoEntity actualizarHorarioAlimentacion(Long Id, RegistroAlimentoEntity registroAlimento) {
+    public RegistroAlimentoEntity actualizarRegistroAlimento(Long Id, RegistroAlimentoEntity registroAlimento) {
         RegistroAlimentoEntity registroAlimentoactualizar = persistance.actualizar(registroAlimento);
         return registroAlimentoactualizar;
 

@@ -26,7 +26,7 @@ public class TipoAnimalLogic {
     @Inject
     private TipoAnimalPersistence persistance;
 
-    public List<TipoAnimalEntity> obtenerTipoAnimales() {
+    public List<TipoAnimalEntity> obtenerTipoAnimal() {
         List<TipoAnimalEntity> tipoAnimales=persistance.encontrarTodos();
         return tipoAnimales;
     }

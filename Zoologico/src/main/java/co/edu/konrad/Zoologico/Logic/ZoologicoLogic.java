@@ -26,7 +26,7 @@ public class ZoologicoLogic {
         List<ZoologicoEntity>tipoIdentificacion=persistance.encontrarTodos();
         return tipoIdentificacion;
     }
-     public ZoologicoEntity obtenerTipoZoologicoPorId(Long Id) throws IllegalAccessException {
+     public ZoologicoEntity obtenerZoologicoPorId(Long Id) throws IllegalAccessException {
         ZoologicoEntity tipoI = persistance.encontrarPorId(Id);
         if (tipoI == null) {
             throw new IllegalAccessException("el Tipo de Identificacion no existe");

@@ -38,7 +38,7 @@ public class TipoIdentificacionLogic {
  *crear producto
  *@return prod
  */
-    public TipoIdentificacionEntity crearTipoTipoIdentificacion(TipoIdentificacionEntity tipoespacio) {
+    public TipoIdentificacionEntity crearTipoIdentificacion(TipoIdentificacionEntity tipoespacio) {
         persistance.inserta(tipoespacio);
         return tipoespacio;
     }
@@ -58,7 +58,7 @@ public class TipoIdentificacionLogic {
  * @param Id
  * 
  */
-    public void eliminarHorarioTipoIdentificacion(Long Id) {
+    public void eliminarTipoIdentificacion(Long Id) {
         persistance.eliminar(Id);
 
     }

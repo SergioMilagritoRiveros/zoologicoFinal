@@ -38,7 +38,7 @@ public class TipoEspacioLogic {
  *crear producto
  *@return prod
  */
-    public TipoEspacioEntity crearTipoEmpleado(TipoEspacioEntity tipoespacio) {
+    public TipoEspacioEntity crearTipoEspacio(TipoEspacioEntity tipoespacio) {
         persistance.inserta(tipoespacio);
         return tipoespacio;
     }
@@ -47,7 +47,7 @@ public class TipoEspacioLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public TipoEspacioEntity actualizarTipoEmpleado(Long Id, TipoEspacioEntity tipoEspacio) {
+    public TipoEspacioEntity actualizarTipoEspacio(Long Id, TipoEspacioEntity tipoEspacio) {
         TipoEspacioEntity tipospacio = persistance.actualizar(tipoEspacio);
         return tipospacio;
 

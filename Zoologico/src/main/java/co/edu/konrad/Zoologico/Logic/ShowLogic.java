@@ -38,7 +38,7 @@ public class ShowLogic {
  *crear producto
  *@return prod
  */
-    public ShowEntity crearRating(ShowEntity show) {
+    public ShowEntity crearShow(ShowEntity show) {
         persistance.inserta(show);
         return show;
     }
