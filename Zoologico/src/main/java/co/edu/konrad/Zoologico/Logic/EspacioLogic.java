@@ -38,7 +38,7 @@ public class EspacioLogic {
  *crear producto
  *@return prod
  */
-    public EspacioEntity crearEmpleado(EspacioEntity espacio) {
+    public EspacioEntity crearEspacio(EspacioEntity espacio) {
         persistance.inserta(espacio);
         return espacio;
     }
@@ -47,7 +47,7 @@ public class EspacioLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public EspacioEntity actualizarAnimal(Long Id, EspacioEntity espacio) {
+    public EspacioEntity actualizarEspacio(Long Id, EspacioEntity espacio) {
         EspacioEntity espacioActualizar = persistance.actualizar(espacio);
         return espacioActualizar;
 

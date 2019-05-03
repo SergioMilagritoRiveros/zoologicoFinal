@@ -28,12 +28,12 @@ public class EspacioDTO {
         this.tipoEspacioID = espacio.getTipoEspacioID();
     }
     
-    public static List<EmpleadoDTO> toEmpleadoList(List<EmpleadoEntity> listaAnimal){
-        List<EmpleadoDTO> listaEmpleadoDTO = new ArrayList<>();
-        for(EmpleadoEntity entity : listaAnimal){
-            listaEmpleadoDTO.add(new EmpleadoDTO(entity));
+    public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio){
+        List<EspacioDTO> listaEspacioDTO = new ArrayList<>();
+        for(EspacioEntity entity : listaEspacio){
+            listaEspacioDTO.add(new EspacioDTO(entity));
         }
-        return listaEmpleadoDTO;
+        return listaEspacioDTO;
     }
     
     public EspacioEntity toEntity(){
