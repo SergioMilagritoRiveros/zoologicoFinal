@@ -38,7 +38,7 @@ public class EspecieLogic {
  *crear producto
  *@return prod
  */
-    public EspecieEntity crearEmpleado(EspecieEntity especie) {
+    public EspecieEntity crearEspecie(EspecieEntity especie) {
         persistance.inserta(especie);
         return especie;
     }
@@ -47,7 +47,7 @@ public class EspecieLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public EspecieEntity actualizarAnimal(Long Id, EspecieEntity especie) {
+    public EspecieEntity actualizarEspecie(Long Id, EspecieEntity especie) {
         EspecieEntity especieActualizar = persistance.actualizar(especie);
         return especieActualizar;
 
