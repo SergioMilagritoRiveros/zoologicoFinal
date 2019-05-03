@@ -48,7 +48,7 @@ public class EmpleadoLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public EmpleadoEntity actualizarAnimal(Long Id, EmpleadoEntity empleado) {
+    public EmpleadoEntity actualizarEmpleado(Long Id, EmpleadoEntity empleado) {
         EmpleadoEntity empleadoActualizar = persistance.actualizar(empleado);
         return empleadoActualizar;
 
