@@ -47,7 +47,7 @@ public class RatingLogic {
  *actualizar producto
  *@return productoActualizar
  */
-    public RatingEntity actualizarRatingn(Long Id, RatingEntity rating) {
+    public RatingEntity actualizarRating(Long Id, RatingEntity rating) {
         RatingEntity ratingActualizar = persistance.actualizar(rating);
         return ratingActualizar;
 
@@ -58,7 +58,7 @@ public class RatingLogic {
  * @param Id
  * 
  */
-    public void eliminarHorarioRating(Long Id) {
+    public void eliminarRating(Long Id) {
         persistance.eliminar(Id);
 
     }
