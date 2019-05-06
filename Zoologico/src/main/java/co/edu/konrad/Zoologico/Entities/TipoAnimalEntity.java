@@ -35,9 +35,9 @@ public class TipoAnimalEntity implements Serializable {
     @JoinColumn(name = "EspecieID")
     private EspecieEntity EspecieID;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "GeneroID")
-    private List<GeneroEntity> GeneroID;
+    private GeneroEntity GeneroID;
     /*
     *atributo descripcion
      */
@@ -60,16 +60,17 @@ public class TipoAnimalEntity implements Serializable {
         this.EspecieID = EspecieID;
     }
 
-   
-
-    public List<GeneroEntity> getGeneroID() {
+    public GeneroEntity getGeneroID() {
         return GeneroID;
     }
 
-    public void setGeneroID(List<GeneroEntity> GeneroID) {
+    public void setGeneroID(GeneroEntity GeneroID) {
         this.GeneroID = GeneroID;
     }
 
+   
+
+    
     public String getDescripcion() {
         return Descripcion;
     }

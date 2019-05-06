@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AnimalesComponent } from './animales/animales.component';
+import { GeneroComponent } from './genero/genero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    AnimalesComponent
+    AnimalesComponent,
+    GeneroComponent
   ],
   imports: [
     BrowserModule,
