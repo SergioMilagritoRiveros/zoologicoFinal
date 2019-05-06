@@ -6,7 +6,7 @@ declare var $ :any;
   styleUrls: ['./genero.component.css']
 })
 export class GeneroComponent implements OnInit {
-
+     informacion : any[]=[];
   constructor() { }
 
   ngOnInit() {
@@ -16,11 +16,17 @@ export class GeneroComponent implements OnInit {
       dataType: 'json',
       contentType: 'application/json'
   }).done(function (data) {
-      for (let index = 0; index < data.length; index++) {
-        console.log(data[index]);
-        
-      }
+        for (let i = 0; i < data.length; i++) {
+        $('#tabla').append('<th>'+data[i].id+'</th>');
+        $('#tabla').append('<th>'+data[i].genero+'</th>');
+        $('#tabla').append('<th><button id="button1">Eliminar</button></th>');
+        }
       });
+
+      console.log(this.informacion);
+  }
+   eliminar() {
+    alert('chupelo');
   }
 
 }
