@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { identifierModuleUrl } from '@angular/compiler';
+
 declare var $ :any;
 @Component({
   selector: 'app-genero',
@@ -13,7 +15,7 @@ export class GeneroComponent implements OnInit {
     var informacion3:Array<any>=[];
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:8080/Zoologico/api/Genero',
+      url: 'http://localhost:60979/Zoologico/api/Genero',
       dataType: 'json',
       contentType: 'application/json'
   }).done(function (data) {
@@ -31,13 +33,30 @@ export class GeneroComponent implements OnInit {
     console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
-      url:'http://localhost:8080/Zoologico/api/Genero/'+id,
+      url:'http://localhost:60979/Zoologico/api/Genero/'+id,
       contentType: 'application/json',
       dataType: 'json'
   }).done(function(data){
       console.log("Elemento eliminado");
       window.location.reload();
   }).fail(function(xhr, status, error){
+      console.log(error);
+  });
+  }
+
+  crear(){
+    $.ajax({
+      method: 'POST',
+      url: 'http://localhost:60979/Zoologico/api/Genero',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify({
+          Id: $('#id').val(),
+          Genero: $('#genero').val()
+      })
+  }).done(function (data) {
+        window.location.reload();
+  }).fail(function (xhr, status, error) {
       console.log(error);
   });
   }
