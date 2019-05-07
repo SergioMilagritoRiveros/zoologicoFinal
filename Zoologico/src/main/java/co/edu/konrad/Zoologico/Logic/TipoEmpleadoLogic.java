@@ -38,10 +38,10 @@ public class TipoEmpleadoLogic {
  *crear producto
  *@return prod
  */
-    public TipoEmpleadoEntity crearTipoEmpleado(TipoEmpleadoEntity tipoempleado) {
-        persistance.inserta(tipoempleado);
-        return tipoempleado;
-    }
+    public TipoEmpleadoEntity crearProducto(TipoEmpleadoEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

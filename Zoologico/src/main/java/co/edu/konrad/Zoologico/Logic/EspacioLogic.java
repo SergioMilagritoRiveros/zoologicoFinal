@@ -38,10 +38,10 @@ public class EspacioLogic {
  *crear producto
  *@return prod
  */
-    public EspacioEntity crearEspacio(EspacioEntity espacio) {
-        persistance.inserta(espacio);
-        return espacio;
-    }
+    public EspacioEntity crearProducto(EspacioEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

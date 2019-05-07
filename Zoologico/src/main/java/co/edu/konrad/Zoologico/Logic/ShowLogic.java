@@ -38,10 +38,10 @@ public class ShowLogic {
  *crear producto
  *@return prod
  */
-    public ShowEntity crearShow(ShowEntity show) {
-        persistance.inserta(show);
-        return show;
-    }
+    public ShowEntity crearProducto(ShowEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

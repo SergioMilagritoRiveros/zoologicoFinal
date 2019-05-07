@@ -38,10 +38,10 @@ public class AnimalLogic {
  *crear producto
  *@return prod
  */
-    public AnimalEntity crearAnimal(AnimalEntity ani) {
-        persistance.inserta(ani);
-        return ani;
-    }
+    public AnimalEntity crearProducto(AnimalEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

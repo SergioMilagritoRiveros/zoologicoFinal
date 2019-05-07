@@ -38,10 +38,10 @@ public class RatingLogic {
  *crear producto
  *@return prod
  */
-    public RatingEntity crearRating(RatingEntity rating) {
-        persistance.inserta(rating);
-        return rating;
-    }
+    public RatingEntity crearProducto(RatingEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

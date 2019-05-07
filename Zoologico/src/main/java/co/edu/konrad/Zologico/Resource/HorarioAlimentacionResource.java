@@ -59,7 +59,7 @@ public class HorarioAlimentacionResource {
     
     @POST
     public HorarioAlimentacionDTO createProducto(HorarioAlimentacionDTO fdto){ 
-        return new HorarioAlimentacionDTO(HorarioAlimentacionLogic.crearProducto(fdto.toEntity())); 
+        return new HorarioAlimentacionDTO(horarioAlimentacionLogic.crearProducto(fdto.toEntity())); 
     } 
     
     

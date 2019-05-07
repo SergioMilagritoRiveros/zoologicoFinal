@@ -38,10 +38,10 @@ public class ZoologicoLogic {
  *crear producto
  *@return prod
  */
-    public ZoologicoEntity crearZoologico(ZoologicoEntity tipoespacio) {
-        persistance.inserta(tipoespacio);
-        return tipoespacio;
-    }
+    public ZoologicoEntity crearProducto(ZoologicoEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

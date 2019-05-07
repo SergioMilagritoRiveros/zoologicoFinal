@@ -52,8 +52,8 @@ public class ShowResource {
     }
     
     @POST
-    public TipoAnimalDTO createProducto(TipoAnimalDTO fdto){ 
-        return new TipoAnimalDTO(TipoAnimalLogic.crearProducto(fdto.toEntity())); 
+    public ShowDTO createProducto(ShowDTO fdto){ 
+        return new ShowDTO(ShowLogic.crearProducto(fdto.toEntity())); 
     } 
     
     

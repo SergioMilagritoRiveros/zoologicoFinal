@@ -38,10 +38,10 @@ public class RegistroAlimentoLogic {
  *crear producto
  *@return prod
  */
-    public RegistroAlimentoEntity crearRegistroAlimento(RegistroAlimentoEntity registroAlimento) {
-        persistance.inserta(registroAlimento);
-        return registroAlimento;
-    }
+    public RegistroAlimentoEntity crearProducto(RegistroAlimentoEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

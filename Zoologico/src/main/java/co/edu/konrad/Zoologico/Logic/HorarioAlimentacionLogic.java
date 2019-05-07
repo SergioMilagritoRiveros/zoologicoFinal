@@ -38,10 +38,10 @@ public class HorarioAlimentacionLogic {
  *crear producto
  *@return prod
  */
-    public HorarioAlimentacionEntity crearHorarioAlimentacion(HorarioAlimentacionEntity horarioalimentacion) {
-        persistance.inserta(horarioalimentacion);
-        return horarioalimentacion;
-    }
+    public HorarioAlimentacionEntity crearProducto(HorarioAlimentacionEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

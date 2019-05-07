@@ -38,10 +38,10 @@ public class EspecieLogic {
  *crear producto
  *@return prod
  */
-    public EspecieEntity crearEspecie(EspecieEntity especie) {
-        persistance.inserta(especie);
-        return especie;
-    }
+    public EspecieEntity crearProducto(EspecieEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

@@ -59,7 +59,7 @@ public class RatingResource {
     
     @POST
     public RatingDTO createProducto(RatingDTO fdto){ 
-        return new RatingDTO(RatingLogic.crearProducto(fdto.toEntity())); 
+        return new RatingDTO(ratingLogic.crearProducto(fdto.toEntity())); 
     } 
     
     

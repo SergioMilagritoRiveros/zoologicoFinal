@@ -42,10 +42,10 @@ public class TipoAnimalLogic {
  *crear producto
  *@return prod
  */
-    public TipoAnimalEntity crearTipoAnimal(TipoAnimalEntity tani) {
-        persistance.inserta(tani);
-        return tani;
-    }
+    public TipoAnimalEntity crearProducto(TipoAnimalEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto

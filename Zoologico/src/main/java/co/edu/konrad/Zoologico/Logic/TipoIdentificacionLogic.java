@@ -38,10 +38,10 @@ public class TipoIdentificacionLogic {
  *crear producto
  *@return prod
  */
-    public TipoIdentificacionEntity crearTipoIdentificacion(TipoIdentificacionEntity tipoespacio) {
-        persistance.inserta(tipoespacio);
-        return tipoespacio;
-    }
+    public TipoIdentificacionEntity crearProducto(TipoIdentificacionEntity productoCrear){ 
+        persistance.create(productoCrear); 
+        return productoCrear; 
+    } 
 /**
  * @param Id, prod
  *actualizar producto
