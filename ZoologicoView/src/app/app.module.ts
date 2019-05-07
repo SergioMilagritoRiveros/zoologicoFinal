@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AnimalesComponent } from './animales/animales.component';
 import { GeneroComponent } from './genero/genero.component';
+import { EspecieComponent } from './especie/especie.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GeneroComponent } from './genero/genero.component';
     HeaderComponent,
     SidebarComponent,
     AnimalesComponent,
-    GeneroComponent
+    GeneroComponent,
+    EspecieComponent
   ],
   imports: [
     BrowserModule,

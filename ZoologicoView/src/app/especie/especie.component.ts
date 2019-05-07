@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 declare var $ :any;
+declare var informacion2:any[];
 @Component({
-  selector: 'app-genero',
-  templateUrl: './genero.component.html',
-  styleUrls: ['./genero.component.css']
+  selector: 'app-especie',
+  templateUrl: './especie.component.html',
+  styleUrls: ['./especie.component.css']
 })
-export class GeneroComponent implements OnInit {
-  informacion :Array<any>=[];
+export class EspecieComponent implements OnInit {
+    informacion :Array<any>=[];
   constructor() { }
 
   ngOnInit() {
     var informacion3:Array<any>=[];
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:8080/Zoologico/api/Genero',
+      url: 'http://localhost:8080/Zoologico/api/Especie',
       dataType: 'json',
       contentType: 'application/json'
   }).done(function (data) {
@@ -31,7 +32,7 @@ export class GeneroComponent implements OnInit {
     console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
-      url:'http://localhost:8080/Zoologico/api/Genero/'+id,
+      url:'http://localhost:8080/Zoologico/api/Especie/'+id,
       contentType: 'application/json',
       dataType: 'json'
   }).done(function(data){
@@ -41,5 +42,4 @@ export class GeneroComponent implements OnInit {
       console.log(error);
   });
   }
-
 }

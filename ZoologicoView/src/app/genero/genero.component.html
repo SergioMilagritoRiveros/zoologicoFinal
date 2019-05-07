@@ -1,4 +1,4 @@
-<table class="table" style="width: 80%;" id="tabla">
+<table class="table" style="width: 100%;" id="tabla">
   <thead>
     <tr>
       <th scope="col" >#</th>
@@ -6,7 +6,10 @@
       <th scope="col">Botones</th>
     </tr>
   </thead>
-  <tbody>
-
-    </tbody>
+  <tr *ngFor="let item of informacion">
+    <th>{{item.id}}</th>
+     <th>{{item.genero}}</th>
+   <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger" style="width: 40%">Eliminar</button>
+     <button  style="width: 10%;visibility: hidden;" disabled></button>
+   <button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-warning" style="width: 40%">Actualizar</button></th>
     </table>
