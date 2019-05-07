@@ -58,9 +58,9 @@ public class EspecieResource {
     }
     
     @POST
-    public EspecieDTO createEspecie(EspecieDTO especieDTO){
-        return new EspecieDTO(especieLogic.crearEspecie(especieDTO.toEntity()));
-    }
+    public EspecieDTO createProducto(EspecieDTO fdto){ 
+        return new EspecieDTO(especieLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

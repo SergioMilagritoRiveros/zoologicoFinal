@@ -58,9 +58,9 @@ public class AnimalResource {
     }
     
     @POST
-    public AnimalDTO createAnimal(AnimalDTO animalDTO){
-        return new AnimalDTO(animalLogic.crearAnimal(animalDTO.toEntity()));
-    }
+    public AnimalDTO createProducto(AnimalDTO fdto){ 
+        return new AnimalDTO(animalLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

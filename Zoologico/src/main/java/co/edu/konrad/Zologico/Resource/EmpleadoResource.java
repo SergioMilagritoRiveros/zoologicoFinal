@@ -58,9 +58,9 @@ public class EmpleadoResource {
     }
     
     @POST
-    public EmpleadoDTO createEmpleado(EmpleadoDTO empleadoDTO){
-        return new EmpleadoDTO(empleadoLogic.crearEmpleado(empleadoDTO.toEntity()));
-    }
+    public EmpleadoDTO createProducto(EmpleadoDTO fdto){ 
+        return new EmpleadoDTO(empleadoLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

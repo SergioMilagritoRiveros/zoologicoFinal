@@ -52,9 +52,9 @@ public class TipoAnimalResource {
     }
     
     @POST
-    public TipoAnimalDTO createTipoAnimal(TipoAnimalDTO TipoAnimalDTO){
-        return new TipoAnimalDTO(TipoAnimalLogic.crearTipoAnimal(TipoAnimalDTO.toEntity()));
-    }
+    public TipoAnimalDTO createProducto(TipoAnimalDTO fdto){ 
+        return new TipoAnimalDTO(TipoAnimalLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

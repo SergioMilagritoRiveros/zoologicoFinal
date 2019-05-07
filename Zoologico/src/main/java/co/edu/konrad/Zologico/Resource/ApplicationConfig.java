@@ -37,7 +37,6 @@ public class ApplicationConfig extends Application{
         resources.add(co.edu.konrad.Zologico.Resource.TipoAnimalResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.TipoEmpleadoResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.TipoEspacioResource.class);
-        resources.add(co.edu.konrad.Zologico.Resource.TipoIdentificacionResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.ZoologicoResource.class);
     }
 }

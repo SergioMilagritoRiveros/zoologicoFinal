@@ -53,9 +53,9 @@ public class TipoEspacioResource {
     }
     
     @POST
-    public TipoEspacioDTO createTipoEspacio(TipoEspacioDTO TipoEspacioDTO){
-        return new TipoEspacioDTO(TipoEspacioLogic.crearTipoEspacio(TipoEspacioDTO.toEntity()));
-    }
+    public TipoEspacioDTO createProducto(TipoEspacioDTO fdto){ 
+        return new TipoEspacioDTO(TipoEspacioLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

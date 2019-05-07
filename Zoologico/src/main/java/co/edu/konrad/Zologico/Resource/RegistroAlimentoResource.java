@@ -52,9 +52,9 @@ public class RegistroAlimentoResource {
     }
     
     @POST
-    public RegistroAlimentoDTO createRegistroAlimento(RegistroAlimentoDTO RegistroAlimentoDTO){
-        return new RegistroAlimentoDTO(RegistroAlimentoLogic.crearRegistroAlimento(RegistroAlimentoDTO.toEntity()));
-    }
+    public RegistroAlimentoDTO createProducto(RegistroAlimentoDTO fdto){ 
+        return new RegistroAlimentoDTO(RegistroAlimentoLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

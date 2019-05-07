@@ -53,9 +53,9 @@ public class TipoIdentificacionResource {
     }
     
     @POST
-    public TipoIdentificacionDTO createTipoIdentificacion(TipoIdentificacionDTO TipoIdentificacionDTO){
-        return new TipoIdentificacionDTO(TipoIdentificacionLogic.crearTipoIdentificacion(TipoIdentificacionDTO.toEntity()));
-    }
+    public TipoIdentificacionDTO createProducto(TipoIdentificacionDTO fdto){ 
+        return new TipoIdentificacionDTO(TipoIdentificacionLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

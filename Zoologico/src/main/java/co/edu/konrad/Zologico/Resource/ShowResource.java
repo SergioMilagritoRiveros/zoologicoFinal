@@ -52,9 +52,9 @@ public class ShowResource {
     }
     
     @POST
-    public ShowDTO createShow(ShowDTO ShowDTO){
-        return new ShowDTO(ShowLogic.crearShow(ShowDTO.toEntity()));
-    }
+    public TipoAnimalDTO createProducto(TipoAnimalDTO fdto){ 
+        return new TipoAnimalDTO(TipoAnimalLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**

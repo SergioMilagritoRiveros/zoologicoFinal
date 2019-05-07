@@ -53,9 +53,9 @@ public class ZoologicoResource {
     }
     
     @POST
-    public ZoologicoDTO createShow(ZoologicoDTO ZoologicoDTO){
-        return new ZoologicoDTO(ZoologicoLogic.crearZoologico(ZoologicoDTO.toEntity()));
-    }
+    public ZoologicoDTO createProducto(ZoologicoDTO fdto){ 
+        return new ZoologicoDTO(ZoologicoLogic.crearProducto(fdto.toEntity())); 
+    } 
     
     
     /**
