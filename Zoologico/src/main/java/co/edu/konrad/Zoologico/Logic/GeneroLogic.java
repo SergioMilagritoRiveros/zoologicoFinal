@@ -38,10 +38,11 @@ public class GeneroLogic {
  *crear producto
  *@return prod
  */
-    public GeneroEntity crearGenero(GeneroEntity genero) {
-        persistance.inserta(genero);
-        return genero;
+  public GeneroEntity crearProducto(GeneroEntity productoCrear){
+        persistance.create(productoCrear);
+        return productoCrear;
     }
+
 /**
  * @param Id, prod
  *actualizar producto

@@ -39,9 +39,9 @@ public class GeneroPersistence {
     /*
     *insertar un registro a la tabla 
     */
-    public GeneroEntity inserta(GeneroEntity entity){
-        em.persist(entity);
-        return entity;
+    public GeneroEntity create(GeneroEntity productoNuevo){
+        em.persist(productoNuevo);
+        return productoNuevo;
     }
     /*
     *actualizar los datos de una endtidad

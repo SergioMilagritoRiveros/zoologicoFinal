@@ -57,9 +57,9 @@ public class GeneroResource {
         return new GeneroDTO(genero);
     }
     
-    @POST
-    public GeneroDTO createGenero(GeneroDTO generoDTO){
-        return new GeneroDTO(generoLogic.crearGenero(generoDTO.toEntity()));
+     @POST
+    public GeneroDTO createProducto(GeneroDTO fdto){
+        return new GeneroDTO(generoLogic.crearProducto(fdto.toEntity()));
     }
     
     

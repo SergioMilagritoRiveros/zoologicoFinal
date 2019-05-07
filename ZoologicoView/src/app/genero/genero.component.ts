@@ -9,13 +9,26 @@ declare var $ :any;
 })
 export class GeneroComponent implements OnInit {
   informacion :Array<any>=[];
+   getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName [1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
   constructor() { }
 
   ngOnInit() {
     var informacion3:Array<any>=[];
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:60979/Zoologico/api/Genero',
+      url: 'http://localhost:8080/Zoologico/api/Genero',
       dataType: 'json',
       contentType: 'application/json'
   }).done(function (data) {
@@ -33,7 +46,7 @@ export class GeneroComponent implements OnInit {
     console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
-      url:'http://localhost:60979/Zoologico/api/Genero/'+id,
+      url:'http://localhost:8080/Zoologico/api/Genero/'+id,
       contentType: 'application/json',
       dataType: 'json'
   }).done(function(data){
@@ -47,12 +60,12 @@ export class GeneroComponent implements OnInit {
   crear(){
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:60979/Zoologico/api/Genero',
+      url: 'http://localhost:8080/Zoologico/api/Genero',
       contentType: 'application/json',
       dataType: 'json',
       data: JSON.stringify({
-          Id: $('#id').val(),
-          Genero: $('#genero').val()
+        id:$('#Id').val(),
+        Genero: $('#Genero').val()
       })
   }).done(function (data) {
         window.location.reload();
