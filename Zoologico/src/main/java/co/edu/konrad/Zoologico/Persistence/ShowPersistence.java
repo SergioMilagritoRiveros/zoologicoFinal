@@ -42,9 +42,9 @@ public class ShowPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public ShowEntity inserta(ShowEntity entity) {
-        em.persist(entity);
-        return entity;
+    public ShowEntity create(ShowEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

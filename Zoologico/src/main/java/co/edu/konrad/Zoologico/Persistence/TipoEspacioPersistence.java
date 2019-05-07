@@ -42,9 +42,9 @@ public class TipoEspacioPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public TipoEspacioEntity inserta(TipoEspacioEntity entity) {
-        em.persist(entity);
-        return entity;
+    public TipoEspacioEntity create(TipoEspacioEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

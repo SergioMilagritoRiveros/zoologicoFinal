@@ -42,9 +42,9 @@ public class RatingPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public RatingEntity inserta(RatingEntity entity) {
-        em.persist(entity);
-        return entity;
+    public RatingEntity create(RatingEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

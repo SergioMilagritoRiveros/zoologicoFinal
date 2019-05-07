@@ -39,9 +39,9 @@ public class EmpleadoPersistence {
     /*
     *insertar un registro a la tabla 
     */
-    public EmpleadoEntity inserta(EmpleadoEntity entity){
-        em.persist(entity);
-        return entity;
+    public EmpleadoEntity create(EmpleadoEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
     /*
     *actualizar los datos de una endtidad

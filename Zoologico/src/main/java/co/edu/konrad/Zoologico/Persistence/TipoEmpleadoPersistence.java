@@ -42,9 +42,9 @@ public class TipoEmpleadoPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public TipoEmpleadoEntity inserta(TipoEmpleadoEntity entity) {
-        em.persist(entity);
-        return entity;
+    public TipoEmpleadoEntity create(TipoEmpleadoEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

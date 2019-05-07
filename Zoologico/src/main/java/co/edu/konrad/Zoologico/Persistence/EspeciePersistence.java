@@ -39,9 +39,9 @@ public class EspeciePersistence {
     /*
     *insertar un registro a la tabla 
     */
-    public EspecieEntity inserta(EspecieEntity entity){
-        em.persist(entity);
-        return entity;
+    public EspecieEntity create(EspecieEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
     /*
     *actualizar los datos de una endtidad

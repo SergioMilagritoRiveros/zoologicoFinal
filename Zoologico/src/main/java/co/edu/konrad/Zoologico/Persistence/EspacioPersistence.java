@@ -40,9 +40,9 @@ public class EspacioPersistence {
     /*
     *insertar un registro a la tabla 
     */
-    public EspacioEntity inserta(EspacioEntity entity){
-        em.persist(entity);
-        return entity;
+    public EspacioEntity create(EspacioEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
     /*
     *actualizar los datos de una endtidad

@@ -39,9 +39,9 @@ public class AnimalPersistence {
     /*
     *insertar un registro a la tabla 
     */
-    public AnimalEntity inserta(AnimalEntity entity){
-        em.persist(entity);
-        return entity;
+    public AnimalEntity create(AnimalEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
     /*
     *actualizar los datos de una endtidad

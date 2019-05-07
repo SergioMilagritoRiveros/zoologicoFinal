@@ -42,9 +42,9 @@ public class TipoIdentificacionPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public TipoIdentificacionEntity inserta(TipoIdentificacionEntity entity) {
-        em.persist(entity);
-        return entity;
+    public TipoIdentificacionEntity create(TipoIdentificacionEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

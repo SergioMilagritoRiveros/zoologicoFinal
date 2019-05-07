@@ -43,9 +43,9 @@ public class HorarioAlimentacionPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public HorarioAlimentacionEntity inserta(HorarioAlimentacionEntity entity) {
-        em.persist(entity);
-        return entity;
+    public HorarioAlimentacionEntity create(HorarioAlimentacionEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

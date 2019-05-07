@@ -43,9 +43,9 @@ public class RegistroAlimentoPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public RegistroAlimentoEntity inserta(RegistroAlimentoEntity entity) {
-        em.persist(entity);
-        return entity;
+    public RegistroAlimentoEntity create(RegistroAlimentoEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*

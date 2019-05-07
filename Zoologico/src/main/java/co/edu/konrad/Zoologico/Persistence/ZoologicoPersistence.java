@@ -42,9 +42,9 @@ public class ZoologicoPersistence {
     /*
     *insertar un registro a la tabla 
      */
-    public ZoologicoEntity inserta(ZoologicoEntity entity) {
-        em.persist(entity);
-        return entity;
+    public ZoologicoEntity create(ZoologicoEntity productoNuevo){ 
+        em.persist(productoNuevo); 
+        return productoNuevo; 
     }
 
     /*
