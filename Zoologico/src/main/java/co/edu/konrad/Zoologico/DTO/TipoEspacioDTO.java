@@ -20,6 +20,10 @@ public class TipoEspacioDTO {
     private String tamaño;
     private Long dsponibilidadPersonas;
 
+    public TipoEspacioDTO() {
+    }
+    
+
     public TipoEspacioDTO(TipoEspacioEntity tip) {
         this.id = tip.getId();
         this.nombreEspacio = tip.getNombreEspacio();

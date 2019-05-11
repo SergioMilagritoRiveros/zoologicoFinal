@@ -18,6 +18,10 @@ public class GeneroDTO {
      private Long id;
     private String Genero;
 
+    public GeneroDTO() {
+    }
+    
+
     public GeneroDTO(GeneroEntity genero) {
         this.id = genero.getId();
         this.Genero = genero.getGenero();

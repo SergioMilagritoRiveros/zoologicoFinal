@@ -19,6 +19,10 @@ public class TipoAnimalDTO {
     private GeneroEntity GeneroID;
     private String Descripcion;
 
+    public TipoAnimalDTO() {
+    }
+    
+
     public TipoAnimalDTO(TipoAnimalEntity tip) {
         this.id = tip.getId();
         this.EspecieID = tip.getEspecieID();

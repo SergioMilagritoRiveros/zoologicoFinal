@@ -20,6 +20,10 @@ public class HorarioAlimentacionDTO {
     private Date horaDesayuno;
     private Date horaComida;
 
+    public HorarioAlimentacionDTO() {
+    }
+    
+
     public HorarioAlimentacionDTO(HorarioAlimentacionEntity hor) {
         this.id = hor.getId();
         this.horaDesayuno = hor.getHoraDesayuno();

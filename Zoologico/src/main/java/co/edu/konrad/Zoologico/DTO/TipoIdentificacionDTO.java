@@ -18,6 +18,10 @@ public class TipoIdentificacionDTO {
     private Long id;
     private String TipoIdentificacion;
 
+    public TipoIdentificacionDTO() {
+    }
+    
+
     public TipoIdentificacionDTO(TipoIdentificacionEntity tip) {
         this.id = tip.getId();
         this.TipoIdentificacion = tip.getTipoIdentificacion();

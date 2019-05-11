@@ -19,6 +19,11 @@ public class ZoologicoDTO {
     private List<ShowEntity> ShowID;
     private List<AnimalEntity> AnimalID;
 
+    public ZoologicoDTO() {
+    }
+    
+    
+
     public ZoologicoDTO(ZoologicoEntity zoo) {
         this.id = zoo.getId();
         this.AsignacionEspaciosID = zoo.getAsignacionEspaciosID();

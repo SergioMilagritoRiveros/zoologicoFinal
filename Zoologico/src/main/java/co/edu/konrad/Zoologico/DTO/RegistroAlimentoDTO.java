@@ -21,6 +21,10 @@ public class RegistroAlimentoDTO {
     private String TipoAlimento;
     private TipoAnimalEntity tipoAnimalID;
 
+    public RegistroAlimentoDTO() {
+    }
+    
+
     public RegistroAlimentoDTO(RegistroAlimentoEntity reg) {
         this.id = reg.getId();
         this.cantidadAlimento = reg.getCantidadAlimento();

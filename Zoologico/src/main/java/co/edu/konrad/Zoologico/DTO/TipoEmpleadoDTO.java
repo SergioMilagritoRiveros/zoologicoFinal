@@ -19,6 +19,10 @@ public class TipoEmpleadoDTO {
     private String Ocupacion;
     private double Salario;
 
+    public TipoEmpleadoDTO() {
+    }
+    
+
     public TipoEmpleadoDTO(TipoEmpleadoEntity tip) {
         this.id = tip.getId();
         this.HorasDiarias = tip.getHorasDiarias();

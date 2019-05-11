@@ -20,6 +20,10 @@ public class EspacioDTO {
     private Boolean disponibilidad;
     private TipoEspacioEntity tipoEspacioID;
 
+    public EspacioDTO() {
+    }
+    
+
     public EspacioDTO(EspacioEntity espacio) {
         this.id = espacio.getId();
         this.nombreEspacio = espacio.getNombreEspacio();

@@ -24,6 +24,10 @@ public class AnimalDTO {
     private EmpleadoEntity EmpleadoEntityID;
     private String nombreCientifico;
 
+    public AnimalDTO() {
+    }
+    
+
     public AnimalDTO(AnimalEntity animal) {
         this.AnimalID = animal.getId();
         this.tipoAnimalID = animal.getAnimal();

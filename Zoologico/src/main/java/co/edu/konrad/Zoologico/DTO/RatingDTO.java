@@ -19,6 +19,10 @@ public class RatingDTO {
     private Long puntuacion;
     private String comentario;
 
+    public RatingDTO() {
+    }
+    
+
     public RatingDTO(RatingEntity rating) {
         this.id = rating.getId();
         this.puntuacion = rating.getPuntuacion();

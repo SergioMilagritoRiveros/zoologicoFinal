@@ -17,6 +17,10 @@ public class EspecieDTO {
     private Long id;
     private String Especie;
 
+    public EspecieDTO() {
+    }
+    
+
     public EspecieDTO(EspecieEntity especie) {
         this.id = especie.getId();
         this.Especie = especie.getEspecie();

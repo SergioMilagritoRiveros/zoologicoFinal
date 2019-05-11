@@ -22,6 +22,10 @@ public class ShowDTO {
     private EspacioEntity EspaciosID;
     private Long cantidad;
 
+    public ShowDTO() {
+    }
+    
+
     public ShowDTO(ShowEntity show) {
         this.id = show.getId();
         this.RatingID = show.getRatingID();
