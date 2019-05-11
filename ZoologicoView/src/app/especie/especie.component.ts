@@ -42,4 +42,58 @@ export class EspecieComponent implements OnInit {
       console.log(error);
   });
   }
+  crear(){
+    alert( $('#Id').val()+$('#Especie').val());
+    $.ajax({
+      method: 'POST',
+      url: 'http://localhost:8080/Zoologico/api/Especie',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify({
+        id:$('#Id').val(),
+        Especie: $('#Especie').val()
+      })
+  }).done(function (data) {
+        window.location.reload();
+  }).fail(function (xhr, status, error) {
+      console.log(error);
+  });
+  }
+  actualizarFormulario(id:number){
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/Zoologico/api/Especie/' + id,
+      contentType: 'application/json',
+      dataType: 'json'
+  }).done(function (data) {
+    $('#IdActualizar').val(data.id),
+   $('#EspecieActualizar').val(data.genero)
+  });
+  }
+  actualizar(){
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#IdActualizar').val(),
+      dataType: 'json'
+  }).done(function (data) {
+
+          $.ajax({
+              method: 'PUT',
+              url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#IdActualizar').val(),
+              contentType: 'application/json',
+              dataType: 'json',
+              data: JSON.stringify({
+                id:$('#IdActualizar').val(),
+                Especie: $('#EspecieActualizar').val()
+              })
+          }).done(function (data) {
+            window.location.reload();
+          }).fail(function (xhr, status, error) {
+              console.log(error);
+          });
+
+  }).fail(function (xhr, status, error) {
+      console.log(error);
+  });
+  }
 }

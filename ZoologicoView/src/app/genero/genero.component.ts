@@ -73,5 +73,41 @@ export class GeneroComponent implements OnInit {
       console.log(error);
   });
   }
+  actualizarFormulario(id:number){
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/Zoologico/api/Genero/' + id,
+      contentType: 'application/json',
+      dataType: 'json'
+  }).done(function (data) {
+    $('#IdActualizar').val(data.id),
+   $('#GeneroActualizar').val(data.genero)
+  });
+  }
+  actualizar(){
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/Zoologico/api/Genero/' + $('#IdActualizar').val(),
+      dataType: 'json'
+  }).done(function (data) {
 
+          $.ajax({
+              method: 'PUT',
+              url: 'http://localhost:8080/Zoologico/api/Genero/' + $('#IdActualizar').val(),
+              contentType: 'application/json',
+              dataType: 'json',
+              data: JSON.stringify({
+                id:$('#IdActualizar').val(),
+                Genero: $('#GeneroActualizar').val()
+              })
+          }).done(function (data) {
+            window.location.reload();
+          }).fail(function (xhr, status, error) {
+              console.log(error);
+          });
+
+  }).fail(function (xhr, status, error) {
+      console.log(error);
+  });
+  }
 }
