@@ -37,10 +37,11 @@ export class GeneroComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
          informacion3.push(data[i]);
       }
-     
+      $('#Id').val(informacion3.length+1);
       });
       this.informacion=informacion3;
-    console.log(this.informacion);
+      
+    console.log(informacion3.length);
   }
   eliminar(id:number) {
     console.log('chupelo'+id);

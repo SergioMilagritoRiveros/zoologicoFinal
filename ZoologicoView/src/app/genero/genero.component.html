@@ -14,11 +14,11 @@
           <form>
             <div class="form-group">
               <label for="email">Id:</label>
-              <input type="text" class="form-control" id="Id">
+              <input type="text" class="form-control" id="Id" disabled>
             </div>
             <div class="form-group">
               <label for="pwd">Genero:</label>
-              <input type="text" class="form-control" id="Genero">
+              <input type="text" class="form-control" id="Genero" >
             </div>            
             <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
           </form>
@@ -63,7 +63,7 @@
     <tr>
       <th scope="col" >#</th>
       <th scope="col">Tipo</th>
-      <th scope="col">Botones</th>
+      <th scope="col">Opcioens</th>
     </tr>
   </thead>
   <tr *ngFor="let item of informacion">

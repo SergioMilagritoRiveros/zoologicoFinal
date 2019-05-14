@@ -28,7 +28,7 @@ public class TipoAnimalPersistence {
     *Buscar todas las entidades
      */
     public List<TipoAnimalEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from TipoAnimalEntity ");
+        Query todos = em.createQuery("select p from TipoAnimalEntity p");
         return todos.getResultList();
     }
 

@@ -23,7 +23,7 @@ export class EspecieComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
          informacion3.push(data[i]);
       }
-     
+      $('#Id').val(informacion3.length+1);
       });
       this.informacion=informacion3;
     console.log(this.informacion);
@@ -51,7 +51,7 @@ export class EspecieComponent implements OnInit {
       dataType: 'json',
       data: JSON.stringify({
         id:$('#Id').val(),
-        Especie: $('#Especie').val()
+        especie: $('#Especie').val()
       })
   }).done(function (data) {
         window.location.reload();
@@ -67,7 +67,7 @@ export class EspecieComponent implements OnInit {
       dataType: 'json'
   }).done(function (data) {
     $('#IdActualizar').val(data.id),
-   $('#EspecieActualizar').val(data.genero)
+   $('#EspecieActualizar').val(data.especie)
   });
   }
   actualizar(){
