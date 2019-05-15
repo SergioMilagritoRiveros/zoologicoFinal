@@ -44,7 +44,6 @@ export class GeneroComponent implements OnInit {
     console.log(informacion3.length);
   }
   eliminar(id:number) {
-    console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
       url:'http://localhost:8080/Zoologico/api/Genero/'+id,

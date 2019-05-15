@@ -9,6 +9,7 @@ import { AnimalesComponent } from './animales/animales.component';
 import { GeneroComponent } from './genero/genero.component';
 import { EspecieComponent } from './especie/especie.component';
 import { TipoAnimalComponent } from './tipo-animal/tipo-animal.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TipoAnimalComponent } from './tipo-animal/tipo-animal.component';
     AnimalesComponent,
     GeneroComponent,
     EspecieComponent,
-    TipoAnimalComponent
+    TipoAnimalComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

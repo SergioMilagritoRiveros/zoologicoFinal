@@ -29,7 +29,6 @@ export class EspecieComponent implements OnInit {
     console.log(this.informacion);
   }
   eliminar(id:number) {
-    console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
       url:'http://localhost:8080/Zoologico/api/Especie/'+id,
@@ -43,7 +42,6 @@ export class EspecieComponent implements OnInit {
   });
   }
   crear(){
-    alert( $('#Id').val()+$('#Especie').val());
     $.ajax({
       method: 'POST',
       url: 'http://localhost:8080/Zoologico/api/Especie',

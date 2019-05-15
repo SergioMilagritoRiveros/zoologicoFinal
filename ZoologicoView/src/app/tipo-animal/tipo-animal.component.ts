@@ -45,7 +45,8 @@ export class TipoAnimalComponent implements OnInit {
       });
       this.genero=genero2;
       
-    console.log(genero2.length);
+    console.log(this.genero);
+
     var especie2:Array<any>=[];
     $.ajax({
       method: 'GET',
@@ -58,13 +59,12 @@ export class TipoAnimalComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
           especie2.push(data[i]);
       }
-      $('#Id').val(especie2.length+1);
+     
       });
       this.especie=especie2;
     console.log(this.especie);
   }
   eliminar(id:number) {
-    console.log('chupelo'+id);
     $.ajax({
       method: 'DELETE',
       url:'http://localhost:8080/Zoologico/api/TipoAnimal/'+id,
@@ -78,7 +78,6 @@ export class TipoAnimalComponent implements OnInit {
   });
   }
   crear(){
-    alert( $('#Id').val()+$('#Descripcion').val()+$('#Especie').val().split("&", 0));
     $.ajax({
       method: 'POST',
       url: 'http://localhost:8080/Zoologico/api/TipoAnimal',
@@ -87,18 +86,13 @@ export class TipoAnimalComponent implements OnInit {
       data: JSON.stringify({
         id:$('#Id').val(),
         Descripcion: $('#Descripcion').val(),
-        especieID: $.ajax({
-              method: 'GET',
-              url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#Especie').val(),
-              dataType: 'json'
-          }),
+        especieID:{
+        url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#Especie').val()}
+        ,
         
-        generoID: $.ajax({
-          method: 'GET',
-          url: 'http://localhost:8080/Zoologico/api/Genero/' + $('#Genero').val(),
-          contentType: 'application/json',
-          dataType: 'json'
-      })
+        generoID:{
+         url: 'http://localhost:8080/Zoologico/api/Genero/' + $('#Genero').val()
+        }
       })
   }).done(function (data) {
         window.location.reload();
