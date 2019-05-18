@@ -1,82 +1,48 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
+
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
-// Import containers
-import { DefaultLayoutComponent } from './containers';
-
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-import {AnimalesComponent} from './animales/animales.component';
-import {GeneroComponent} from './genero/genero.component';
-import {EspecieComponent} from './especie/especie.component';
-import {TipoAnimalComponent} from './tipo-animal/tipo-animal.component';
-
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { TypographyComponent } from './typography/typography.component';
+import { IconsComponent } from './icons/icons.component';
+import { MapsComponent } from './maps/maps.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 import {
-  AppAsideModule,
-  AppBreadcrumbModule,
-  AppHeaderModule,
-  AppFooterModule,
-  AppSidebarModule,
-} from '@coreui/angular';
+  AgmCoreModule
+} from '@agm/core';
 
-// Import routing module
-import { AppRoutingModule } from './app.routing';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
-// Import 3rd party components
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ComponentsModule,
+    RouterModule,
     AppRoutingModule,
-    AppAsideModule,
-    AppBreadcrumbModule.forRoot(),
-    AppFooterModule,
-    AppHeaderModule,
-    AppSidebarModule,
-    PerfectScrollbarModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ChartsModule,
-    HttpClientModule
-   
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+    })
+
   ],
   declarations: [
     AppComponent,
-    ...APP_CONTAINERS,
-    P404Component,
-    P500Component,
-    LoginComponent,
-    RegisterComponent,
-    AnimalesComponent,
-    TipoAnimalComponent,
-    GeneroComponent,
-    EspecieComponent
+    AdminLayoutComponent,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
-  bootstrap: [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

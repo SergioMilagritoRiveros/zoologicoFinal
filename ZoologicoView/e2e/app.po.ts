@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
-export class CoreUIPage {
+export class MaterialDashboardAngularPage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.className('app-footer')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }

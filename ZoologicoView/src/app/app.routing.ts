@@ -1,101 +1,41 @@
 import { NgModule } from '@angular/core';
+import { CommonModule, } from '@angular/common';
+import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-// Import Containers
-import { DefaultLayoutComponent } from './containers';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-import {AnimalesComponent} from './animales/animales.component';
-import {GeneroComponent} from './genero/genero.component';
-import {EspecieComponent} from './especie/especie.component';
-import {TipoAnimalComponent} from './tipo-animal/tipo-animal.component';
-
-export const routes: Routes = [
+const routes: Routes =[
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  },
-  {
-    path: '404',
-    component: P404Component,
-    data: {
-      title: 'Page 404'
-    }
-  },
-  {
-    path: '500',
-    component: P500Component,
-    data: {
-      title: 'Page 500'
-    }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {
+  }, {
     path: '',
-    component: DefaultLayoutComponent,
-    data: {
-      title: 'Home'
-    },
+    component: AdminLayoutComponent,
     children: [
-      {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule'
-      }, { path: 'animales', component: AnimalesComponent },
-      { path: 'genero', component: GeneroComponent },
-      { path: 'especie', component: EspecieComponent },
-      { path: 'tipoAnimal', component: TipoAnimalComponent },
-      {
-        path: 'buttons',
-        loadChildren: './views/buttons/buttons.module#ButtonsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
-      },
-      {
-        path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
-      },
-      {
-        path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule'
-      },
-      {
-        path: 'theme',
-        loadChildren: './views/theme/theme.module#ThemeModule'
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      }
-    ]
-  },
-  { path: '**', component: P404Component }
+        {
+      path: '',
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+  }]}
+    // { path: 'dashboard',      component: DashboardComponent },
+    // { path: 'user-profile',   component: UserProfileComponent },
+    // { path: 'table-list',     component: TableListComponent },
+    // { path: 'typography',     component: TypographyComponent },
+    // { path: 'icons',          component: IconsComponent },
+    // { path: 'maps',           component: MapsComponent },
+    // { path: 'notifications',  component: NotificationsComponent },
+    // { path: 'upgrade',        component: UpgradeComponent },
+    // { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+  ],
 })
 export class AppRoutingModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EspecieService } from 'app/services/Especie/especie.service';
 declare var $ :any;
 declare var informacion2:any[];
 @Component({
@@ -7,91 +8,81 @@ declare var informacion2:any[];
   styleUrls: ['./especie.component.css']
 })
 export class EspecieComponent implements OnInit {
-    informacion :Array<any>=[];
-  constructor() { }
+  informacion :any;
+  idCrear:number;
+  especieCrear:string='';
+  idActualizar:number;
+  especieActualizar:string;
+ 
+
+  constructor(private _especieService:EspecieService) { }
 
   ngOnInit() {
-    var informacion3:Array<any>=[];
-    $.ajax({
-      method: 'GET',
-      url: 'http://localhost:8080/Zoologico/api/Especie',
-      dataType: 'json',
-      contentType: 'application/json'
-  }).done(function (data) {
-    
-  
-        for (let i = 0; i < data.length; i++) {
-         informacion3.push(data[i]);
-      }
-      $('#Id').val(informacion3.length+1);
-      });
-      this.informacion=informacion3;
-    console.log(this.informacion);
+    this._especieService.getEspecies().subscribe((data) => {
+      console.log(data),
+      this.informacion=data,
+       this.idCrear=this.informacion.length+1
+     });
   }
   eliminar(id:number) {
-    $.ajax({
-      method: 'DELETE',
-      url:'http://localhost:8080/Zoologico/api/Especie/'+id,
-      contentType: 'application/json',
-      dataType: 'json'
-  }).done(function(data){
-      console.log("Elemento eliminado");
-      window.location.reload();
-  }).fail(function(xhr, status, error){
-      console.log(error);
-  });
+    this._especieService.deleteEspecie(id).subscribe(data=>{
+      this.ngOnInit();
+      $('#tablex').load()});
+    
   }
+
   crear(){
-    $.ajax({
-      method: 'POST',
-      url: 'http://localhost:8080/Zoologico/api/Especie',
-      contentType: 'application/json',
-      dataType: 'json',
-      data: JSON.stringify({
-        id:$('#Id').val(),
-        especie: $('#Especie').val()
-      })
-  }).done(function (data) {
-        window.location.reload();
-  }).fail(function (xhr, status, error) {
-      console.log(error);
-  });
+    this.especieCrear=$('#Especie').val();
+    if (this.especieCrear!='') {
+      this._especieService.postEspecie(this.idCrear,this.especieCrear).subscribe(data=>{
+        this.ngOnInit();
+        $('#tablex').load();
+        $('#crearf').load();
+        
+      });
+    }else{
+      this.showNotification('top','rigth')
+    }
+   
   }
   actualizarFormulario(id:number){
-    $.ajax({
-      method: 'GET',
-      url: 'http://localhost:8080/Zoologico/api/Especie/' + id,
-      contentType: 'application/json',
-      dataType: 'json'
-  }).done(function (data) {
-    $('#IdActualizar').val(data.id),
-   $('#EspecieActualizar').val(data.especie)
-  });
+   this._especieService.getEspeciesid(id).subscribe(data=>{
+    this.idActualizar=data['id'];
+    this.especieActualizar=data['especie'];
+   });
   }
   actualizar(){
-    $.ajax({
-      method: 'GET',
-      url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#IdActualizar').val(),
-      dataType: 'json'
-  }).done(function (data) {
-
-          $.ajax({
-              method: 'PUT',
-              url: 'http://localhost:8080/Zoologico/api/Especie/' + $('#IdActualizar').val(),
-              contentType: 'application/json',
-              dataType: 'json',
-              data: JSON.stringify({
-                id:$('#IdActualizar').val(),
-                Especie: $('#EspecieActualizar').val()
-              })
-          }).done(function (data) {
-            window.location.reload();
-          }).fail(function (xhr, status, error) {
-              console.log(error);
-          });
-
-  }).fail(function (xhr, status, error) {
-      console.log(error);
-  });
+    this._especieService.putEspecie(this.idActualizar,this.especieActualizar).subscribe(data=>{
+      this.ngOnInit();
+      $('#tablex').load();
+      $('#actualizarf').load();});
   }
+  showNotification(from, align){
+    const type = ['','info','success','warning','danger'];
+
+    const color = Math.floor((Math.random() * 4) + 1);
+
+    $.notify({
+        icon: "notifications",
+        message: "Especie vacio , porfavor ingrese un valor <br>en la descripcion del especie"
+
+    },{
+        type: type[color],
+        timer: 4000,
+        placement: {
+            from: from,
+            align: align
+        },
+        template: '<div data-notify="container" class="col-xl-4 col-lg-4 col-11 col-sm-4 col-md-4 alert alert-{0} alert-with-icon" role="alert">' +
+          '<button mat-button  type="button" aria-hidden="true" class="close mat-button" data-notify="dismiss">  <i class="material-icons">close</i></button>' +
+          '<i class="material-icons" data-notify="icon">notifications</i> ' +
+          '<span data-notify="title">{1}</span> ' +
+          '<span data-notify="message">{2}</span>' +
+          '<div class="progress" data-notify="progressbar">' +
+            '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+          '</div>' +
+          '<a href="{3}" target="{4}" data-notify="url"></a>' +
+        '</div>'
+    });
+}
 }

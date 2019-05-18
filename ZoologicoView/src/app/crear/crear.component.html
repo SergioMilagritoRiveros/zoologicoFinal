@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 10%;">
+  <div class="row">
+    
+  
+    <div *ngFor="let item of menuItems" class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">{{item.icon}}</i>
+                </div>
+                <p class="card-category">Crear</p>
+                
+            </div>
+            <div class="card-body"><h3 class="card-title">{{item.title}}</h3></div>
+            <div class="card-footer">
+                <div class="stats">
+                    <button type="button" class="btn btn-info" [routerLink]="[item.path]">Acceder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
