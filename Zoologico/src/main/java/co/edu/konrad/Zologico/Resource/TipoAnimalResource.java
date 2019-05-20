@@ -59,6 +59,7 @@ public class TipoAnimalResource {
     
     @POST
     public TipoAnimalDTO createProducto(TipoAnimalDTO fdto){ 
+        System.err.println(fdto);
         return new TipoAnimalDTO(TipoAnimalLogic.crearProducto(fdto.toEntity())); 
     } 
     
@@ -81,10 +82,10 @@ public class TipoAnimalResource {
     
     @DELETE
     @Path("{TipoAnimalID: \\d+}")
-    public void deleteShow(@PathParam("ShowID") Long id) throws IllegalAccessException{
+    public void deleteShow(@PathParam("TipoAnimalID") Long id) throws IllegalAccessException{
        TipoAnimalEntity TipoAnimalEntity =TipoAnimalLogic.obtenerTipoAnimalPorId(id);
         if(TipoAnimalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+            throw new RuntimeException("El tipoanimal no existe.");
         }
        TipoAnimalLogic.eliminarTipoAnimal(id);
     }

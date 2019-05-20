@@ -43,6 +43,7 @@ public class TipoAnimalPersistence {
     *insertar un registro a la tabla 
      */
     public TipoAnimalEntity create(TipoAnimalEntity productoNuevo){ 
+        
         em.persist(productoNuevo); 
         return productoNuevo; 
     }

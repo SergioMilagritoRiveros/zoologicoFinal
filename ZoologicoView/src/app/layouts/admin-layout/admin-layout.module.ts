@@ -14,6 +14,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {GeneroComponent} from './../../genero/genero.component';
 import {EspecieComponent} from './../../especie/especie.component';
 import {CrearComponent} from './../../crear/crear.component';
+import {TipoAnimalComponent} from './../../tipo-animal/tipo-animal.component';
 
 import {
   MatButtonModule,
@@ -44,7 +45,7 @@ import { from } from 'rxjs';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,GeneroComponent,EspecieComponent,CrearComponent
+    UpgradeComponent,GeneroComponent,EspecieComponent,CrearComponent,TipoAnimalComponent
   ]
 })
 

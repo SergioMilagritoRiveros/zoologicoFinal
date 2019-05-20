@@ -11,6 +11,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {GeneroComponent} from './../../genero/genero.component';
 import {EspecieComponent} from './../../especie/especie.component';
 import {CrearComponent} from './../../crear/crear.component';
+import {TipoAnimalComponent} from './../../tipo-animal/tipo-animal.component';
 
 export const AdminLayoutRoutes: Routes = [
     
@@ -24,5 +25,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'genero',      component: GeneroComponent },
     { path: 'especie',      component: EspecieComponent },
-    { path: 'crear',      component: CrearComponent }
+    { path: 'crear',      component: CrearComponent },
+    { path: 'tipoAnimal',      component: TipoAnimalComponent }
 ];

@@ -8,6 +8,7 @@ declare interface RouteInfo {
 export const  CREAR: RouteInfo[] = [
   { path: '/genero', title: 'Genero',  icon: 'backup', class: '' },
   { path: '/especie', title: 'Especie',  icon: 'backup', class: '' },
+  { path: '/tipoAnimal', title: 'Tipo Animal',  icon: 'backup', class: '' },
 ];
 @Component({
   selector: 'app-crear',
