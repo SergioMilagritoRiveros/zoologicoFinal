@@ -71,9 +71,6 @@ public class TipoAnimalDTO {
         this.GeneroID = GeneroID;
     }
 
-  
-
-    
     public String getDescripcion() {
         return Descripcion;
     }
@@ -81,6 +78,8 @@ public class TipoAnimalDTO {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
+
+   
 
     
     

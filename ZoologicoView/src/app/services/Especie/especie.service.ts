@@ -9,7 +9,7 @@ export class EspecieService {
   constructor(private http: HttpClient) { 
 
   }
-  especie = 'http://localhost:8080/Zoologico/api/Especie';
+  especie = '/Zoologico/api/Especie';
 
 getEspecies() {
   return this.http.get(this.especie);

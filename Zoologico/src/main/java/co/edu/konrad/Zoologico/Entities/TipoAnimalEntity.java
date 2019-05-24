@@ -44,6 +44,9 @@ public class TipoAnimalEntity implements Serializable {
     @Column(name = "Descripciion")
     private String Descripcion;
 
+    public TipoAnimalEntity() {
+    }
+
     public Long getId() {
         return id;
     }

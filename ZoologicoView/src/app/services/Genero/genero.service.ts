@@ -8,7 +8,7 @@ export class GeneroService {
   constructor(private http: HttpClient) { 
 
   }
-  genero = 'http://localhost:8080/Zoologico/api/Genero';
+  genero = '/Zoologico/api/Genero';
 
 getGeneros() {
   return this.http.get(this.genero);
