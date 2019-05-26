@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { identifierModuleUrl } from '@angular/compiler';
-import {GeneroService} from './../services/Genero/genero.service';
+import {GeneroService} from '../../services/Genero/genero.service';
 import {FormControl, Validators} from '@angular/forms';
 
 declare var $:any;

@@ -11,10 +11,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import {GeneroComponent} from './../../genero/genero.component';
-import {EspecieComponent} from './../../especie/especie.component';
-import {CrearComponent} from './../../crear/crear.component';
-import {TipoAnimalComponent} from './../../tipo-animal/tipo-animal.component';
+import { GeneroComponent } from '../../formulariosDeCreacion/genero/genero.component';
+import { EspecieComponent } from '../../formulariosDeCreacion/especie/especie.component';
+import { CrearComponent } from './../../crear/crear.component';
+import { TipoAnimalComponent } from '../../formulariosDeCreacion/tipo-animal/tipo-animal.component';
+import{HorarioAlimentacionComponent} from '../../formulariosDeCreacion/horario-alimentacion/horario-alimentacion.component';
 
 import {
   MatButtonModule,
@@ -45,8 +46,8 @@ import { from } from 'rxjs';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,GeneroComponent,EspecieComponent,CrearComponent,TipoAnimalComponent
+    UpgradeComponent, GeneroComponent, EspecieComponent, CrearComponent, TipoAnimalComponent,HorarioAlimentacionComponent
   ]
 })
 
-export class AdminLayoutModule {}
+export class AdminLayoutModule { }

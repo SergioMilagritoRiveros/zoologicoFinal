@@ -8,10 +8,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import {GeneroComponent} from './../../genero/genero.component';
-import {EspecieComponent} from './../../especie/especie.component';
+import {GeneroComponent} from '../../formulariosDeCreacion/genero/genero.component';
+import {EspecieComponent} from '../../formulariosDeCreacion/especie/especie.component';
 import {CrearComponent} from './../../crear/crear.component';
-import {TipoAnimalComponent} from './../../tipo-animal/tipo-animal.component';
+import {TipoAnimalComponent} from '../../formulariosDeCreacion/tipo-animal/tipo-animal.component';
+import { HorarioAlimentacionComponent } from '../../formulariosDeCreacion/horario-alimentacion/horario-alimentacion.component';
 
 export const AdminLayoutRoutes: Routes = [
     
@@ -26,5 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'genero',      component: GeneroComponent },
     { path: 'especie',      component: EspecieComponent },
     { path: 'crear',      component: CrearComponent },
-    { path: 'tipoAnimal',      component: TipoAnimalComponent }
+    { path: 'tipoAnimal',      component: TipoAnimalComponent },
+    {path:'horarioAlimentacion', component:HorarioAlimentacionComponent}
 ];

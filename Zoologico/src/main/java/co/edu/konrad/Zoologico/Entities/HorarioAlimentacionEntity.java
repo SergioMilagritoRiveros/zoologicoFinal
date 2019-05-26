@@ -28,6 +28,7 @@ public class HorarioAlimentacionEntity implements Serializable {
     *atributo hora desayuno
     */
     @Column(name="HoraDesayuno")
+    @Temporal(TemporalType.DATE)
     private Date horaDesayuno;
     /*
     *atributo hora comida

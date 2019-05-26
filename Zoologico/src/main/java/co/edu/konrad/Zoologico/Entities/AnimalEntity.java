@@ -31,7 +31,7 @@ public class AnimalEntity implements Serializable {
     /*
     *atributo tipo animalID
      */
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "tipoAnimalID")
     private TipoAnimalEntity animal;
 
