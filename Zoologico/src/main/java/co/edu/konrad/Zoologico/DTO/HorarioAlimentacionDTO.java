@@ -7,6 +7,7 @@ package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.EspecieEntity;
 import co.edu.konrad.Zoologico.Entities.HorarioAlimentacionEntity;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,8 +18,8 @@ import java.util.List;
  */
 public class HorarioAlimentacionDTO {
     private Long id;
-    private Date horaDesayuno;
-    private Date horaComida;
+    private String horaDesayuno;
+    private String horaComida;
 
     public HorarioAlimentacionDTO() {
     }
@@ -54,21 +55,23 @@ public class HorarioAlimentacionDTO {
         this.id = id;
     }
 
-    public Date getHoraDesayuno() {
+    public String getHoraDesayuno() {
         return horaDesayuno;
     }
 
-    public void setHoraDesayuno(Date horaDesayuno) {
+    public void setHoraDesayuno(String horaDesayuno) {
         this.horaDesayuno = horaDesayuno;
     }
 
-    public Date getHoraComida() {
+    public String getHoraComida() {
         return horaComida;
     }
 
-    public void setHoraComida(Date horaComida) {
+    public void setHoraComida(String horaComida) {
         this.horaComida = horaComida;
     }
-    
-    
+
+   
+
+   
 }

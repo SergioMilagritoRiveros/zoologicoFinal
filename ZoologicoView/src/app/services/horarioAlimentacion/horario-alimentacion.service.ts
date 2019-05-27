@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HorarioAlimentacion } from 'app/interfaces/horarioAlimentacion.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,29 @@ export class HorarioAlimentacionService {
   constructor(private http: HttpClient) { 
 
   }
-  horarioALimentacion = '/Zoologico/api/Genero';
+  horarioALimentacion = '/Zoologico/api/HorarioAlimentacion';
 
-getGeneros() {
+getHorarioAlimentacion() {
   return this.http.get(this.horarioALimentacion);
 } 
-getGenerosid(id:number) {
+getHorarioAlimentacionid(id:number) {
   return this.http.get(this.horarioALimentacion+'/'+id);
 }
-deleteGenero (id: number) {
+deleteHorarioAlimentacion (id: number) {
   
   return this.http.delete(this.horarioALimentacion+'/'+id);
 }
-postGenero(id:number, horarioALimentacion:string){
-  return this.http.post(this.horarioALimentacion,{horarioALimentacion,id});
+postHorarioAlimentacion(id2:number, desyuno:string,comida:string){
+  
+  var horari:HorarioAlimentacion={
+    horaComida:comida,
+    horaDesayuno:desyuno,
+    id:id2
+  }
+  console.log(horari);
+  return this.http.post(this.horarioALimentacion,horari);
 }
-putGenero(id:number, horarioALimentacion:string){
+putHorarioAlimentacion(id:number, horarioALimentacion:string){
   return this.http.put(this.horarioALimentacion+'/'+id,{horarioALimentacion,id});
 }
 }

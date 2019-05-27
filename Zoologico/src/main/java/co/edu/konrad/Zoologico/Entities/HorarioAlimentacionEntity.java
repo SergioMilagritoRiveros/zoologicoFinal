@@ -28,14 +28,14 @@ public class HorarioAlimentacionEntity implements Serializable {
     *atributo hora desayuno
     */
     @Column(name="HoraDesayuno")
-    @Temporal(TemporalType.DATE)
-    private Date horaDesayuno;
+    
+    private String horaDesayuno;
     /*
     *atributo hora comida
     */
     @Column(name="HoraComida")
-    @Temporal(TemporalType.DATE)
-    private Date horaComida;
+   
+    private String horaComida;
 
     public HorarioAlimentacionEntity() {
     }
@@ -48,20 +48,20 @@ public class HorarioAlimentacionEntity implements Serializable {
         this.id = id;
     }
 
-    public Date getHoraDesayuno() {
+    public String getHoraDesayuno() {
         return horaDesayuno;
     }
 
-    public void setHoraDesayuno(Date horaDesayuno) {
+    public void setHoraDesayuno(String horaDesayuno) {
         this.horaDesayuno = horaDesayuno;
     }
 
-    public Date getHoraComida() {
+    public String getHoraComida() {
         return horaComida;
     }
 
-    public void setHoraComida(Date horaComida) {
+    public void setHoraComida(String horaComida) {
         this.horaComida = horaComida;
     }
-    
+
 }

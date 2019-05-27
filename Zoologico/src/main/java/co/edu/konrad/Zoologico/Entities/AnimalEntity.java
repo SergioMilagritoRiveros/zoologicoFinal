@@ -48,9 +48,9 @@ public class AnimalEntity implements Serializable {
     /*
     *atributo horario de alimentacionID
      */ 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "HorarioAlimentacionID")
-    private List<HorarioAlimentacionEntity> horarioAlimentacionID;
+    private HorarioAlimentacionEntity horarioAlimentacionID;
     /*
     *atributo espaciosID
      */
@@ -103,13 +103,14 @@ public class AnimalEntity implements Serializable {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public List<HorarioAlimentacionEntity> getHorarioAlimentacionID() {
+    public HorarioAlimentacionEntity getHorarioAlimentacionID() {
         return horarioAlimentacionID;
     }
 
-    public void setHorarioAlimentacionID(List<HorarioAlimentacionEntity> horarioAlimentacionID) {
+    public void setHorarioAlimentacionID(HorarioAlimentacionEntity horarioAlimentacionID) {
         this.horarioAlimentacionID = horarioAlimentacionID;
     }
+
     
     public EspacioEntity getEspaciosID() {
         return espaciosID;

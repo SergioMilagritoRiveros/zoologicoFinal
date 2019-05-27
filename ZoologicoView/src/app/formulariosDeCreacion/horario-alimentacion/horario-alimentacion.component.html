@@ -18,8 +18,13 @@
                 <input [ngModel]="idCrear" name="idcrearf" type="number" class="form-control" id="Id"  disabled>
               </div>
               <div class="form-group">
-                <label for="pwd">Horario de ALimentacion:</label>
-                <input [ngModel]="horarioALimentacionCrear" name="horarioALimentacioncrearf" type="text" class="form-control" id="geenro" >
+                <label for="pwd">Horario de Desayuno:</label>
+                <input [ngModel]="horarioDesayunoCrear" name="horarioALimentacioncrearf" type="time" class="form-control" id="desyuno" >
+               
+              </div>  
+              <div class="form-group">
+                <label for="pwd">Horario de Comida:</label>
+                <input [ngModel]="horarioComidaCrear" name="horarioALimentacioncrearf" type="time" class="form-control" id="comida" >
                
               </div>            
               <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
@@ -65,13 +70,15 @@
     <thead>
       <tr>
         <th scope="col" >#</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Desayuno</th>
+        <th scope="col">Comida</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tr *ngFor="let item of informacion">
       <th>{{item.id}}</th>
-       <th>{{item.horarioALimentacion}}</th>
+      <th>{{item.horaDesayuno}}</th>
+       <th>{{item.horaComida}}</th>
      <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger" style="width: 40%">Eliminar</button>
        <button  style="width: 10%;visibility: hidden;" disabled></button>
        <button type="button" (click)="actualizarFormulario(item.id)" class="btn btn-warning" data-toggle="modal" data-target="#actualizar" style="text-align: center; align-items: center; align-content: center;width: 40%;">Actualizar Horario de ALimentacion</button>
