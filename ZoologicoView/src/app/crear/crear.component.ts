@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 declare interface RouteInfo {
   path: string;
   title: string;
@@ -18,9 +20,13 @@ export const  CREAR: RouteInfo[] = [
 })
 export class CrearComponent implements OnInit {
   menuItems: any[];
-  constructor() { }
+  constructor(private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      alert(this._UserService.getuser());
+      this.router.navigate(['/']);
+    }
     this.menuItems = CREAR.filter(menuItem => menuItem);
   }
 

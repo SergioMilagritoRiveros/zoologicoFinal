@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecieService } from 'app/services/Especie/especie.service';
+import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 declare var $ :any;
 declare var informacion2:any[];
 @Component({
@@ -15,9 +17,12 @@ export class EspecieComponent implements OnInit {
   especieActualizar:string;
  
 
-  constructor(private _especieService:EspecieService) { }
+  constructor(private _especieService:EspecieService,private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
     this._especieService.getEspecies().subscribe((data) => {
       console.log(data),
       this.informacion=data,

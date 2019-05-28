@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HorarioAlimentacionService } from 'app/services/horarioAlimentacion/horario-alimentacion.service';
+import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 
 declare var $:any;
 @Component({
@@ -12,9 +14,12 @@ export class HorarioAlimentacionComponent implements OnInit {
   idCrear:number;
   horarioDesayunoCrear:string='';
   horarioComidaCrear:string='';
-  constructor(private _horarioAlimentacionService:HorarioAlimentacionService) { }
+  constructor(private _horarioAlimentacionService:HorarioAlimentacionService, private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
     this._horarioAlimentacionService.getHorarioAlimentacion().subscribe((data) => {
       console.log(data),
       this.informacion=data,

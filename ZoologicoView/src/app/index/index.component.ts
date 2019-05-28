@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'app/services/Login/login.service';
 import { Router } from '@angular/router';
 import { Alert } from 'selenium-webdriver';
+import { UserService } from './../services/user/user.service';
 
 declare var $: any;
 
@@ -14,9 +15,13 @@ export class IndexComponent implements OnInit {
   informacion: any[];
   correo: string;
   contrasena: string;
-  constructor(private _loginservioce: LoginService, private router: Router) { }
+  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {
+    this._UserService.setuser(0);
+   }
 
   ngOnInit() {
+    alert(this._UserService.getuser());
+    this._UserService.setuser(0);
   }
   login() {
     var informacion2: any;
@@ -39,9 +44,14 @@ export class IndexComponent implements OnInit {
           contrasepa = informacion2.contrasena;
           
           if (contrasepa == this.contrasena) {
-            if (mtipoU == 'Admin') {
-              $('#cerrarpopoup').click();
-              this.router.navigate(['/dashboard']);
+            if (mtipoU == 'Admin') {   
+              if(this._UserService.getuser() == 0){
+                this._UserService.setuser(1);
+                $('#cerrarpopoup').click();
+                this.router.navigate(['/dashboard']);
+              }else{
+                alert('ya has iniciado sesion');
+              }
             } else { alert('no eres admin'); }
             $('#cerrarpopoup').click();
           } else {

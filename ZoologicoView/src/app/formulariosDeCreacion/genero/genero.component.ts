@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { identifierModuleUrl } from '@angular/compiler';
 import {GeneroService} from '../../services/Genero/genero.service';
 import {FormControl, Validators} from '@angular/forms';
+import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 
 declare var $:any;
 @Component({
@@ -28,9 +30,12 @@ export class GeneroComponent implements OnInit {
     }
 };
 
-  constructor(private _generoService:GeneroService) { }
+  constructor(private _generoService:GeneroService,private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
     this._generoService.getGeneros().subscribe((data) => {
       console.log(data),
       this.informacion=data,

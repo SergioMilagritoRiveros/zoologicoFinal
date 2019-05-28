@@ -4,6 +4,8 @@ import { EspecieService } from 'app/services/Especie/especie.service';
 import { GeneroService } from 'app/services/Genero/genero.service';
 import { TipoAnimal } from 'app/interfaces/tipoanimal.interface';
 import { Especie } from 'app/interfaces/especie.interface';
+import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-tipo-animal',
@@ -21,9 +23,12 @@ export class TipoAnimalComponent implements OnInit {
   generoCrear: number;
   especieDesc: any;
   generoDesc: any;
-  constructor(private _tipoAnimalService: TipoAnimalService, private _especieService: EspecieService, private _generoService: GeneroService) { }
+  constructor(private _tipoAnimalService: TipoAnimalService, private _especieService: EspecieService, private _generoService: GeneroService,private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
     this._especieService.getEspecies().subscribe(data => this.especie = data);
     this._generoService.getGeneros().subscribe(data => this.genero = data);
     this._tipoAnimalService.getTipoAnimals().subscribe(data => {
