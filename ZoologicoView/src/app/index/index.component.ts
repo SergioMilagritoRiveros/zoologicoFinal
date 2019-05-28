@@ -52,16 +52,21 @@ export class IndexComponent implements OnInit {
                   } else {
                     alert('ya has iniciado sesion');
                   }
-                } else { this._UserService.setuser(2);
+                } else {
+                  this._UserService.setuser(2);
                   $('#cerrarpopoup').click();
-                  this.router.navigate(['/dashboardUser']); }
+                  this.router.navigate(['/dashboardUser']);
+                }
                 $('#cerrarpopoup').click();
               } else {
                 alert('contraseña o usuario invalido');
                 console.log('contraseña equivocada');
               }
 
-            } 
+            } else {
+              console.log('holabb');
+
+            }
 
           });
 

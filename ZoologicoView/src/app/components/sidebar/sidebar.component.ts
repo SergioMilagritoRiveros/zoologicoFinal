@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'app/services/user/user.service';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -29,9 +30,10 @@ export class SidebarComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private _useresrService :UserService) { }
 
   ngOnInit() {
+  
     this.menuItems = ROUTES.filter(menuItem => menuItem);
    
   }
@@ -41,4 +43,7 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+  usuraui(){
+    return this._useresrService.getuser();
+  }
 }

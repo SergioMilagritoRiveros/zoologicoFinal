@@ -14,6 +14,9 @@ export class HorarioAlimentacionComponent implements OnInit {
   idCrear: number;
   horarioDesayunoCrear: string = '';
   horarioComidaCrear: string = '';
+  idActualizar:number;
+  horarioDesayunoActualizar: string = '';
+  horarioComidaActualizar: string = '';
   constructor(private _horarioAlimentacionService: HorarioAlimentacionService, private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
@@ -47,6 +50,19 @@ export class HorarioAlimentacionComponent implements OnInit {
       this.showNotification('top', 'rigth')
     }
 
+  }
+  actualizarFormulario(id: number) {
+    this._horarioAlimentacionService.getHorarioAlimentacionid(id).subscribe(data => {
+      this.idActualizar = data['id'];
+      this.horarioDesayunoActualizar = data['especie'];
+    });
+  }
+  actualizar() {
+    this._horarioAlimentacionService.putHorarioAlimentacion(this.idActualizar, this.horarioDesayunoActualizar).subscribe(data => {
+      this.ngOnInit();
+      $('#tablex').load();
+      $('#actualizarf').load();
+    });
   }
   showNotification(from, align) {
     const type = ['', 'info', 'success', 'warning', 'danger'];
