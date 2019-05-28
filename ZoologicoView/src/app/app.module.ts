@@ -24,6 +24,7 @@ import {
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
+import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 
 
 
@@ -44,6 +45,7 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    UserLayaoutComponent,
     IndexComponent,
     LoginComponent,
 

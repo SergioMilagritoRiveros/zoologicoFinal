@@ -6,6 +6,7 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 
 const routes: Routes =[
   {
@@ -27,7 +28,15 @@ const routes: Routes =[
         {
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]}
+  }, {
+    path: 'dashboardUser',
+    component: UserLayaoutComponent,
+    children: [
+        {
+      path: '',
+      loadChildren: './layouts/user-layaout/user-layaout.module#UserLayaoutModule'
+  }]}]
+}
     // { path: 'dashboard',      component: DashboardComponent },
     // { path: 'user-profile',   component: UserProfileComponent },
     // { path: 'table-list',     component: TableListComponent },
