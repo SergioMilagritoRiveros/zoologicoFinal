@@ -9,22 +9,22 @@ export class LoginService {
   constructor(private http: HttpClient) { 
 
   }
-  especie = '/Zoologico/api/User';
+  user = '/Zoologico/api/User';
 
 login() {
-  return this.http.get(this.especie);
+  return this.http.get(this.user);
 } 
 getUsersid(id:number) {
-  return this.http.get(this.especie+'/'+id);
+  return this.http.get(this.user+'/'+id);
 }
 deleteUser (id: number) {
   
-  return this.http.delete(this.especie+'/'+id);
+  return this.http.delete(this.user+'/'+id);
 }
-postUser(id:number, especie:string){
-  return this.http.post(this.especie,{especie,id});
+postUser(id:number, user:string){
+  return this.http.post(this.user,{user,id});
 }
-putUser(id:number, especie:string){
-  return this.http.put(this.especie+'/'+id,{especie,id});
+putUser(id:number, user:string){
+  return this.http.put(this.user+'/'+id,{user,id});
 }
 }
