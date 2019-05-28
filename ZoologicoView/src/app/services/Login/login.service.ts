@@ -21,8 +21,8 @@ deleteUser (id: number) {
   
   return this.http.delete(this.user+'/'+id);
 }
-postUser(id:number, user:string){
-  return this.http.post(this.user,{user,id});
+postUser(id:number, apellido:string, contrasena:string, correo:string, nombre:string, tipo_user:string){
+  return this.http.post(this.user,{apellido: apellido,contrasena: contrasena,correoElectronico: correo,id: id,nombre: nombre,tipoUser: tipo_user});
 }
 putUser(id:number, user:string){
   return this.http.put(this.user+'/'+id,{user,id});

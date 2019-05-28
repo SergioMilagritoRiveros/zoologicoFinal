@@ -15,13 +15,26 @@ export class IndexComponent implements OnInit {
   informacion: any[];
   correo: string;
   contrasena: string;
+  idCrear: number;
+  nombre: any;
+  apellido: any;
+  correoo: any;
+  contrasenaa: any;
   constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {
     this._UserService.setuser(0);
   }
 
   ngOnInit() {
-
     this._UserService.setuser(0);
+
+  }
+  signup() {
+    var cont: number;
+    this._loginservioce.login().subscribe(data => {
+      console.log(data);
+      this.idCrear = this.informacion.length + 1
+    });
+    this._loginservioce.postUser(this.idCrear,this.apellido,this.contrasenaa,this.correoo,this.nombre,"User").subscribe();
   }
   login() {
     var informacion2: any;
@@ -33,8 +46,6 @@ export class IndexComponent implements OnInit {
       if (this.contrasena == null) {
         alert('ingresa una contraseña');
       } else {
-
-
         this._loginservioce.login().subscribe(data => {
           informacion2 = data;
           console.log(informacion2.length);
