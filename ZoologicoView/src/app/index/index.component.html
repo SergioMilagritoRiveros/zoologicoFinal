@@ -35,8 +35,7 @@
         data-target="#myModal">Ingresar</button>
 
       <!-- Modal -->
-      <div id="myModal" class="modal fade" role="dialog"
-        style="align-items: center; align-content: center;">
+      <div id="myModal" class="modal fade" role="dialog" style="align-items: center; align-content: center;">
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content" id="crearf">
@@ -44,39 +43,49 @@
               <h4 class="modal-title" style="color: black;">Ingresar</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body" >
+            <div class="modal-body">
               <div class="container">
                 <div class="row">
-                   <div class="col-sm-4">
-                    
+                  <div class="col-sm-4">
+
                   </div>
                   <div class="col-sm-4">
-                  
-                  <label for="email">Correo Electronico:</label>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-sm-4">
-                    
-                </div>
-                  <div class="col-sm-4">
-                    <input name="correoe" type="email" class="form-control" id="correologin">
+
+                    <label for="email">Correo Electronico:</label>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="form-group">
-                    <label for="pwd"> Contraseña:</label>
-                    <input name="generocrearf" type="text" class="form-control" id="geenro">
+                  <div class="col-sm-4">
 
                   </div>
+                  <div class="col-sm-4">
+                    <input [(ngModel)]="correo" name="correoe" type="email" class="form-control" id="correologin" style="width: 96%">
+                  </div>
                 </div>
-                <button type="button" class="btn btn-success" (click)="crear()">Ingresar</button>
+                <div class="row" style="margin-top: 10px">
+                  <div class="col-sm-4">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="pwd"> Contraseña:</label></div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                  <div class="col-sm-4">
+                  </div>
+                  <div class="col-sm-4">
+                    <input [(ngModel)]="contrasena"  name="Contraseñaaa" type="password" class="form-control" id="contaseñaaaa" style="width: 96%"></div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                  <div class="col-sm-4">
+                  </div>
+                  <div class="col-sm-4">
+                    <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)="login()" style="margin-top: 10px">Ingresar</button></div>
+                </div>
 
               </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="cerrarpopoup">Cerrar</button>
             </div>
           </div>
 
