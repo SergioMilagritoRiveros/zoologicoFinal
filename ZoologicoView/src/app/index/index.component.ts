@@ -22,28 +22,43 @@ export class IndexComponent implements OnInit {
     var informacion2: any;
     var mtipoU: any;
     var contrasepa: any;
+    if (this.correo==null) {
+      alert('ingresa un correo');
+    }else{
+      if (this.contrasena==null) {
+        alert('ingresa una contraseña');
+      }else{
+        
+      
     this._loginservioce.login().subscribe(data => {
       informacion2 = data;
-      console.log(informacion2);
+      console.log(informacion2.length);
       var results = informacion2.filter(informacion2 => {
-        if (informacion2.correoElectronico == this.correo) {
+        if (informacion2.correoElectronico == this.correo &&informacion2.length!=0 ) {
           mtipoU = informacion2.tipoUser;
           contrasepa = informacion2.contrasena;
-          return informacion2.contrasena;
+          
+          if (contrasepa == this.contrasena) {
+            if (mtipoU == 'Admin') {
+              $('#cerrarpopoup').click();
+              this.router.navigate(['/dashboard']);
+            } else { alert('no eres admin'); }
+            $('#cerrarpopoup').click();
+          } else {
+            alert('contraseña o usuario invalido');
+            console.log('contraseña equivocada');
+          }
+          
+        }else{
+          console.log('holabb');
+
+          alert('usuario incorrecto');
         }
+       
       });
-      if (contrasepa == this.contrasena) {
-        if (mtipoU == 'Admin') {
-          $('#cerrarpopoup').click();
-          this.router.navigate(['/dashboard']);
-        } else { alert('no eres admin'); }
-        $('#cerrarpopoup').click();
-      } else {
-        alert('contraseña o usuario invalido');
-        console.log('contraseña equivocada');
-      }
+      
     });
-
-
+  }
+  }
   }
 }
