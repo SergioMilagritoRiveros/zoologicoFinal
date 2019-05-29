@@ -15,6 +15,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
+import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 
 
 
@@ -38,6 +39,7 @@ import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
     UserLayaoutComponent,
     IndexComponent,
     AnimalesViewComponent,
+    RatingComponent
     
 
   ],

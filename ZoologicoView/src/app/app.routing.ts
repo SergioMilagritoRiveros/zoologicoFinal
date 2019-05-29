@@ -8,8 +8,12 @@ import { IndexComponent } from './index/index.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
+import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 const routes: Routes =[
-  
+  {
+    path:'rating',
+    component:RatingComponent
+  },
   {
     path:'animelesView',
     component:AnimalesViewComponent

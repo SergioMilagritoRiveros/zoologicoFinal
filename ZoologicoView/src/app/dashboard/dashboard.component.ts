@@ -11,9 +11,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   constructor(private _UserService: UserService, private router: Router) {
-    if (this._UserService.getuser() == 0) {
-      this.router.navigate(['/index']);
-    }
+ 
    }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
@@ -73,8 +71,8 @@ export class DashboardComponent implements OnInit {
   };
   ngOnInit() {
 
-    if (this._UserService.getuser() == 0) {
-      this.router.navigate(['/']);
+    if (this._UserService.getuser() != 1) {
+      this.router.navigate(['/index']);
     }
 
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */

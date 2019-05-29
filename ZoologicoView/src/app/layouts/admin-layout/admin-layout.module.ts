@@ -12,7 +12,7 @@ import{HorarioAlimentacionComponent} from '../../formulariosDeCreacion/horario-a
 import{TipoIdentificacionComponent}from'../../formulariosDeCreacion/tipo-identificacion/tipo-identificacion.component';
 import { TipoEmpleadoComponent } from '../../formulariosDeCreacion/tipo-empleado/tipo-empleado.component';
 import { TipoEspacioComponent } from '../../formulariosDeCreacion/tipo-espacio/tipo-espacio.component';
-import{RatingComponent}from'../../formulariosDeCreacion/rating/rating.component';
+
 import {
   MatButtonModule,
   MatInputModule,
@@ -36,7 +36,7 @@ import { from } from 'rxjs';
   ],
   declarations: [
     DashboardComponent,
-    TipoEmpleadoComponent,TipoEspacioComponent, GeneroComponent, EspecieComponent, CrearComponent, TipoAnimalComponent,HorarioAlimentacionComponent,TipoIdentificacionComponent,RatingComponent
+    TipoEmpleadoComponent,TipoEspacioComponent, GeneroComponent, EspecieComponent, CrearComponent, TipoAnimalComponent,HorarioAlimentacionComponent,TipoIdentificacionComponent,
   ]
 })
 
