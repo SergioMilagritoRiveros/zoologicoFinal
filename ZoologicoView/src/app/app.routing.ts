@@ -3,16 +3,13 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './login/login.component';
+
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 
 const routes: Routes =[
-  {
-    path: 'login',
-    component: LoginComponent 
-  },
+
   {
     path: '',
     component: IndexComponent

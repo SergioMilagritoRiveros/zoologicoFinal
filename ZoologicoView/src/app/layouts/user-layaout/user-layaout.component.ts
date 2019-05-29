@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { NavbarComponent } from '../../components.1/navbar/navbar.component';
+
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user/user.service';
