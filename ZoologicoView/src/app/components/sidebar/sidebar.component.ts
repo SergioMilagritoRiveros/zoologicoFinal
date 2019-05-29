@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/services/user/user.service';
+import { Router } from '@angular/router';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -25,18 +26,19 @@ export const ROUTES: RouteInfo[] = [
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
+
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
 
 
-  constructor(private _useresrService :UserService) { }
+  constructor(private _useresrService :UserService, private router: Router) { }
 
   ngOnInit() {
   
     this.menuItems = ROUTES.filter(menuItem => menuItem);
    
-  }
+  }  
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;
@@ -46,4 +48,8 @@ export class SidebarComponent implements OnInit {
   usuraui(){
     return this._useresrService.getuser();
   }
+  salir(){
+    this._useresrService.setuser(0);
+    this.router.navigate(['/']);
+  } 
 }

@@ -24,7 +24,6 @@ export class CrearComponent implements OnInit {
 
   ngOnInit() {
     if (this._UserService.getuser() == 0) {
-      alert(this._UserService.getuser());
       this.router.navigate(['/']);
     }
     this.menuItems = CREAR.filter(menuItem => menuItem);

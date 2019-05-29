@@ -74,7 +74,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     if (this._UserService.getuser() == 0) {
-      alert(this._UserService.getuser());
       this.router.navigate(['/']);
     }
 

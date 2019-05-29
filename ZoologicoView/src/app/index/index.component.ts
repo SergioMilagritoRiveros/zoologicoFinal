@@ -20,14 +20,20 @@ export class IndexComponent implements OnInit {
   apellido: any;
   correoo: any;
   contrasenaa: any;
-  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {
-    this._UserService.setuser(0);
+  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {    
   }
 
   ngOnInit() {
-    this._UserService.setuser(0);
-
   }
+
+  usuario(){
+    return this._UserService.getuser();
+  }
+
+  salir(){
+    this._UserService.setuser(0);
+  } 
+
   signup() {
     var cont: number;
     this._loginservioce.login().subscribe(data => {
@@ -39,15 +45,15 @@ export class IndexComponent implements OnInit {
     });
    
   }
-  login() {
+  login() {    
     var informacion2: any;
     var mtipoU: any;
     var contrasepa: any;
     if (this.correo == null) {
-      alert('ingresa un correo');
+      alert('Ingresa un correo');
     } else {
       if (this.contrasena == null) {
-        alert('ingresa una contraseña');
+        alert('Ingresa una contraseña');
       } else {
         this._loginservioce.login().subscribe(data => {
           informacion2 = data;

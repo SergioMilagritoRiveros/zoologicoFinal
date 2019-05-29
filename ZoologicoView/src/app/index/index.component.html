@@ -31,8 +31,10 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
 
+      <button *ngIf="usuario() != 0" type="button" class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal"
+        data-target="#myModal">Salir</button>
 
-      <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+      <button *ngIf="usuario() == 0" type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
         data-target="#myModal">Ingresar</button>
 
       <!-- Modal -->
@@ -96,8 +98,8 @@
         </div>
       </div>
 
-      <button type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#myModal2"
-        style="margin-left: 10px; margin-right: 10px;">Registrar</button>
+      <button *ngIf="usuario() == 0" type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal"
+        data-target="#myModal2" style="margin-left: 10px; margin-right: 10px;">Registrar</button>
       <div id="myModal2" class="modal fade" role="dialog" style="align-items: center; align-content: center;">
         <div class="modal-dialog">
           <!-- Modal content-->

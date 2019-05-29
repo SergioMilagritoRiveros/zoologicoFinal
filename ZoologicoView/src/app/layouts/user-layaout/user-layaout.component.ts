@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { NavbarComponent } from '../../components.1/navbar/navbar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import { UserService } from './../../services/user/user.service';
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -24,11 +25,16 @@ export class UserLayaoutComponent implements OnInit {
 
 
 
-    constructor() { }
+    constructor( private router: Router, private _UserService: UserService) { }
   
     ngOnInit() {
       this.menuItems = ROUTES.filter(menuItem => menuItem);
      
     }
+
+    salir(){
+      this._UserService.setuser(0);
+      this.router.navigate(['/']);
+    } 
   
 }
