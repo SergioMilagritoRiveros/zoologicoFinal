@@ -3,6 +3,7 @@ import { LoginService } from 'app/services/Login/login.service';
 import { Router } from '@angular/router';
 import { Alert } from 'selenium-webdriver';
 import { UserService } from '../services/user/user.service';
+import { AnimalService } from 'app/services/Animal/animal.service';
 
 declare var $: any;
 
@@ -12,13 +13,19 @@ declare var $: any;
   styleUrls: ['./AnimalesView.component.css']
 })
 export class AnimalesViewComponent implements OnInit {
-  informacion: any[]=[1,2,3,4,5,6];
+  informacion: any;
  
-  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {    
+  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService,private _animaService:AnimalService) {    
   }
-
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
+    this._animaService.getAnimaless().subscribe((data) => {
+      console.log(data),
+        this.informacion = data;
+    });
   }
-
+  
   
 }
