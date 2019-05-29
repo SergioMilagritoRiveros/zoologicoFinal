@@ -17,7 +17,7 @@ import { EspecieComponent } from '../../formulariosDeCreacion/especie/especie.co
 import { CrearComponent } from './../../crear/crear.component';
 import { TipoAnimalComponent } from '../../formulariosDeCreacion/tipo-animal/tipo-animal.component';
 import{HorarioAlimentacionComponent} from '../../formulariosDeCreacion/horario-alimentacion/horario-alimentacion.component';
-
+import{TipoIdentificacionComponent}from'../../formulariosDeCreacion/tipo-identificacion/tipo-identificacion.component';
 import {
   MatButtonModule,
   MatInputModule,
@@ -48,7 +48,7 @@ import { from } from 'rxjs';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent, GeneroComponent, EspecieComponent, CrearComponent, TipoAnimalComponent,HorarioAlimentacionComponent
+    UpgradeComponent, GeneroComponent, EspecieComponent, CrearComponent, TipoAnimalComponent,HorarioAlimentacionComponent,TipoIdentificacionComponent
   ]
 })
 

@@ -48,6 +48,7 @@ import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.compon
     UserLayaoutComponent,
     IndexComponent,
     LoginComponent,
+    
 
   ],
   providers: [],
