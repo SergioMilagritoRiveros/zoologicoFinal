@@ -60,6 +60,9 @@ export class HorarioAlimentacionComponent implements OnInit {
     });
   }
   actualizar() {
+    this.horarioDesayunoActualizar = $('#desyunoactu').val();
+      this.horarioComidaActualizar=$('#comidaactu').val();
+    alert( this.idActualizar);
     this._horarioAlimentacionService.putHorarioAlimentacion(this.idActualizar, this.horarioDesayunoActualizar,this.horarioComidaActualizar).subscribe(data => {
       this.ngOnInit();
       $('#tablex').load();
