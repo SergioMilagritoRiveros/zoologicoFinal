@@ -54,9 +54,9 @@ export class TipoAnimalComponent implements OnInit {
         this.generoDesc = data2;
         console.log('especie', this.especieDesc, 'genero', this.generoDesc)
         this._tipoAnimalService.postTipoAnimal({
-          descripcion: tipoAnimalDesc,
-          especieID: this.especieDesc,
-          generoID: this.generoDesc,
+          Descripcion: tipoAnimalDesc,
+          EspecieID: this.especieDesc,
+          GeneroID: this.generoDesc,
           id: this.idCrear
         }).subscribe(data => {
 
@@ -70,7 +70,7 @@ export class TipoAnimalComponent implements OnInit {
 
 
 
-    console.log('objeto: { descripcion:' + tipoAnimalDesc + ', especieID: {especie: ' + this.especieDesc.especie + ', id:' + this.especieDesc.id + ' }')
+    console.log('objeto: { descripcion:' + tipoAnimalDesc + ', especieID: {Especie: ' + this.especieDesc.especie + ', id:' + this.especieDesc.id + ' }')
 
 
   }

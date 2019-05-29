@@ -28,7 +28,7 @@ public class TipoAnimalEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TipoAnimalID",nullable=false)
+    @Column(name = "TipoAnimalID")
     private Long id;
 
     @ManyToOne
@@ -45,6 +45,13 @@ public class TipoAnimalEntity implements Serializable {
     private String Descripcion;
 
     public TipoAnimalEntity() {
+    }
+
+    public TipoAnimalEntity(Long id, EspecieEntity EspecieID, GeneroEntity GeneroID, String Descripcion) {
+        this.id = id;
+        this.EspecieID = EspecieID;
+        this.GeneroID = GeneroID;
+        this.Descripcion = Descripcion;
     }
 
     public Long getId() {
