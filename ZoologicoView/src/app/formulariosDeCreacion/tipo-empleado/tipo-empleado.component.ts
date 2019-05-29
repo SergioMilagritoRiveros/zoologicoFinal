@@ -40,7 +40,7 @@ export class TipoEmpleadoComponent implements OnInit {
     this._tipoEmpleadoService.getTipoEmpleado().subscribe((data) => {
       console.log(data),
         this.informacion = data,
-        this.idCrear = this.informacion.length + 1
+        this.idCrear = this.informacion.length + 1;
     });
   }
   eliminar(id: number) {
@@ -52,7 +52,10 @@ export class TipoEmpleadoComponent implements OnInit {
   }
 
   crear() {
-    if (this.ocupacionCrear != '') {
+    this.horasDiariasCrear=$('#horasDiariasCrearid').val();
+    this.ocupacionCrear=$('#ocupacionCrearid').val();
+    this.salarioCrear=$('#salarioCrearid').val();
+    if (this.ocupacionCrear != null) {
       this._tipoEmpleadoService.postTipoEmpleado(this.idCrear, this.horasDiariasCrear, this.ocupacionCrear, this.salarioCrear).subscribe(data => {
         this.ngOnInit();
         $('#tablex').load();
