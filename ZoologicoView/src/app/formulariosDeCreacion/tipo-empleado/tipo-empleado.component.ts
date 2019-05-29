@@ -14,7 +14,7 @@ declare var $: any;
 export class TipoEmpleadoComponent implements OnInit {
 
   informacion: any;
-  idCrear: number;
+  idCrear: number = 0;
   horasDiariasCrear: number;
   ocupacionCrear: string = '';
   salarioCrear: number;
@@ -35,12 +35,12 @@ export class TipoEmpleadoComponent implements OnInit {
 
   ngOnInit() {
     if (this._UserService.getuser() == 0) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/']); 
     }
     this._tipoEmpleadoService.getTipoEmpleado().subscribe((data) => {
       console.log(data),
         this.informacion = data,
-        this.idCrear = this.informacion.length + 1;
+        this.idCrear = this.informacion.length + 1
     });
   }
   eliminar(id: number) {

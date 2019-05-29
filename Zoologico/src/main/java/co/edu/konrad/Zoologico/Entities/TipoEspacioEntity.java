@@ -43,6 +43,9 @@ public class TipoEspacioEntity implements Serializable {
     @Column(name = "DisponibilidadPersonas")
     private Long dsponibilidadPersonas;
 
+    public TipoEspacioEntity() {
+    }
+
     public Long getId() {
         return id;
     }
