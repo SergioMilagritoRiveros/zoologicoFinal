@@ -18,6 +18,9 @@ export class AnimalesViewComponent implements OnInit {
   constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService,private _animaService:AnimalService) {    
   }
   ngOnInit() {
+    if (this._UserService.getuser() == 0) {
+      this.router.navigate(['/']);
+    }
     this._animaService.getAnimaless().subscribe((data) => {
       console.log(data),
         this.informacion = data;
