@@ -25,8 +25,6 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
-import { TipoEmpleadoComponent } from './formulariosDeCreacion/tipo-empleado/tipo-empleado.component';
-import { TipoEspacioComponent } from './formulariosDeCreacion/tipo-espacio/tipo-espacio.component';
 
 
 
@@ -50,8 +48,6 @@ import { TipoEspacioComponent } from './formulariosDeCreacion/tipo-espacio/tipo-
     UserLayaoutComponent,
     IndexComponent,
     LoginComponent,
-    TipoEmpleadoComponent,
-    TipoEspacioComponent,
 
   ],
   providers: [],

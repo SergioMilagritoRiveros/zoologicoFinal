@@ -53,7 +53,7 @@ export class IndexComponent implements OnInit {
       alert('Ingresa un correo');
     } else {
       if (this.contrasena == null) {
-        alert('Ingresa una contraseña');
+        alert('Ingresa una contrasena');
       } else {
         this._loginservioce.login().subscribe(data => {
           informacion2 = data;
@@ -79,8 +79,8 @@ export class IndexComponent implements OnInit {
                 }
                 $('#cerrarpopoup').click();
               } else {
-                alert('contraseña o usuario invalido');
-                console.log('contraseña equivocada');
+                alert('contrasena o usuario invalido');
+                console.log('contrasena equivocada');
               }
 
             } else {

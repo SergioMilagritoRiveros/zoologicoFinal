@@ -13,6 +13,9 @@ import {EspecieComponent} from '../../formulariosDeCreacion/especie/especie.comp
 import {CrearComponent} from './../../crear/crear.component';
 import {TipoAnimalComponent} from '../../formulariosDeCreacion/tipo-animal/tipo-animal.component';
 import { HorarioAlimentacionComponent } from '../../formulariosDeCreacion/horario-alimentacion/horario-alimentacion.component';
+import{TipoIdentificacionComponent}from'../../formulariosDeCreacion/tipo-identificacion/tipo-identificacion.component';
+import { TipoEmpleadoComponent } from '../../formulariosDeCreacion/tipo-empleado/tipo-empleado.component';
+import { TipoEspacioComponent } from '../../formulariosDeCreacion/tipo-espacio/tipo-espacio.component';
 
 export const AdminLayoutRoutes: Routes = [
     
@@ -28,5 +31,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'especie',      component: EspecieComponent },
     { path: 'crear',      component: CrearComponent },
     { path: 'tipoAnimal',      component: TipoAnimalComponent },
-    {path:'horarioAlimentacion', component:HorarioAlimentacionComponent}
+    {path:'horarioAlimentacion', component:HorarioAlimentacionComponent},
+    {path:'tipoIdentificacion', component:TipoIdentificacionComponent},
+    {path:'tipoEmpleado', component:TipoEmpleadoComponent},
+    {path:'tipoEspacio', component:TipoEspacioComponent}
 ];

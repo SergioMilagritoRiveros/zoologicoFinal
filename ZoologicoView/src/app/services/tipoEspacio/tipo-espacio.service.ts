@@ -19,10 +19,10 @@ deleteTipoEspacio (id: number) {
   
   return this.http.delete(this.tipoEspacio+'/'+id);
 }
-postTipoEspacio(id:number, tipoEspacio:string, tamaño: number, disponibilidadPersonas:boolean){
-  return this.http.post(this.tipoEspacio,{id,tipoEspacio, tamaño, disponibilidadPersonas});
+postTipoEspacio(id:number, tipoEspacio:string, tamano: number, disponibilidadPersonas:boolean){
+  return this.http.post(this.tipoEspacio,{id,tipoEspacio, tamano, disponibilidadPersonas});
 }
-putTipoEspacio(id:number, tipoEspacio:string, tamaño: number, disponibilidadPersonas:boolean){
-  return this.http.put(this.tipoEspacio+'/'+id,{id,tipoEspacio, tamaño, disponibilidadPersonas});
+putTipoEspacio(id:number, tipoEspacio:string, tamano: number, disponibilidadPersonas:boolean){
+  return this.http.put(this.tipoEspacio+'/'+id,{id,tipoEspacio, tamano, disponibilidadPersonas});
 }
 }

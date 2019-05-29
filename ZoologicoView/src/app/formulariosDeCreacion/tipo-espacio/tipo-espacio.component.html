@@ -1,3 +1,100 @@
-<p>
-  tipo-espacio works!
-</p>
+<!-- Trigger the modal with a button -->
+<div style="margin-top: 5%">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
+    style="text-align: center; align-items: center; align-content: center; margin: 3% 0% 3% 3%">Crear
+    tipoEspacio</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" id="crearf">
+        <div class="modal-header">
+          <h4 class="modal-title">Crear Tipo Espacio</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [ngModel]="idCrear" name="idcrearf" type="number" class="form-control" id="Id" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">disponibilidad personas:</label>
+              <input [ngModel]="disponibilidadPersonaCrear" name="tipoEspaciocrearf" type="text" class="form-control" id="tipEs">
+            </div>
+            <div class="form-group">
+              <label for="pwd">nombre espacio:</label>
+              <input [ngModel]="nombreEspacioCrear" name="tipoEspaciocrearf" type="text" class="form-control" id="tipEs">
+            </div>
+            <div class="form-group">
+              <label for="pwd">tamano:</label>
+              <input [ngModel]="tamanoCrear" name="tipoEspaciocrearf" type="number" class="form-control" id="tipEs">
+            </div>
+            <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="actualizar" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" id="actualizarf">
+        <div class="modal-header">
+          <h4 class="modal-title">Actualizar tipoEspacio</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [(ngModel)]="idActualizar" type="text" class="form-control" id="IdActualizar2" name="idactu"
+                disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">tipoEspacio:</label>
+              <input [(ngModel)]="tipoEspacioActualizar" type="text" class="form-control" id="tipoEspacioActualizar"
+                name="gene">
+            </div>
+            <button type="button" class="btn btn-warning" (click)="actualizar()">Actualizar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tablex">
+    <table class="table" style="width: 100%;text-align: center; align-items: center; align-content: center;" id="tabla">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of informacion">
+        <th>{{item.id}}</th>
+        <th>{{item.disponibilidadPersonas}}</th>
+        <th>{{item.nombreEspacio}}</th>
+        <th>{{item.tamano}}</th>
+        <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
+            style="width: 40%">Eliminar</button>
+          <button style="width: 10%;visibility: hidden;" disabled></button>
+          <button type="button" (click)="actualizarFormulario(item.id)" class="btn btn-warning" data-toggle="modal"
+            data-target="#actualizar"
+            style="text-align: center; align-items: center; align-content: center;width: 40%;">Actualizar
+            tipoEspacio</button>
+
+    </table>
+  </div>
+</div>

@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { identifierModuleUrl } from '@angular/compiler';
-import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user/user.service';
 import { Router } from '@angular/router';
-import { TipoEmpleadoService } from 'app/services/tipoEmpleado/tipo-empleado.service';
-
+import { TipoIdentificacionService } from 'app/services/TipoIdentificacion/tipo-identificacion.service';
 declare var $: any;
 @Component({
-  selector: 'app-tipo-empleado',
-  templateUrl: './tipo-empleado.component.html',
-  styleUrls: ['./tipo-empleado.component.scss']
+  selector: 'app-tipo-identificacion',
+  templateUrl: './tipo-identificacion.component.html',
+  styleUrls: ['./tipo-identificacion.component.scss']
 })
-export class TipoEmpleadoComponent implements OnInit {
+
+export class TipoIdentificacionComponent implements OnInit {
 
   informacion: any;
   idCrear: number;
-  horasDiariasCrear: number;
-  ocupacionCrear: string = '';
-  salarioCrear: number;
+  tipoIdentificacionCrear: string = '';
+  idActualizar: number;
+  tipoIdentificacionActualizar: string;
   getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
       sURLVariables = sPageURL.split('&'),
@@ -31,20 +29,20 @@ export class TipoEmpleadoComponent implements OnInit {
     }
   };
 
-  constructor(private _tipoEmpleadoService: TipoEmpleadoService, private _UserService: UserService, private router: Router) { }
+  constructor(private _tipoIdentificacionService: TipoIdentificacionService, private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
     if (this._UserService.getuser() == 0) {
       this.router.navigate(['/']);
     }
-    this._tipoEmpleadoService.getTipoEmpleado().subscribe((data) => {
+    this._tipoIdentificacionService.getTipoIdentificacions().subscribe((data) => {
       console.log(data),
         this.informacion = data,
         this.idCrear = this.informacion.length + 1
     });
   }
   eliminar(id: number) {
-    this._tipoEmpleadoService.deleteTipoEmpleado(id).subscribe(data => {
+    this._tipoIdentificacionService.deleteTipoIdentificacion(id).subscribe(data => {
       this.ngOnInit();
       $('#tablex').load()
     });
@@ -52,8 +50,9 @@ export class TipoEmpleadoComponent implements OnInit {
   }
 
   crear() {
-    if (this.ocupacionCrear != '') {
-      this._tipoEmpleadoService.postTipoEmpleado(this.idCrear, this.horasDiariasCrear, this.ocupacionCrear, this.salarioCrear).subscribe(data => {
+    this.tipoIdentificacionCrear = $('#geenro').val();
+    if (this.tipoIdentificacionCrear != '') {
+      this._tipoIdentificacionService.postTipoIdentificacion(this.idCrear, this.tipoIdentificacionCrear).subscribe(data => {
         this.ngOnInit();
         $('#tablex').load();
         $('#crearf').load();
@@ -64,21 +63,19 @@ export class TipoEmpleadoComponent implements OnInit {
     }
 
   }
-  /*
   actualizarFormulario(id: number) {
-    this._tipoEmpleadoService.getTipoEmpleadosid(id).subscribe(data => {
+    this._tipoIdentificacionService.getTipoIdentificacionsid(id).subscribe(data => {
       this.idActualizar = data['id'];
-      this.tipoEmpleadoActualizar = data['tipoEmpleado'];
+      this.tipoIdentificacionActualizar = data['tipoIdentificacion'];
     });
   }
   actualizar() {
-    this._tipoEmpleadoService.putTipoEmpleado(this.idActualizar, this.tipoEmpleadoActualizar).subscribe(data => {
+    this._tipoIdentificacionService.putTipoIdentificacion(this.idActualizar, this.tipoIdentificacionActualizar).subscribe(data => {
       this.ngOnInit();
       $('#tablex').load();
       $('#actualizarf').load();
     });
   }
-  */
   showNotification(from, align) {
     const type = ['', 'info', 'success', 'warning', 'danger'];
 
@@ -86,7 +83,7 @@ export class TipoEmpleadoComponent implements OnInit {
 
     $.notify({
       icon: "notifications",
-      message: "TipoEmpleado vacio , porfavor ingrese un valor <br>en la descripcion del tipoEmpleado"
+      message: "TipoIdentificacion vacio , porfavor ingrese un valor <br>en la descripcion del tipoIdentificacion"
 
     }, {
         type: type[color],
@@ -107,5 +104,4 @@ export class TipoEmpleadoComponent implements OnInit {
           '</div>'
       });
   }
-
 }
