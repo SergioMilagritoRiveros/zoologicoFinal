@@ -5,20 +5,16 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+
 
 import { AppComponent } from './app.component';
-
-import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { IndexComponent } from './index/index.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
+import { AgmCoreModule} from '@agm/core';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
+import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 
 
 
@@ -27,10 +23,9 @@ import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.compon
   imports: [
     BrowserAnimationsModule,
     FormsModule,
-    ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule,    
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -41,6 +36,7 @@ import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.compon
     AdminLayoutComponent,
     UserLayaoutComponent,
     IndexComponent,
+    AnimalesViewComponent,
 
   ],
   providers: [],

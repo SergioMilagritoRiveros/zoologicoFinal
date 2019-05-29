@@ -7,9 +7,13 @@ import { IndexComponent } from './index/index.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
-
+import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 const routes: Routes =[
-
+  
+  {
+    path:'animelesView',
+    component:AnimalesViewComponent
+  },
   {
     path: '',
     component: IndexComponent
@@ -32,7 +36,8 @@ const routes: Routes =[
         {
       path: '',
       loadChildren: './layouts/user-layaout/user-layaout.module#UserLayaoutModule'
-  }]}]
+  }]}
+]
 }
     // { path: 'dashboard',      component: DashboardComponent },
     // { path: 'user-profile',   component: UserProfileComponent },

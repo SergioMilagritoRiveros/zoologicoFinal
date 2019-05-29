@@ -1,11 +1,22 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
-
+import { UserService } from 'app/services/user/user.service';
+declare var $:any;
+declare interface RouteInfo {
+    path: string;
+    title: string;
+    icon: string;
+    class: string;
+  }
+  export const  ROUTES: RouteInfo[] = [
+    { path: '/dashboard', title: 'Dashboard',  icon: 'Dashboard', class: '' },
+    { path: '/crear', title: 'Crear',  icon: 'backup', class: '' },
+    
+  ];
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
@@ -16,9 +27,12 @@ export class AdminLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  menuItems: any[];
+  constructor( public location: Location, private router: Router,private _useresrService :UserService) {}
 
   ngOnInit() {
+      
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
@@ -83,4 +97,22 @@ export class AdminLayoutComponent implements OnInit {
       return bool;
   }
 
+
+
+
+  
+
+  isMobileMenu() {
+      if ($(window).width() > 991) {
+          return false;
+      }
+      return true;
+  };
+  usuraui(){
+    return this._useresrService.getuser();
+  }
+  salir(){
+    this._useresrService.setuser(0);
+    this.router.navigate(['/']);
+  } 
 }
