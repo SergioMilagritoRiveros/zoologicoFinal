@@ -50,6 +50,10 @@ public class UserDTO {
         return listaEmpleadoDTO;
     }
 
+    public UserDTO() {
+    }
+    
+
     public Long getId() {
         return id;
     }

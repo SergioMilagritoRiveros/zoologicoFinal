@@ -12,7 +12,7 @@ declare var $: any;
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  informacion: any[];
+  informacion: any;
   correo: string;
   contrasena: string;
   idCrear: number;
@@ -31,10 +31,13 @@ export class IndexComponent implements OnInit {
   signup() {
     var cont: number;
     this._loginservioce.login().subscribe(data => {
+      this.informacion=data;
       console.log(data);
-      this.idCrear = this.informacion.length + 1
+      this.idCrear = this.informacion.length + 1;
+      alert(this.idCrear)
+      this._loginservioce.postUser(this.idCrear,this.apellido,this.contrasenaa,this.correoo,this.nombre,"User").subscribe();
     });
-    this._loginservioce.postUser(this.idCrear,this.apellido,this.contrasenaa,this.correoo,this.nombre,"User").subscribe();
+   
   }
   login() {
     var informacion2: any;
