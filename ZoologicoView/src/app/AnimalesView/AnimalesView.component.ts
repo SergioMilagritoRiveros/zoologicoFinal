@@ -12,14 +12,8 @@ declare var $: any;
   styleUrls: ['./AnimalesView.component.css']
 })
 export class AnimalesViewComponent implements OnInit {
-  informacion: any;
-  correo: string;
-  contrasena: string;
-  idCrear: number;
-  nombre: any;
-  apellido: any;
-  correoo: any;
-  contrasenaa: any;
+  informacion: any[]=[1,2,3,4,5,6];
+ 
   constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService) {    
   }
 
