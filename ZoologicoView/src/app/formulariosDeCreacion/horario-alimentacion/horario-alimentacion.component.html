@@ -52,9 +52,16 @@
                 <input [(ngModel)]="idActualizar" type="text" class="form-control" id="IdActualizar2" name="idactu" disabled>
               </div>
               <div class="form-group">
-                <label for="pwd">Horario de ALimentacion:</label>
-                <input [(ngModel)]="horarioALimentacionActualizar" type="text" class="form-control" id="Horario de ALimentacionActualizar" name="gene">
-              </div>            
+                <label for="pwd">Horario de Comida:</label>
+                <input [ngModel]="horarioComidaActualizar" name="horarioALimentacioncrearfor" type="time" class="form-control" id="comida" >
+               
+              </div>  
+              <div class="form-group">
+                <label for="pwd">Horario de Desayuno:</label>
+                <input [ngModel]="horarioDesayunoActualizar" name="horarioALimentacioncrearf" type="time" class="form-control" id="desyuno" >
+               
+              </div>  
+                          
               <button type="button" class="btn btn-warning" (click)="actualizar()">Actualizar</button>
             </form>
         </div>

@@ -54,11 +54,13 @@ export class HorarioAlimentacionComponent implements OnInit {
   actualizarFormulario(id: number) {
     this._horarioAlimentacionService.getHorarioAlimentacionid(id).subscribe(data => {
       this.idActualizar = data['id'];
-      this.horarioDesayunoActualizar = data['especie'];
+      this.horarioDesayunoActualizar = data['horaDesayuno'];
+      this.horarioComidaActualizar= data['horaComida'];
+     
     });
   }
   actualizar() {
-    this._horarioAlimentacionService.putHorarioAlimentacion(this.idActualizar, this.horarioDesayunoActualizar).subscribe(data => {
+    this._horarioAlimentacionService.putHorarioAlimentacion(this.idActualizar, this.horarioDesayunoActualizar,this.horarioComidaActualizar).subscribe(data => {
       this.ngOnInit();
       $('#tablex').load();
       $('#actualizarf').load();

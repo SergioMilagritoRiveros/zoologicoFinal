@@ -32,7 +32,7 @@ postHorarioAlimentacion(id2:number, desyuno:string,comida:string){
   console.log(horari);
   return this.http.post(this.horarioALimentacion,horari);
 }
-putHorarioAlimentacion(id:number, horarioALimentacion:string){
-  return this.http.put(this.horarioALimentacion+'/'+id,{horarioALimentacion,id});
+putHorarioAlimentacion(idhor:number, desayuno:string,comida:string){
+  return this.http.put(this.horarioALimentacion+'/'+idhor,{comida,desayuno,idhor});
 }
 }
