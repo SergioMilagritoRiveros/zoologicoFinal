@@ -24,12 +24,12 @@ public class EspecieEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EspecieID")
+    @Column(name = "EspecieID",nullable=false)
     private Long id;
     /*
     *atributo especie
      */
-    @Column(name = "Especie")
+    @Column(name = "Especie",nullable=false)
     private String Especie;
 
     public EspecieEntity() {

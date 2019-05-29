@@ -24,23 +24,23 @@ import javax.persistence.OneToMany;
 public class ZoologicoEntity implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ZoologicoID")
+    @Column(name="ZoologicoID",nullable=false)
     private Long id;
 
     /*
     *atributo asignacion de espacios
     */
-    @Column(name="AsignacionEspaciosID")
+    @Column(name="AsignacionEspaciosID",nullable=false)
     private Long AsignacionEspaciosID;
     /*
     *atributo show ID
     */   
     @OneToMany
-     @JoinColumn(name="ShowID")
+     @JoinColumn(name="ShowID",nullable=false)
     private List<ShowEntity> ShowID;
     
     @OneToMany
-    @JoinColumn(name="AnimalID")
+    @JoinColumn(name="AnimalID",nullable=false)
     private List<AnimalEntity> AnimalID;
 
     public Long getId() {

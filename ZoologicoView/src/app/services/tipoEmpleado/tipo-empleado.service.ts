@@ -20,7 +20,7 @@ deleteTipoEmpleado (id: number) {
   return this.http.delete(this.tipoEmpleado+'/'+id);
 }
 postTipoEmpleado(id2:number, horasDiarias2:number, ocupacion2: string, salario2: number){
-  console.log({horasDiarias2,id2,ocupacion2,salario2});
+  console.log('servicio',{horasDiarias2,id2,ocupacion2,salario2});
   return this.http.post(this.tipoEmpleado,{horasDiarias:horasDiarias2,id:id2,ocupacion:ocupacion2,salario:salario2});
 }
 putTipoEmpleado(id:number, horasDiarias:number, ocupacion: string, salario: number){

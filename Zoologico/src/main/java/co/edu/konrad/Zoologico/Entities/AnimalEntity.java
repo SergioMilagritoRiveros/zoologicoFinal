@@ -26,7 +26,7 @@ public class AnimalEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "AnimalID")
+    @Column(name = "AnimalID",nullable=false)
     private Long id;
     /*
     *atributo tipo animalID
@@ -38,12 +38,12 @@ public class AnimalEntity implements Serializable {
     /*
     *atributo cantidad en habitad
      */
-    @Column(name = "CantidadHabitad")
+    @Column(name = "CantidadHabitad",nullable=false)
     private Long cantidadHabitad;
     /*
     *atributo cantidad total
      */
-    @Column(name = "cantidadTotal")
+    @Column(name = "cantidadTotal",nullable=false)
     private Long cantidadTotal;
     /*
     *atributo horario de alimentacionID
@@ -62,11 +62,11 @@ public class AnimalEntity implements Serializable {
     @JoinColumn(name = "RatingID")
     private List<RatingEntity> RatingID;
 
-    @Column(name = "NombreCientifico")
+    @Column(name = "NombreCientifico",nullable=false)
     private String nombreCientifico;
 
     @ManyToOne
-    @JoinColumn(name="empleadoID")
+    @JoinColumn(name="empleadoID",nullable=false)
     private EmpleadoEntity EmpleadoEntityID;
 
     public Long getId() {

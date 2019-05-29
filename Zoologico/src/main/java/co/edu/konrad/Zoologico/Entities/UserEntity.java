@@ -26,31 +26,31 @@ public class UserEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "USerId")
+    @Column(name = "USerId",nullable=false)
     private Long id;
     /*
     *atributo tipo animalID
      */
 
-    @Column(name = "tipoUser")
+    @Column(name = "tipoUser",nullable=false)
     private String tipoUser;
 
     /*
     *atributo cantidad en habitad
      */
-    @Column(name = "correoElectronico")
+    @Column(name = "correoElectronico",nullable=false)
     private String correoElectronico;
     /*
     *atributo cantidad total
      */
-    @Column(name = "nombre")
+    @Column(name = "nombre",nullable=false)
     private String nombre;
     
     
-    @Column(name = "apellido")
+    @Column(name = "apellido",nullable=false)
     private String apellido;
     
-      @Column(name = "contraseña")
+      @Column(name = "contraseña",nullable=false)
     private String contrasena;
 
 

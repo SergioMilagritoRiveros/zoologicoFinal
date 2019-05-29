@@ -26,20 +26,20 @@ public class RegistroAlimentoEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="RegistroAlimentoID")
+    @Column(name="RegistroAlimentoID",nullable=false)
     private Long id;
 
      /*
     *atributo cantidad alimento
     */
     
-    @Column(name="CantidadAlimento")
+    @Column(name="CantidadAlimento",nullable=false)
     private double cantidadAlimento;
     
     /*
     *atributo tipo alimento 
     */   
-    @Column(name="TipoAlimentoID")
+    @Column(name="TipoAlimentoID",nullable=false)
     private String TipoAlimento;
     
     

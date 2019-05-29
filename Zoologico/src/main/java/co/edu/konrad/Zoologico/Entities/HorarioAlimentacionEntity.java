@@ -20,18 +20,18 @@ public class HorarioAlimentacionEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="HorarioAlimentacionID")
+    @Column(name="HorarioAlimentacionID",nullable=false)
     private Long id;
     /*
     *atributo hora desayuno
     */
-    @Column(name="HoraDesayuno")
+    @Column(name="HoraDesayuno",nullable=false)
     
     private String horaDesayuno;
     /*
     *atributo hora comida
     */
-    @Column(name="HoraComida")
+    @Column(name="HoraComida",nullable=false)
    
     private String horaComida;
 

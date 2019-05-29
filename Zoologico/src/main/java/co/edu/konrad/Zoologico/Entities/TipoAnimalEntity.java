@@ -28,20 +28,20 @@ public class TipoAnimalEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TipoAnimalID")
+    @Column(name = "TipoAnimalID",nullable=false)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "EspecieID")
+    @JoinColumn(name = "EspecieID",nullable=false)
     private EspecieEntity EspecieID;
 
     @ManyToOne
-    @JoinColumn(name = "GeneroID")
+    @JoinColumn(name = "GeneroID",nullable=false)
     private GeneroEntity GeneroID;
     /*
     *atributo descripcion
      */
-    @Column(name = "Descripciion")
+    @Column(name = "Descripciion",nullable=false)
     private String Descripcion;
 
     public TipoAnimalEntity() {

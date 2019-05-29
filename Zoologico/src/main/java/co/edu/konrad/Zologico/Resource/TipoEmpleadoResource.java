@@ -63,12 +63,7 @@ public class TipoEmpleadoResource {
     } 
     
     
-    /**
-     * Actualizar un producto
-     * @param id
-     * @param productoDTO
-     * @return productoDTO actualizado
-     */
+    
     @PUT
     @Path("{id: \\d+}")
     public TipoEmpleadoDTO updateTipoEmpleado(@PathParam("id") Long id,TipoEmpleadoDTO TipoEmpleadoDTO) throws IllegalAccessException{

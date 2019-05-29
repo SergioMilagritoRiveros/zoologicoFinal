@@ -24,23 +24,23 @@ public class TipoEspacioEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TipoEspacioID")
+    @Column(name = "TipoEspacioID",nullable=false)
     private Long id;
 
     /*
     * atributo tamaño
      */
-    @Column(name = "NombreEspacio")
+    @Column(name = "NombreEspacio",nullable=false)
     private String nombreEspacio;
     /*
     * atributo tamaño
      */
-    @Column(name = "Tamaño")
+    @Column(name = "Tamaño",nullable=false)
     private String tamaño;
     /*
     * atributo dsponibilidad personas
      */
-    @Column(name = "DisponibilidadPersonas")
+    @Column(name = "DisponibilidadPersonas",nullable=false)
     private Long dsponibilidadPersonas;
 
     public TipoEspacioEntity() {

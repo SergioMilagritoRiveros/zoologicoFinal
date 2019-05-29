@@ -24,18 +24,18 @@ public class EmpleadoEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EmpleadoID")
+    @Column(name = "EmpleadoID",nullable=false)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "TipoEmpleadoID")
+    @JoinColumn(name = "TipoEmpleadoID",nullable=false)
     private TipoEmpleadoEntity tipoEmpleadoID;
 
-    @Column(name = "Nombre")
+    @Column(name = "Nombre",nullable=false)
     private String nombreEmpleado;
 
     @ManyToOne
-    @JoinColumn(name = "TipoIdentificacionID")
+    @JoinColumn(name = "TipoIdentificacionID",nullable=false)
     private TipoEmpleadoEntity tipoIdentificacionID;
 
     @Column(name = "NumeroIdentificacion")

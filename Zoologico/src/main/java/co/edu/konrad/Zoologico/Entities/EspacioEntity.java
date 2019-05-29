@@ -22,23 +22,23 @@ public class EspacioEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EspacioID")
+    @Column(name = "EspacioID",nullable=false)
     private Long id;
     /*
     *atributo nombre del espacio
      */
-    @Column(name = "nombre_espacio")
+    @Column(name = "nombre_espacio",nullable=false)
     private String nombreEspacio;
     /*
     *atributo ubibcacion
      */
-    @Column(name = "Ubicacion")
+    @Column(name = "Ubicacion",nullable=false)
     private String ubicacion;
     /*
     *atributo disponibilidad
      */
   
-    @Column(name = "Disponibilidad")
+    @Column(name = "Disponibilidad",nullable=false)
     private Boolean disponibilidad;
     /*
     *atributo tipo de espacio

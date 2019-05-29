@@ -23,13 +23,13 @@ public class GeneroEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="GeneroID")
+    @Column(name="GeneroID",nullable=false)
     private Long id;
 
     /*
     *atributo tipo genero
     */
-    @Column(name="Genero")
+    @Column(name="Genero",nullable=false)
     private String Genero;
 
     public GeneroEntity() {

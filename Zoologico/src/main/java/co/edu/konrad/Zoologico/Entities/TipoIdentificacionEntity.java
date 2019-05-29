@@ -23,12 +23,12 @@ public class TipoIdentificacionEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="TipoIdentificacionID")
+    @Column(name="TipoIdentificacionID",nullable=false)
     private Long id;
     /*
     *atributo tipo identficacion
     */
-    @Column(name="TipoIdentificacion")
+    @Column(name="TipoIdentificacion",nullable=false)
     private String TipoIdentificacion;
 
     public TipoIdentificacionEntity() {

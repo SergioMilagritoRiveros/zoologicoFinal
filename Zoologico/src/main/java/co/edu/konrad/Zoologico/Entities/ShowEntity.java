@@ -28,20 +28,20 @@ public class ShowEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ShowID")
+    @Column(name = "ShowID",nullable=false)
     private Long id;
     /*
     *atributo ratingID
      */ 
     @OneToMany
-    @JoinColumn(name = "RatingID")
+    @JoinColumn(name = "RatingID",nullable=false)
     private List<RatingEntity> RatingID;
 
     /*
     *atributo EmpleadoID
      */
     @ManyToOne
-    @JoinColumn(name = "EmpleadoID")
+    @JoinColumn(name = "EmpleadoID",nullable=false)
     private EmpleadoEntity empleadoID;
 
     /*
