@@ -28,7 +28,7 @@ public class RatingPersistence {
     *Buscar todas las entidades
      */
     public List<RatingEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from RatingEntity ");
+        Query todos = em.createQuery("select p from RatingEntity p");
         return todos.getResultList();
     }
 

@@ -29,7 +29,7 @@ public class RegistroAlimentoPersistence {
     *Buscar todas las entidades
      */
     public List<RegistroAlimentoEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from RegistroAlimentoEntity ");
+        Query todos = em.createQuery("select p from RegistroAlimentoEntity p");
         return todos.getResultList();
     }
 

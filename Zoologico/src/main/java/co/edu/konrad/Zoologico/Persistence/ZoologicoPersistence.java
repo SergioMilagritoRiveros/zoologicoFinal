@@ -28,7 +28,7 @@ public class ZoologicoPersistence {
     *Buscar todas las entidades
      */
     public List<ZoologicoEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from ZoologicoEntity ");
+        Query todos = em.createQuery("select p from ZoologicoEntity p");
         return todos.getResultList();
     }
 
