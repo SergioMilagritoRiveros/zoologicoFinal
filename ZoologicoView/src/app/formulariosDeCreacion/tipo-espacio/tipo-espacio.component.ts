@@ -62,7 +62,7 @@ export class TipoEspacioComponent implements OnInit {
       this.idActualizar = data['id'];
       this.disponibilidadPersonaActualizar = data['dsponibilidadPersonas'];
       this.nombreEspacioActualizar=data['nombreEspacio'];
-      this.tamanoActualizar=data['tamaño']
+      this.tamanoActualizar=data['tamano']
     });
   }
   actualizar() {
