@@ -10,7 +10,7 @@ export class AnimalService {
   constructor(private http: HttpClient) {
 
   }
-  animales = '/Zoologico/api/Animales';
+  animales = '/Zoologico/api/Animal';
 
   getAnimaless() {
     return this.http.get(this.animales);
