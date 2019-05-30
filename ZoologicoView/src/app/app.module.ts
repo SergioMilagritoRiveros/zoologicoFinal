@@ -10,6 +10,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
+import { ShowsViewComponent } from './shows-view/shows-view.component';
 
 
 
@@ -29,7 +30,8 @@ import { RatingComponent } from './formulariosDeCreacion/rating/rating.component
     UserLayaoutComponent,
     IndexComponent,
     AnimalesViewComponent,
-    RatingComponent
+    RatingComponent,
+    ShowsViewComponent
     
 
   ],

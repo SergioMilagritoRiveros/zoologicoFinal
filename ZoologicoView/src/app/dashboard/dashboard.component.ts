@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     if (this._UserService.getuser() != 1) {
-      this.router.navigate(['/index']);
+      this.router.navigate(['/']);
     }
 
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */

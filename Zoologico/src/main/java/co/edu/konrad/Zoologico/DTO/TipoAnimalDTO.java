@@ -25,8 +25,13 @@ public class TipoAnimalDTO {
 
     public TipoAnimalDTO(TipoAnimalEntity tip) {
         this.id = tip.getId();
-        this.EspecieID = tip.getEspecieID();
-        this.GeneroID = tip.getGeneroID();
+        if(this.EspecieID != null){
+            EspecieDTO e = new EspecieDTO();
+            this.EspecieID.setId(e.getId());
+        }
+        if (this.GeneroID != null) {
+            this.GeneroID = tip.getGeneroID();
+        }        
         this.Descripcion = tip.getDescripcion();
     }
     
