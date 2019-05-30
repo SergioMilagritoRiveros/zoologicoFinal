@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class TipoAnimalDTO {
     private Long id; 
-    private EspecieEntity EspecieID;
-    private GeneroEntity GeneroID;
+    private EspecieDTO EspecieID;
+    private GeneroDTO GeneroID;
     private String Descripcion;
 
     public TipoAnimalDTO() {
@@ -25,12 +25,13 @@ public class TipoAnimalDTO {
 
     public TipoAnimalDTO(TipoAnimalEntity tip) {
         this.id = tip.getId();
-        if(this.EspecieID != null){
+        if(tip.getEspecieID() != null){
             EspecieDTO e = new EspecieDTO();
-            this.EspecieID.setId(e.getId());
+            this.EspecieID = e;
         }
-        if (this.GeneroID != null) {
-            this.GeneroID = tip.getGeneroID();
+        if (tip.getGeneroID() != null) {
+            GeneroDTO e = new GeneroDTO();
+            this.GeneroID = e;
         }        
         this.Descripcion = tip.getDescripcion();
     }
@@ -39,8 +40,12 @@ public class TipoAnimalDTO {
         TipoAnimalEntity entity = new TipoAnimalEntity();
         entity.setId(this.id);
         entity.setDescripcion(this.Descripcion);
-        entity.setEspecieID(this.EspecieID);
-        entity.setGeneroID(this.GeneroID);
+        if (this.EspecieID != null) {
+            entity.setEspecieID(this.EspecieID.toEntity());
+        }
+        if (this.GeneroID != null) {
+            entity.setGeneroID(this.GeneroID.toEntity());
+        }
         return entity;
     }
     
@@ -60,19 +65,19 @@ public class TipoAnimalDTO {
         this.id = id;
     }
 
-    public EspecieEntity getEspecieID() {
+    public EspecieDTO getEspecieID() {
         return EspecieID;
     }
 
-    public void setEspecieID(EspecieEntity EspecieID) {
+    public void setEspecieID(EspecieDTO EspecieID) {
         this.EspecieID = EspecieID;
     }
 
-    public GeneroEntity getGeneroID() {
+    public GeneroDTO getGeneroID() {
         return GeneroID;
     }
 
-    public void setGeneroID(GeneroEntity GeneroID) {
+    public void setGeneroID(GeneroDTO GeneroID) {
         this.GeneroID = GeneroID;
     }
 
