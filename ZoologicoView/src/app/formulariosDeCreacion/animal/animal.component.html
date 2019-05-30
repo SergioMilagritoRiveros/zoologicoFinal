@@ -1,6 +1,7 @@
 <div style="margin-top: 5%;">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
-    style="text-align: center; align-items: center; align-content: center; margin: 3% 0% 3% 3%">Crear Especie</button>
+    style="text-align: center; align-items: center; align-content: center; margin: 3% 0% 3% 3%">Crear Especie
+  </button>
 
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog"
@@ -150,6 +151,36 @@
       </div>
     </div>
   </div>
-
+  <div id="tablex">
+      <table class="table" style="width: 100%; align-content: center; align-items: center; text-align: center;"
+        id="tabla">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">animal</th>
+            <th scope="col">cantidadAnimal</th>
+            <th scope="col">CantidadTotal</th>
+            <th scope="col">HorarioAlimentacion</th>
+            <th scope="col">Espacio</th>
+            <th scope="col">NombreCientifico</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let item of informacion">
+          <th>{{item.id}}</th>
+          <th>{{item.descripcion}}</th>
+          <th>{{item.especieID.especie}}</th>
+          <th>{{item.generoID.genero}}</th>
+          <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
+              style="width: 40%">Eliminar</button>
+            <button style="width: 10%;visibility: hidden;" disabled></button>
+            <button type="button" (click)="actualizarFormulario(item.id)" class="btn btn-warning" data-toggle="modal"
+              data-target="#actualizar"
+              style="text-align: center; align-items: center; align-content: center;width: 40%;">Actualizar
+              TipoAnimal</button>
+        </tr>
+      </table>
+    </div>
 
 </div>
