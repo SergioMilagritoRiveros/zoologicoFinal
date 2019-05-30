@@ -1,3 +1,155 @@
-<p>
-  animal works!
-</p>
+<div style="margin-top: 5%;">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
+    style="text-align: center; align-items: center; align-content: center; margin: 3% 0% 3% 3%">Crear Especie</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Crear Especie</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [(ngModel)]="idCrear" type="number" class="form-control" id="Id" name="crearid" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAnimal:</label>
+              <input [(ngModel)]="TipoAnimalCrear" type="text" class="form-control" name="crearTipoAnimal"
+                id="TipoAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">cantidadAnimal:</label>
+              <input [(ngModel)]="CantidadAnimalCrear" type="number" class="form-control" name="crearCantidad"
+                id="cantidadAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">cantidadTotalAnimal:</label>
+              <input [(ngModel)]="CantidadTotalAnimalCrear" type="number" class="form-control" name="crearCantidad"
+                id="cantidadToalAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">HorarioAlimentacion:</label>
+              <select [(ngModel)]="HorarioAlimentacionCrear" id="HorarioAlimentacion" name="horarioAlimentacionCrearf"
+                class="browser-default custom-select">
+                <option *ngFor="let item of horarioAlimentacion" value="{{item.id}}">{{item.horarioAlimentacion}}
+                </option>
+              </select>
+              <div class="form-group">
+                <label for="pwd">Espacios:</label>
+                <select [(ngModel)]="espacioCrear" name="espacioCrearf" id="Espacio"
+                  class="browser-default custom-select">
+                  <option *ngFor="let item of Espacio" value="{{item.id}}">{{item.Espacio}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Rating:</label>
+                <select [(ngModel)]="ratingCrear" name="ratingCrearf" id="Rating" class="browser-default custom-select">
+                  <option *ngFor="let item of rating" value="{{item.id}}">{{item.rating}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Empleado:</label>
+                <select [(ngModel)]="empleadoCrear" name="empleadoCrearf" id="Empleado"
+                  class="browser-default custom-select">
+                  <option *ngFor="let item of empleado" value="{{item.id}}">{{item.empleado}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">NombreCientifico:</label>
+                <input [(ngModel)]="NombreCientificoCrear" type="text" class="form-control" name="crearNombreCientifico"
+                  id="NombreCientifico">
+              </div>
+            </div>
+            <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="actualizar" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Actualizar Animal</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [(ngModel)]="idCrear" type="number" class="form-control" id="Id" name="actualizarid" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAnimal:</label>
+              <input [(ngModel)]="TipoAnimalCrear" type="text" class="form-control" name="actualizarTipoAnimal"
+                id="TipoAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">cantidadAnimal:</label>
+              <input [(ngModel)]="CantidadAnimalCrear" type="number" class="form-control" name="actualizarCantidad"
+                id="cantidadAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">cantidadTotalAnimal:</label>
+              <input [(ngModel)]="CantidadTotalAnimalCrear" type="number" class="form-control" name="actualizarCantidad"
+                id="cantidadToalAnimal">
+            </div>
+            <div class="form-group">
+              <label for="pwd">HorarioAlimentacion:</label>
+              <select [(ngModel)]="HorarioAlimentacionCrear" id="HorarioAlimentacion"
+                name="horarioAlimentacionActualizarf" class="browser-default custom-select">
+                <option *ngFor="let item of horarioAlimentacion" value="{{item.id}}">{{item.horarioAlimentacion}}
+                </option>
+              </select>
+              <div class="form-group">
+                <label for="pwd">Espacios:</label>
+                <select [(ngModel)]="espacioCrear" name="espacioActualizarf" id="Espacio"
+                  class="browser-default custom-select">
+                  <option *ngFor="let item of Espacio" value="{{item.id}}">{{item.Espacio}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Rating:</label>
+                <select [(ngModel)]="ratingCrear" name="ratingActualizarf" id="Rating"
+                  class="browser-default custom-select">
+                  <option *ngFor="let item of rating" value="{{item.id}}">{{item.rating}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Empleado:</label>
+                <select [(ngModel)]="empleadoCrear" name="empleadoActualizarf" id="Empleado"
+                  class="browser-default custom-select">
+                  <option *ngFor="let item of empleado" value="{{item.id}}">{{item.empleado}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">NombreCientifico:</label>
+                <input [(ngModel)]="NombreCientificoCrear" type="text" class="form-control"
+                  name="nombreCientificoActualizarf" id="NombreCientifico">
+              </div>
+            </div>
+            <button type="button" class="btn btn-success" (click)="actualizar()">Actualizar</button>
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
