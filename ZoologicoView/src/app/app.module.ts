@@ -12,6 +12,8 @@ import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
 import { ShowComponent } from './formulariosDeCreacion/show/show.component';
+import { RegistroAlimentoComponent } from './formulariosDeCreacion/registro-alimento/registro-alimento.component';
+import { EspacioComponent } from './formulariosDeCreacion/espacio/espacio.component';
 
 
 
@@ -35,6 +37,8 @@ import { ShowComponent } from './formulariosDeCreacion/show/show.component';
     RatingComponent,
     ShowsViewComponent,
     ShowComponent,
+    RegistroAlimentoComponent,
+    EspacioComponent,
   
     
 
