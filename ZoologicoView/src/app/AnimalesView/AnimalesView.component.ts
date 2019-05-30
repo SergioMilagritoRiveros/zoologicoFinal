@@ -14,16 +14,30 @@ declare var $: any;
 })
 export class AnimalesViewComponent implements OnInit {
   informacion: any;
+  idCrear: number;
  
-  constructor(private _loginservioce: LoginService, private router: Router, private _UserService: UserService,private _animaService:AnimalService) {    
-  }
+  getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : sParameterName[1];
+      }
+    }
+  };
+
+  constructor(private _AnimalService: AnimalService) { }
+
   ngOnInit() {
-    this._animaService.getAnimaless().subscribe((data) => {
-      console.log('data',data),
-        this.informacion = data;
+    
+    this._AnimalService.getAnimaless().subscribe((data) => {
+      console.log(data),
+        this.informacion = data,
+        this.idCrear = this.informacion.length + 1
     });
-    console.log(this.informacion);
   }
-  
   
 }
