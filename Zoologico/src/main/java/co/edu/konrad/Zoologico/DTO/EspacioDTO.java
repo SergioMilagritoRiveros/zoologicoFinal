@@ -18,7 +18,7 @@ public class EspacioDTO {
     private String nombreEspacio;
     private String ubicacion;
     private Boolean disponibilidad;
-    private TipoEspacioEntity tipoEspacioID;
+    private TipoEspacioDTO tipoEspacioID;
 
     public EspacioDTO() {
     }
@@ -29,7 +29,10 @@ public class EspacioDTO {
         this.nombreEspacio = espacio.getNombreEspacio();
         this.ubicacion = espacio.getUbicacion();
         this.disponibilidad = espacio.getDisponibilidad();
-        this.tipoEspacioID = espacio.getTipoEspacioID();
+        if(espacio.getTipoEspacioID() != null){
+            TipoEspacioDTO e = new TipoEspacioDTO(espacio.getTipoEspacioID());
+            this.tipoEspacioID = e;
+        }
     }
     
     public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio){
@@ -45,7 +48,9 @@ public class EspacioDTO {
         entity.setDisponibilidad(this.disponibilidad);
         entity.setId(this.id);
         entity.setNombreEspacio(this.nombreEspacio);
-        entity.setTipoEspacioID(this.tipoEspacioID);
+        if (this.tipoEspacioID != null) {
+            entity.setTipoEspacioID(this.tipoEspacioID.toEntity());
+        }
         entity.setUbicacion(this.ubicacion);
         return entity;
     }
@@ -82,13 +87,15 @@ public class EspacioDTO {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioEntity getTipoEspacioID() {
+    public TipoEspacioDTO getTipoEspacioID() {
         return tipoEspacioID;
     }
 
-    public void setTipoEspacioID(TipoEspacioEntity tipoEspacioID) {
+    public void setTipoEspacioID(TipoEspacioDTO tipoEspacioID) {
         this.tipoEspacioID = tipoEspacioID;
     }
+
+    
     
     
     
