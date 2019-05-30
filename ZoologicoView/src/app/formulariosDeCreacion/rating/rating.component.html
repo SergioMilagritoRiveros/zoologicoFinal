@@ -8,7 +8,7 @@
       <!-- Modal content-->
       <div class="modal-content" id="crearf">
         <div class="modal-header">
-          <h4 class="modal-title">Crear Horario de ALimentacion</h4>
+          <h4 class="modal-title">Crear Rating</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>        
         </div>
         <div class="modal-body">
@@ -19,12 +19,12 @@
               </div>
               <div class="form-group">
                 <label for="pwd">puntuacion:</label>
-                <input [ngModel]="horarioDesayunoCrear" name="rating crearf" type="time" class="form-control" id="puntuacion" >
+                <input [ngModel]="horarioDesayunoCrear" name="rating crearf" type="number" class="form-control" id="puntuacion" >
                
               </div>  
               <div class="form-group">
                 <label for="pwd">comentarios:</label>
-                <input [ngModel]="horarioComidaCrear" name="rating crearf" type="time" class="form-control" id="comentarios" >
+                <input [ngModel]="horarioComidaCrear" name="rating crearf" type="text" class="form-control" id="comentarios" >
                
               </div>            
               <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
@@ -42,23 +42,23 @@
       <!-- Modal content-->
       <div class="modal-content" id="actualizarf">
         <div class="modal-header">
-          <h4 class="modal-title">Actualizar Horario de ALimentacion</h4>
+          <h4 class="modal-title">ActualizarRating</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>        
         </div>
         <div class="modal-body">
             <form>
               <div class="form-group">
                 <label for="email">Id:</label>
-                <input [(ngModel)]="idActualizar" type="text" class="form-control" id="IdActualizar2" name="idactu" disabled>
+                <input [(ngModel)]="idActualizar" type="number" class="form-control" id="IdActualizar2" name="idactu" disabled>
               </div>
               <div class="form-group">
-                <label for="pwd">Horario de Comida:</label>
-                <input [ngModel]="horarioComidaActualizar" name="rating crearfor" type="time" class="form-control" id="comidaactu" >
+                <label for="pwd">Puntuacion:</label>
+                <input [ngModel]="horarioComidaActualizar" name="rating crearfor" type="number" class="form-control" id="puntuacionactu" >
                
               </div>  
               <div class="form-group">
-                <label for="pwd">Horario de Desayuno:</label>
-                <input [ngModel]="horarioDesayunoActualizar" name="rating crearf" type="time" class="form-control" id="desyunoactu" >
+                <label for="pwd">Comentarios:</label>
+                <input [ngModel]="horarioDesayunoActualizar" name="rating crearf" type="text" class="form-control" id="comentariosactu" >
                
               </div>  
                           
@@ -77,15 +77,15 @@
     <thead>
       <tr>
         <th scope="col" >#</th>
-        <th scope="col">Desayuno</th>
-        <th scope="col">Comida</th>
+        <th scope="col">Puntuacion</th>
+        <th scope="col">Comentarios</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tr *ngFor="let item of informacion">
       <th>{{item.id}}</th>
-      <th>{{item.horaDesayuno}}</th>
-       <th>{{item.horaComida}}</th>
+      <th>{{item.Puntuacion}}</th>
+       <th>{{item.Comentarios}}</th>
      <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger" style="width: 40%">Eliminar</button>
        <button  style="width: 10%;visibility: hidden;" disabled></button>
        <button type="button" (click)="actualizarFormulario(item.id)" class="btn btn-warning" data-toggle="modal" data-target="#actualizar" style="text-align: center; align-items: center; align-content: center;width: 40%;">Actualizar Horario de ALimentacion</button>
