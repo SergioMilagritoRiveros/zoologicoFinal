@@ -36,11 +36,7 @@ const routes: Routes =[
   }, {
     path: 'dashboardUser',
     component: UserLayaoutComponent,
-    children: [
-        {
-      path: '',
-      loadChildren: './layouts/user-layaout/user-layaout.module#UserLayaoutModule'
-  }]}
+    }
 ]
 }
     // { path: 'dashboard',      component: DashboardComponent },
