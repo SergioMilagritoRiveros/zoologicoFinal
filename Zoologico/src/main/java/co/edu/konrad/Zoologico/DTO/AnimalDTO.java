@@ -74,6 +74,13 @@ public class AnimalDTO {
         if (this.horarioAlimentacionID != null) {
             entity.setHorarioAlimentacionID(this.horarioAlimentacionID.toEntity());
         }
+        if(this.RatingID != null){
+            ArrayList<RatingEntity> e = new ArrayList<>();
+            for (int i = 0; i < this.RatingID.size(); i++) {
+                e.add(this.RatingID.get(i).toEntity());
+            }
+            entity.setRatingID(e);
+        }
         entity.setId(this.AnimalID);
         entity.setNombreCientifico(this.nombreCientifico);
         return entity;

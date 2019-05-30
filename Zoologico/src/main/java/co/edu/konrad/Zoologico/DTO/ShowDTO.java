@@ -15,11 +15,11 @@ import java.util.List;
  */
 public class ShowDTO {
     private Long id;
-    private List<RatingEntity> RatingID;
-    private EmpleadoEntity empleadoID;
-    private AnimalEntity animalID;
+    private List<RatingDTO> RatingID;
+    private EmpleadoDTO empleadoID;
+    private AnimalDTO animalID;
     private String espacio;
-    private EspacioEntity EspaciosID;
+    private EspacioDTO EspaciosID;
     private Long cantidad;
 
     public ShowDTO() {
@@ -28,11 +28,26 @@ public class ShowDTO {
 
     public ShowDTO(ShowEntity show) {
         this.id = show.getId();
-        this.RatingID = show.getRatingID();
-        this.empleadoID = show.getEmpleadoID();
-        this.animalID = show.getAnimalID();
+        if(show.getRatingID() != null){
+            ArrayList<RatingDTO> e = new ArrayList<>();
+            for (int i = 0; i < this.RatingID.size(); i++) {
+                e.add(new RatingDTO(this.RatingID.get(i).toEntity()));
+            }
+            this.RatingID= e;
+        } 
+        if(show.getEmpleadoID() != null){
+            EmpleadoDTO e = new EmpleadoDTO(show.getEmpleadoID());
+            this.empleadoID = e;
+        }
+        if(show.getAnimalID() != null){
+            AnimalDTO e = new AnimalDTO(show.getAnimalID());
+            this.animalID= e;
+        }
         this.espacio = show.getEspacio();
-        this.EspaciosID = show.getEspaciosID();
+        if(show.getEspaciosID() != null){
+            EspacioDTO e = new EspacioDTO(show.getEspaciosID());
+            this.EspaciosID= e;
+        }
         this.cantidad = show.getCantidad();
     }
     
@@ -47,12 +62,24 @@ public class ShowDTO {
     public ShowEntity toEntity(){
         ShowEntity entity = new ShowEntity();
         entity.setId(this.id);
-        entity.setAnimalID(this.animalID);
+        if (this.animalID != null) {
+            entity.setAnimalID(this.animalID.toEntity());
+        }
         entity.setCantidad(this.cantidad);
-        entity.setEmpleadoID(this.empleadoID);
+        if (this.empleadoID != null) {
+            entity.setEmpleadoID(this.empleadoID.toEntity());
+        }
         entity.setEspacio(this.espacio);
-        entity.setEspaciosID(this.EspaciosID);
-        entity.setRatingID(this.RatingID);
+        if (this.EspaciosID != null) {
+            entity.setEspaciosID(this.EspaciosID.toEntity());
+        }        
+        if(this.RatingID != null){
+            ArrayList<RatingEntity> e = new ArrayList<>();
+            for (int i = 0; i < this.RatingID.size(); i++) {
+                e.add(this.RatingID.get(i).toEntity());
+            }
+            entity.setRatingID(e);
+        }
         return entity;
     }
 
@@ -64,28 +91,36 @@ public class ShowDTO {
         this.id = id;
     }
 
-    public List<RatingEntity> getRatingID() {
+    public List<RatingDTO> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(List<RatingEntity> RatingID) {
+    public void setRatingID(List<RatingDTO> RatingID) {
         this.RatingID = RatingID;
     }
 
-    public EmpleadoEntity getEmpleadoID() {
+    public EmpleadoDTO getEmpleadoID() {
         return empleadoID;
     }
 
-    public void setEmpleadoID(EmpleadoEntity empleadoID) {
+    public void setEmpleadoID(EmpleadoDTO empleadoID) {
         this.empleadoID = empleadoID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public AnimalDTO getAnimalID() {
         return animalID;
     }
 
-    public void setAnimalID(AnimalEntity animalID) {
+    public void setAnimalID(AnimalDTO animalID) {
         this.animalID = animalID;
+    }
+
+    public EspacioDTO getEspaciosID() {
+        return EspaciosID;
+    }
+
+    public void setEspaciosID(EspacioDTO EspaciosID) {
+        this.EspaciosID = EspaciosID;
     }
 
     public String getEspacio() {
@@ -94,14 +129,6 @@ public class ShowDTO {
 
     public void setEspacio(String espacio) {
         this.espacio = espacio;
-    }
-
-    public EspacioEntity getEspaciosID() {
-        return EspaciosID;
-    }
-
-    public void setEspaciosID(EspacioEntity EspaciosID) {
-        this.EspaciosID = EspaciosID;
     }
 
     public Long getCantidad() {
