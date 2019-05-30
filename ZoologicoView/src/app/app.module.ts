@@ -9,13 +9,9 @@ import { IndexComponent } from './index/index.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
+
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
-import { ShowComponent } from './formulariosDeCreacion/show/show.component';
-import { RegistroAlimentoComponent } from './formulariosDeCreacion/registro-alimento/registro-alimento.component';
-import { EspacioComponent } from './formulariosDeCreacion/espacio/espacio.component';
-
-
 
 
 
@@ -35,13 +31,7 @@ import { EspacioComponent } from './formulariosDeCreacion/espacio/espacio.compon
     IndexComponent,
     AnimalesViewComponent,
     RatingComponent,
-    ShowsViewComponent,
-    ShowComponent,
-    RegistroAlimentoComponent,
-    EspacioComponent,
-  
-    
-
+    ShowsViewComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

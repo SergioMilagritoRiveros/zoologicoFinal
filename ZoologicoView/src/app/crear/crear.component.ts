@@ -7,14 +7,17 @@ declare interface RouteInfo {
   icon: string;
   class: string;
 }
-export const  CREAR: RouteInfo[] = [
-  { path: '/genero', title: 'Genero',  icon: 'backup', class: '' },
-  { path: '/especie', title: 'Especie',  icon: 'backup', class: '' },
-  { path: '/tipoAnimal', title: 'Tipo Animal',  icon: 'backup', class: '' },
-  { path: '/horarioAlimentacion', title: 'Horario de Alimentacion',  icon: 'backup', class: '' },
-  {path: '/tipoIdentificacion',title: 'Tipo de Identificacion',icon:'backup',class:''},
-  {path: '/tipoEmpleado',title: 'Tipo de Empleado',icon:'backup',class:''},
-  {path: '/tipoEspacio',title: 'Tipo de Espacio',icon:'backup',class:''}
+export const CREAR: RouteInfo[] = [
+  { path: '/genero', title: 'Genero', icon: 'backup', class: '' },
+  { path: '/especie', title: 'Especie', icon: 'backup', class: '' },
+  { path: '/tipoAnimal', title: 'Tipo Animal', icon: 'backup', class: '' },
+  { path: '/horarioAlimentacion', title: 'Horario de Alimentacion', icon: 'backup', class: '' },
+  { path: '/tipoIdentificacion', title: 'Tipo de Identificacion', icon: 'backup', class: '' },
+  { path: '/tipoEmpleado', title: 'Tipo de Empleado', icon: 'backup', class: '' },
+  { path: '/tipoEspacio', title: 'Tipo de Espacio', icon: 'backup', class: '' },
+  { path: '/show', title: 'Show', icon: 'backup', class: '' },
+  { path: '/registroAlimento', title: 'Registro Alimento', icon: 'backup', class: '' },
+  { path: '/espacio', title: 'Espacio', icon: 'backup', class: '' },
 ];
 @Component({
   selector: 'app-crear',
