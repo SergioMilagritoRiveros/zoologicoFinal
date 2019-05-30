@@ -19,9 +19,10 @@ export class AnimalesViewComponent implements OnInit {
   }
   ngOnInit() {
     this._animaService.getAnimaless().subscribe((data) => {
-      console.log(data),
+      console.log('data',data),
         this.informacion = data;
     });
+    console.log(this.informacion);
   }
   
   

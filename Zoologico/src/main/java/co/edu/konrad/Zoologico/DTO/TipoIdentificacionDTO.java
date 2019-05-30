@@ -6,7 +6,6 @@
 package co.edu.konrad.Zoologico.DTO;
 
 import co.edu.konrad.Zoologico.Entities.TipoIdentificacionEntity;
-import co.edu.konrad.Zoologico.Entities.ZoologicoEntity;
 import java.util.ArrayList;
 import java.util.List;
 
