@@ -22,7 +22,11 @@
             </div>
             <div class="form-group">
               <label for="pwd">disponibilidad personas:</label>
-              <input [ngModel]="disponibilidadPersonaCrear" name="tipoEspaciocrearf" type="text" class="form-control" id="tipEs">
+              <div class="form-check">
+                
+                <input [ngModel]="disponibilidadPersonaCrear" type="checkbox" name="vehicle1" id="dispo"> <br>
+              </div>
+            
             </div>
             <div class="form-group">
               <label for="pwd">nombre espacio:</label>
@@ -30,7 +34,7 @@
             </div>
             <div class="form-group">
               <label for="pwd">tamano:</label>
-              <input [ngModel]="tamanoCrear" name="tipoEspaciocrearf" type="number" class="form-control" id="tipEs">
+              <input [ngModel]="tamanoCrear" name="dfd" type="number" class="form-control" id="taman">
             </div>
             <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
           </form>
@@ -55,13 +59,23 @@
           <form>
             <div class="form-group">
               <label for="email">Id:</label>
-              <input [(ngModel)]="idActualizar" type="text" class="form-control" id="IdActualizar2" name="idactu"
-                disabled>
+              <input [ngModel]="idActualizar" name="idActualizarf" type="number" class="form-control" id="IdActualizar" disabled>
             </div>
             <div class="form-group">
-              <label for="pwd">tipoEspacio:</label>
-              <input [(ngModel)]="tipoEspacioActualizar" type="text" class="form-control" id="tipoEspacioActualizar"
-                name="gene">
+              <label for="pwd">disponibilidad personas:</label>
+              <div class="form-check">
+                
+                <input [ngModel]="disponibilidadPersonaActualizar" type="checkbox" name="vehicle1" id="dispoActualizar"> <br>
+              </div>
+            
+            </div>
+            <div class="form-group">
+              <label for="pwd">nombre espacio:</label>
+              <input [ngModel]="nombreEspacioActualizar" name="tipoEspacioActualizarf" type="text" class="form-control" id="tipEsActualizar">
+            </div>
+            <div class="form-group">
+              <label for="pwd">tamano:</label>
+              <input [ngModel]="tamanoActualizar" name="dfd" type="number" class="form-control" id="tamanActualizar">
             </div>
             <button type="button" class="btn btn-warning" (click)="actualizar()">Actualizar</button>
           </form>
@@ -79,12 +93,14 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Tipo</th>
+          <th scope="col">nombreEspacio</th>
+          <th scope="col">tamaño</th>
           <th scope="col">Opciones</th>
         </tr>
       </thead>
       <tr *ngFor="let item of informacion">
         <th>{{item.id}}</th>
-        <th>{{item.disponibilidadPersonas}}</th>
+        <th>{{item.dsponibilidadPersonas}}</th>
         <th>{{item.nombreEspacio}}</th>
         <th>{{item.tamano}}</th>
         <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
