@@ -12,6 +12,7 @@ import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
+import { EmpleadoComponent } from './formulariosDeCreacion/empleado/empleado.component';
 
 
 
@@ -31,7 +32,8 @@ import { ShowsViewComponent } from './shows-view/shows-view.component';
     IndexComponent,
     AnimalesViewComponent,
     RatingComponent,
-    ShowsViewComponent
+    ShowsViewComponent,
+    EmpleadoComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
