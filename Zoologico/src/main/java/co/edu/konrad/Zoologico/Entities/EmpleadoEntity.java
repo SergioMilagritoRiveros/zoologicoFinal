@@ -36,7 +36,7 @@ public class EmpleadoEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "TipoIdentificacionID",nullable=false)
-    private TipoEmpleadoEntity tipoIdentificacionID;
+    private TipoIdentificacionEntity tipoIdentificacionID;
 
     @Column(name = "NumeroIdentificacion")
     private long numeroIdentificacion;
@@ -57,11 +57,11 @@ public class EmpleadoEntity implements Serializable {
         return id;
     }
 
-    public TipoEmpleadoEntity getTipoIdentificacionID() {
+    public TipoIdentificacionEntity getTipoIdentificacionID() {
         return tipoIdentificacionID;
     }
 
-    public void setTipoIdentificacionID(TipoEmpleadoEntity tipoIdentificacionID) {
+    public void setTipoIdentificacionID(TipoIdentificacionEntity tipoIdentificacionID) {
         this.tipoIdentificacionID = tipoIdentificacionID;
     }
 

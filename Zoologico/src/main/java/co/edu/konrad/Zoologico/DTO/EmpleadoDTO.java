@@ -17,18 +17,24 @@ import java.util.List;
 public class EmpleadoDTO {
     
     private Long id;
-    private TipoEmpleadoEntity tipoEmpleadoID;
+    private TipoEmpleadoDTO tipoEmpleadoID;
     private String nombreEmpleado;
-    private TipoEmpleadoEntity tipoIdentificacionID;
+    private TipoIdentificacionDTO tipoIdentificacionID;
     private long numeroIdentificacion;
     private long numeroTelefono;
     private Date nacimiento;
 
     public EmpleadoDTO(EmpleadoEntity empleado) {
         this.id = empleado.getId();
-        this.tipoEmpleadoID = empleado.getTipoEmpleadoID();
+        if(empleado.getTipoEmpleadoID() != null){
+            TipoEmpleadoDTO e = new TipoEmpleadoDTO(empleado.getTipoEmpleadoID());
+            this.tipoEmpleadoID= e;
+        }
         this.nombreEmpleado = empleado.getNombreEmpleado();
-        this.tipoIdentificacionID = empleado.getTipoEmpleadoID();
+        if(empleado.getTipoIdentificacionID() != null){
+            TipoIdentificacionDTO e = new TipoIdentificacionDTO(empleado.getTipoIdentificacionID());
+            this.tipoIdentificacionID = e;
+        }
         this.numeroIdentificacion = empleado.getNumeroIdentificacion();
         this.numeroTelefono = empleado.getNumeroTelefono();
         this.nacimiento = empleado.getNacimiento();
@@ -41,8 +47,12 @@ public class EmpleadoDTO {
         entity.setNombreEmpleado(this.nombreEmpleado);
         entity.setNumeroIdentificacion(this.numeroIdentificacion);
         entity.setNumeroTelefono(this.numeroTelefono);
-        entity.setTipoEmpleadoID(this.tipoEmpleadoID);
-        entity.setTipoIdentificacionID(this.tipoIdentificacionID);
+        if (this.tipoEmpleadoID != null) {
+            entity.setTipoEmpleadoID(this.tipoEmpleadoID.toEntity());
+        }
+        if (this.tipoIdentificacionID != null) {
+            entity.setTipoIdentificacionID(this.tipoIdentificacionID.toEntity());
+        }
         return entity;
     }
     
@@ -62,11 +72,11 @@ public class EmpleadoDTO {
         this.id = id;
     }
 
-    public TipoEmpleadoEntity getTipoEmpleadoID() {
+    public TipoEmpleadoDTO getTipoEmpleadoID() {
         return tipoEmpleadoID;
     }
 
-    public void setTipoEmpleadoID(TipoEmpleadoEntity tipoEmpleadoID) {
+    public void setTipoEmpleadoID(TipoEmpleadoDTO tipoEmpleadoID) {
         this.tipoEmpleadoID = tipoEmpleadoID;
     }
 
@@ -78,11 +88,11 @@ public class EmpleadoDTO {
         this.nombreEmpleado = nombreEmpleado;
     }
 
-    public TipoEmpleadoEntity getTipoIdentificacionID() {
+    public TipoIdentificacionDTO getTipoIdentificacionID() {
         return tipoIdentificacionID;
     }
 
-    public void setTipoIdentificacionID(TipoEmpleadoEntity tipoIdentificacionID) {
+    public void setTipoIdentificacionID(TipoIdentificacionDTO tipoIdentificacionID) {
         this.tipoIdentificacionID = tipoIdentificacionID;
     }
 
@@ -109,7 +119,8 @@ public class EmpleadoDTO {
     public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
     }
-    
+
+      
     
     
     
