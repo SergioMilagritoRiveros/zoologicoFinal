@@ -28,15 +28,15 @@ public class TipoEspacioEntity implements Serializable {
     private Long id;
 
     /*
-    * atributo tamaño
+    * atributo tamano
      */
     @Column(name = "NombreEspacio",nullable=false)
     private String nombreEspacio;
     /*
-    * atributo tamaño
+    * atributo tamano
      */
-    @Column(name = "Tamaño",nullable=false)
-    private String tamaño;
+    @Column(name = "Tamano",nullable=false)
+    private String tamano;
     /*
     * atributo dsponibilidad personas
      */
@@ -62,12 +62,12 @@ public class TipoEspacioEntity implements Serializable {
         this.nombreEspacio = nombreEspacio;
     }
 
-    public String getTamaño() {
-        return tamaño;
+    public String getTamano() {
+        return tamano;
     }
 
-    public void setTamaño(String tamaño) {
-        this.tamaño = tamaño;
+    public void setTamano(String tamano) {
+        this.tamano = tamano;
     }
 
     public Long getDsponibilidadPersonas() {

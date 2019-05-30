@@ -50,7 +50,7 @@ public class UserEntity implements Serializable {
     @Column(name = "apellido",nullable=false)
     private String apellido;
     
-      @Column(name = "contraseña",nullable=false)
+      @Column(name = "contrasena",nullable=false)
     private String contrasena;
 
 
