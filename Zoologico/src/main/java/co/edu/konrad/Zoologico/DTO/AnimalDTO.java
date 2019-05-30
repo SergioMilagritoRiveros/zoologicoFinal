@@ -15,13 +15,13 @@ import java.util.List;
  */
 public class AnimalDTO {
     private Long AnimalID;
-    private TipoAnimalEntity tipoAnimalID;
+    private TipoAnimalDTO tipoAnimalID;
     private Long cantidadHabitad;
     private Long cantidadTotal;
-    private HorarioAlimentacionEntity horarioAlimentacionID;
-    private EspacioEntity espaciosID;
-    private List<RatingEntity> RatingID;
-    private EmpleadoEntity EmpleadoEntityID;
+    private HorarioAlimentacionDTO horarioAlimentacionID;
+    private EspacioDTO espaciosID;
+    private List<RatingDTO> RatingID;
+    private EmpleadoDTO EmpleadoEntityID;
     private String nombreCientifico;
 
     public AnimalDTO() {
@@ -30,24 +30,50 @@ public class AnimalDTO {
 
     public AnimalDTO(AnimalEntity animal) {
         this.AnimalID = animal.getId();
-        this.tipoAnimalID = animal.getAnimal();
+        if(animal.getAnimal() != null){
+            TipoAnimalDTO e = new TipoAnimalDTO(animal.getAnimal());
+            this.tipoAnimalID = e;
+        }
         this.cantidadHabitad = animal.getCantidadHabitad();
         this.cantidadTotal = animal.getCantidadTotal();
-        this.horarioAlimentacionID = animal.getHorarioAlimentacionID();
-        this.espaciosID = animal.getEspaciosID();
-        this.RatingID = animal.getRatingID();        
-        this.EmpleadoEntityID = animal.getEmpleadoEntityID();
+        if(animal.getHorarioAlimentacionID() != null){
+             HorarioAlimentacionDTO e = new  HorarioAlimentacionDTO(animal.getHorarioAlimentacionID());
+            this.horarioAlimentacionID= e;
+        }
+        if(animal.getEspaciosID() != null){
+            EspacioDTO e = new EspacioDTO(animal.getEspaciosID());
+            this.espaciosID= e;
+        }
+        if(animal.getRatingID() != null){
+            ArrayList<RatingDTO> e = new ArrayList<>();
+            for (int i = 0; i < this.RatingID.size(); i++) {
+                e.add(new RatingDTO(this.RatingID.get(i).toEntity()));
+            }
+            this.RatingID= e;
+        }  
+        if(animal.getEmpleadoEntityID() != null){
+            EmpleadoDTO e = new EmpleadoDTO(animal.getEmpleadoEntityID());          
+            this.EmpleadoEntityID= e;
+        }
         this.nombreCientifico = animal.getNombreCientifico();
     }
     
     public AnimalEntity toEntity(){
         AnimalEntity entity = new AnimalEntity();
-        entity.setAnimal(this.tipoAnimalID);
+        if (this.tipoAnimalID != null) {
+            entity.setAnimal(this.tipoAnimalID.toEntity());
+        }
         entity.setCantidadHabitad(this.cantidadHabitad);
         entity.setCantidadTotal(this.cantidadTotal);
-        entity.setEmpleadoEntityID(this.EmpleadoEntityID);
-        entity.setEspaciosID(this.espaciosID);
-        entity.setHorarioAlimentacionID(horarioAlimentacionID);
+        if (this.EmpleadoEntityID != null) {
+            entity.setEmpleadoEntityID(this.EmpleadoEntityID.toEntity());
+        }
+        if (this.espaciosID != null) {
+            entity.setEspaciosID(this.espaciosID.toEntity());
+        }
+        if (this.horarioAlimentacionID != null) {
+            entity.setHorarioAlimentacionID(this.horarioAlimentacionID.toEntity());
+        }
         entity.setId(this.AnimalID);
         entity.setNombreCientifico(this.nombreCientifico);
         return entity;
@@ -68,11 +94,11 @@ public class AnimalDTO {
         this.AnimalID = AnimalID;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    public TipoAnimalDTO getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(TipoAnimalDTO tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
     }
 
@@ -92,27 +118,36 @@ public class AnimalDTO {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public HorarioAlimentacionEntity getHorarioAlimentacionID() {
+    public HorarioAlimentacionDTO getHorarioAlimentacionID() {
         return horarioAlimentacionID;
     }
 
-    public void setHorarioAlimentacionID(HorarioAlimentacionEntity horarioAlimentacionID) {
+    public void setHorarioAlimentacionID(HorarioAlimentacionDTO horarioAlimentacionID) {
         this.horarioAlimentacionID = horarioAlimentacionID;
     }
-    public EspacioEntity getEspaciosID() {
+
+    public EspacioDTO getEspaciosID() {
         return espaciosID;
     }
 
-    public void setEspaciosID(EspacioEntity espaciosID) {
+    public void setEspaciosID(EspacioDTO espaciosID) {
         this.espaciosID = espaciosID;
     }
 
-    public List<RatingEntity> getRatingID() {
+    public List<RatingDTO> getRatingID() {
         return RatingID;
     }
 
-    public void setRatingID(List<RatingEntity> RatingID) {
+    public void setRatingID(List<RatingDTO> RatingID) {
         this.RatingID = RatingID;
+    }
+
+    public EmpleadoDTO getEmpleadoEntityID() {
+        return EmpleadoEntityID;
+    }
+
+    public void setEmpleadoEntityID(EmpleadoDTO EmpleadoEntityID) {
+        this.EmpleadoEntityID = EmpleadoEntityID;
     }
 
     public String getNombreCientifico() {
@@ -123,17 +158,7 @@ public class AnimalDTO {
         this.nombreCientifico = nombreCientifico;
     }
 
-   
-
-    public EmpleadoEntity getEmpleadoEntityID() {
-        return EmpleadoEntityID;
-    }
-
-    public void setEmpleadoEntityID(EmpleadoEntity EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
-    }
-    
-    
+        
     
     
 }
