@@ -20,7 +20,6 @@ public class AnimalDTO {
     private Long cantidadTotal;
     private HorarioAlimentacionDTO horarioAlimentacionID;
     private EspacioDTO espaciosID;
-    private List<RatingDTO> RatingID;
     private EmpleadoDTO EmpleadoEntityID;
     private String nombreCientifico;
 
@@ -44,13 +43,6 @@ public class AnimalDTO {
             EspacioDTO e = new EspacioDTO(animal.getEspaciosID());
             this.espaciosID= e;
         }
-        if(animal.getRatingID() != null){
-            ArrayList<RatingDTO> e = new ArrayList<>();
-            for (int i = 0; i < this.RatingID.size(); i++) {
-                e.add(new RatingDTO(this.RatingID.get(i).toEntity()));
-            }
-            this.RatingID= e;
-        }  
         if(animal.getEmpleadoEntityID() != null){
             EmpleadoDTO e = new EmpleadoDTO(animal.getEmpleadoEntityID());          
             this.EmpleadoEntityID= e;
@@ -73,13 +65,6 @@ public class AnimalDTO {
         }
         if (this.horarioAlimentacionID != null) {
             entity.setHorarioAlimentacionID(this.horarioAlimentacionID.toEntity());
-        }
-        if(this.RatingID != null){
-            ArrayList<RatingEntity> e = new ArrayList<>();
-            for (int i = 0; i < this.RatingID.size(); i++) {
-                e.add(this.RatingID.get(i).toEntity());
-            }
-            entity.setRatingID(e);
         }
         entity.setId(this.AnimalID);
         entity.setNombreCientifico(this.nombreCientifico);
@@ -139,14 +124,6 @@ public class AnimalDTO {
 
     public void setEspaciosID(EspacioDTO espaciosID) {
         this.espaciosID = espaciosID;
-    }
-
-    public List<RatingDTO> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingDTO> RatingID) {
-        this.RatingID = RatingID;
     }
 
     public EmpleadoDTO getEmpleadoEntityID() {

@@ -15,7 +15,6 @@ import java.util.List;
  */
 public class ShowDTO {
     private Long id;
-    private List<RatingDTO> RatingID;
     private EmpleadoDTO empleadoID;
     private AnimalDTO animalID;
     private String espacio;
@@ -28,13 +27,6 @@ public class ShowDTO {
 
     public ShowDTO(ShowEntity show) {
         this.id = show.getId();
-        if(show.getRatingID() != null){
-            ArrayList<RatingDTO> e = new ArrayList<>();
-            for (int i = 0; i < this.RatingID.size(); i++) {
-                e.add(new RatingDTO(this.RatingID.get(i).toEntity()));
-            }
-            this.RatingID= e;
-        } 
         if(show.getEmpleadoID() != null){
             EmpleadoDTO e = new EmpleadoDTO(show.getEmpleadoID());
             this.empleadoID = e;
@@ -72,13 +64,6 @@ public class ShowDTO {
         entity.setEspacio(this.espacio);
         if (this.EspaciosID != null) {
             entity.setEspaciosID(this.EspaciosID.toEntity());
-        }        
-        if(this.RatingID != null){
-            ArrayList<RatingEntity> e = new ArrayList<>();
-            for (int i = 0; i < this.RatingID.size(); i++) {
-                e.add(this.RatingID.get(i).toEntity());
-            }
-            entity.setRatingID(e);
         }
         return entity;
     }
@@ -89,14 +74,6 @@ public class ShowDTO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<RatingDTO> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingDTO> RatingID) {
-        this.RatingID = RatingID;
     }
 
     public EmpleadoDTO getEmpleadoID() {

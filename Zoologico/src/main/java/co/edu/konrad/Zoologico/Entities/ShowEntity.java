@@ -33,9 +33,6 @@ public class ShowEntity implements Serializable {
     /*
     *atributo ratingID
      */ 
-    @OneToMany
-    @JoinColumn(name = "RatingID",nullable=false)
-    private List<RatingEntity> RatingID;
 
     /*
     *atributo EmpleadoID
@@ -71,14 +68,6 @@ public class ShowEntity implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
     }
 
     public EmpleadoEntity getEmpleadoID() {

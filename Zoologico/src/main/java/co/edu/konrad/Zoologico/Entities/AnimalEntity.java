@@ -57,10 +57,6 @@ public class AnimalEntity implements Serializable {
     @OneToOne
     @JoinColumn(name = "espaciosID")
     private EspacioEntity espaciosID;
-   
-    @OneToMany
-    @JoinColumn(name = "RatingID")
-    private List<RatingEntity> RatingID;
 
     @Column(name = "NombreCientifico",nullable=false)
     private String nombreCientifico;
@@ -119,15 +115,6 @@ public class AnimalEntity implements Serializable {
     public void setEspaciosID(EspacioEntity espaciosID) {
         this.espaciosID = espaciosID;
     }
-
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
-    }
-
    
 
     public String getNombreCientifico() {
