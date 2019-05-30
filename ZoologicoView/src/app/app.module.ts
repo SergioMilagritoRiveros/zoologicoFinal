@@ -11,6 +11,8 @@ import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.compon
 import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
+import { ShowComponent } from './formulariosDeCreacion/show/show.component';
+
 
 
 
@@ -31,7 +33,9 @@ import { ShowsViewComponent } from './shows-view/shows-view.component';
     IndexComponent,
     AnimalesViewComponent,
     RatingComponent,
-    ShowsViewComponent
+    ShowsViewComponent,
+    ShowComponent,
+  
     
 
   ],
