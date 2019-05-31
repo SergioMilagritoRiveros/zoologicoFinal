@@ -28,7 +28,7 @@ public class TipoIdentificacionPersistence {
     *Buscar todas las entidades
      */
     public List<TipoIdentificacionEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from TipoIdentificacionEntity ");
+        Query todos = em.createQuery("select p from TipoIdentificacionEntity p");
         return todos.getResultList();
     }
 

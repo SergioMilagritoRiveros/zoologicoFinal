@@ -14,15 +14,15 @@ import java.util.List;
  * @author ArturoC
  */
 public class EspacioDTO {
+
     private Long id;
     private String nombreEspacio;
     private String ubicacion;
     private Boolean disponibilidad;
-    private TipoEspacioEntity tipoEspacioID;
+    private Long tipoEspacioID;
 
     public EspacioDTO() {
     }
-    
 
     public EspacioDTO(EspacioEntity espacio) {
         this.id = espacio.getId();
@@ -30,17 +30,18 @@ public class EspacioDTO {
         this.ubicacion = espacio.getUbicacion();
         this.disponibilidad = espacio.getDisponibilidad();
         this.tipoEspacioID = espacio.getTipoEspacioID();
+
     }
-    
-    public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio){
+
+    public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio) {
         List<EspacioDTO> listaEspacioDTO = new ArrayList<>();
-        for(EspacioEntity entity : listaEspacio){
+        for (EspacioEntity entity : listaEspacio) {
             listaEspacioDTO.add(new EspacioDTO(entity));
         }
         return listaEspacioDTO;
     }
-    
-    public EspacioEntity toEntity(){
+
+    public EspacioEntity toEntity() {
         EspacioEntity entity = new EspacioEntity();
         entity.setDisponibilidad(this.disponibilidad);
         entity.setId(this.id);
@@ -82,14 +83,14 @@ public class EspacioDTO {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioEntity getTipoEspacioID() {
+    public Long getTipoEspacioID() {
         return tipoEspacioID;
     }
 
-    public void setTipoEspacioID(TipoEspacioEntity tipoEspacioID) {
+    public void setTipoEspacioID(Long tipoEspacioID) {
         this.tipoEspacioID = tipoEspacioID;
     }
+
     
-    
-    
+
 }

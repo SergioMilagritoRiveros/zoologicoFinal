@@ -24,19 +24,18 @@ public class EmpleadoEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EmpleadoID")
+    @Column(name = "EmpleadoID",nullable=false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "TipoEmpleadoID")
-    private TipoEmpleadoEntity tipoEmpleadoID;
 
-    @Column(name = "Nombre")
+    @Column(name = "TipoEmpleadoID",nullable=false)
+    private Long tipoEmpleadoID;
+
+    @Column(name = "Nombre",nullable=false)
     private String nombreEmpleado;
 
-    @ManyToOne
-    @JoinColumn(name = "TipoIdentificacionID")
-    private TipoEmpleadoEntity tipoIdentificacionID;
+    @Column(name = "TipoIdentificacionID",nullable=false)
+    private Long tipoIdentificacionID;
 
     @Column(name = "NumeroIdentificacion")
     private long numeroIdentificacion;
@@ -57,24 +56,24 @@ public class EmpleadoEntity implements Serializable {
         return id;
     }
 
-    public TipoEmpleadoEntity getTipoIdentificacionID() {
+    public Long getTipoEmpleadoID() {
+        return tipoEmpleadoID;
+    }
+
+    public void setTipoEmpleadoID(Long tipoEmpleadoID) {
+        this.tipoEmpleadoID = tipoEmpleadoID;
+    }
+
+    public Long getTipoIdentificacionID() {
         return tipoIdentificacionID;
     }
 
-    public void setTipoIdentificacionID(TipoEmpleadoEntity tipoIdentificacionID) {
+    public void setTipoIdentificacionID(Long tipoIdentificacionID) {
         this.tipoIdentificacionID = tipoIdentificacionID;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public TipoEmpleadoEntity getTipoEmpleadoID() {
-        return tipoEmpleadoID;
-    }
-
-    public void setTipoEmpleadoID(TipoEmpleadoEntity tipoEmpleadoID) {
-        this.tipoEmpleadoID = tipoEmpleadoID;
     }
 
     public String getNombreEmpleado() {

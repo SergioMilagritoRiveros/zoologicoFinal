@@ -14,45 +14,43 @@ import java.util.List;
  * @author ArturoC
  */
 public class ShowDTO {
+
     private Long id;
-    private List<RatingEntity> RatingID;
-    private EmpleadoEntity empleadoID;
-    private AnimalEntity animalID;
+    private Long empleadoID;
+    private Long animalID;
     private String espacio;
-    private EspacioEntity EspaciosID;
+    private Long espaciosID;
     private Long cantidad;
 
     public ShowDTO() {
     }
-    
 
     public ShowDTO(ShowEntity show) {
         this.id = show.getId();
-        this.RatingID = show.getRatingID();
         this.empleadoID = show.getEmpleadoID();
         this.animalID = show.getAnimalID();
         this.espacio = show.getEspacio();
-        this.EspaciosID = show.getEspaciosID();
+        this.espaciosID = show.getEspaciosID();
         this.cantidad = show.getCantidad();
     }
-    
-    public static List<ShowDTO> toShowList(List<ShowEntity> listaShow){
+
+    public static List<ShowDTO> toShowList(List<ShowEntity> listaShow) {
         List<ShowDTO> listaShowDTO = new ArrayList<>();
-        for(ShowEntity entity : listaShow){
+        for (ShowEntity entity : listaShow) {
             listaShowDTO.add(new ShowDTO(entity));
         }
         return listaShowDTO;
     }
-    
-    public ShowEntity toEntity(){
+
+    public ShowEntity toEntity() {
         ShowEntity entity = new ShowEntity();
         entity.setId(this.id);
         entity.setAnimalID(this.animalID);
         entity.setCantidad(this.cantidad);
         entity.setEmpleadoID(this.empleadoID);
         entity.setEspacio(this.espacio);
-        entity.setEspaciosID(this.EspaciosID);
-        entity.setRatingID(this.RatingID);
+        entity.setEspaciosID(this.espaciosID);
+
         return entity;
     }
 
@@ -64,28 +62,28 @@ public class ShowDTO {
         this.id = id;
     }
 
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
-    }
-
-    public EmpleadoEntity getEmpleadoID() {
+    public Long getEmpleadoID() {
         return empleadoID;
     }
 
-    public void setEmpleadoID(EmpleadoEntity empleadoID) {
+    public void setEmpleadoID(Long empleadoID) {
         this.empleadoID = empleadoID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public Long getAnimalID() {
         return animalID;
     }
 
-    public void setAnimalID(AnimalEntity animalID) {
+    public void setAnimalID(Long animalID) {
         this.animalID = animalID;
+    }
+
+    public Long getEspaciosID() {
+        return espaciosID;
+    }
+
+    public void setEspaciosID(Long EspaciosID) {
+        this.espaciosID = EspaciosID;
     }
 
     public String getEspacio() {
@@ -96,14 +94,6 @@ public class ShowDTO {
         this.espacio = espacio;
     }
 
-    public EspacioEntity getEspaciosID() {
-        return EspaciosID;
-    }
-
-    public void setEspaciosID(EspacioEntity EspaciosID) {
-        this.EspaciosID = EspaciosID;
-    }
-
     public Long getCantidad() {
         return cantidad;
     }
@@ -111,6 +101,5 @@ public class ShowDTO {
     public void setCantidad(Long cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
+
 }

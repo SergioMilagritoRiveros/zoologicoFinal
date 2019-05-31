@@ -26,48 +26,40 @@ public class AnimalEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "AnimalID")
+    @Column(name = "AnimalID",nullable=false)
     private Long id;
     /*
     *atributo tipo animalID
      */
-    @OneToOne
-    @JoinColumn(name = "tipoAnimalID")
-    private TipoAnimalEntity animal;
+    @Column(name = "tipoAnimalID")
+    private Long animal;
 
     /*
     *atributo cantidad en habitad
      */
-    @Column(name = "CantidadHabitad")
+    @Column(name = "CantidadHabitad",nullable=false)
     private Long cantidadHabitad;
     /*
     *atributo cantidad total
      */
-    @Column(name = "cantidadTotal")
+    @Column(name = "cantidadTotal",nullable=false)
     private Long cantidadTotal;
     /*
     *atributo horario de alimentacionID
      */ 
-    @OneToMany
-    @JoinColumn(name = "HorarioAlimentacionID")
-    private List<HorarioAlimentacionEntity> horarioAlimentacionID;
+    @Column(name = "HorarioAlimentacionID")
+    private Long horarioAlimentacionID;
     /*
     *atributo espaciosID
      */
-    @OneToOne
-    @JoinColumn(name = "espaciosID")
-    private EspacioEntity espaciosID;
-   
-    @OneToMany
-    @JoinColumn(name = "RatingID")
-    private List<RatingEntity> RatingID;
+    @Column(name = "espaciosID")
+    private Long espaciosID;
 
-    @Column(name = "NombreCientifico")
+    @Column(name = "NombreCientifico",nullable=false)
     private String nombreCientifico;
 
-    @ManyToOne
-    @JoinColumn(name="empleadoID")
-    private EmpleadoEntity EmpleadoEntityID;
+    @Column(name="empleadoID",nullable=false)
+    private Long empleadoEntityID;
 
     public Long getId() {
         return id;
@@ -75,17 +67,7 @@ public class AnimalEntity implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public TipoAnimalEntity getAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(TipoAnimalEntity animal) {
-        this.animal = animal;
-    }
-
-   
+    }   
 
     public Long getCantidadHabitad() {
         return cantidadHabitad;
@@ -103,31 +85,41 @@ public class AnimalEntity implements Serializable {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public List<HorarioAlimentacionEntity> getHorarioAlimentacionID() {
+    public Long getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Long animal) {
+        this.animal = animal;
+    }
+
+    public Long getHorarioAlimentacionID() {
         return horarioAlimentacionID;
     }
 
-    public void setHorarioAlimentacionID(List<HorarioAlimentacionEntity> horarioAlimentacionID) {
+    public void setHorarioAlimentacionID(Long horarioAlimentacionID) {
         this.horarioAlimentacionID = horarioAlimentacionID;
     }
-    
-    public EspacioEntity getEspaciosID() {
+
+    public Long getEspaciosID() {
         return espaciosID;
     }
 
-    public void setEspaciosID(EspacioEntity espaciosID) {
+    public void setEspaciosID(Long espaciosID) {
         this.espaciosID = espaciosID;
     }
 
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
+    public Long getEmpleadoEntityID() {
+        return empleadoEntityID;
     }
 
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
+    public void setEmpleadoEntityID(Long empleadoEntityID) {
+        this.empleadoEntityID = empleadoEntityID;
     }
 
    
+
+
 
     public String getNombreCientifico() {
         return nombreCientifico;
@@ -135,14 +127,6 @@ public class AnimalEntity implements Serializable {
 
     public void setNombreCientifico(String nombreCientifico) {
         this.nombreCientifico = nombreCientifico;
-    }
-
-    public EmpleadoEntity getEmpleadoEntityID() {
-        return EmpleadoEntityID;
-    }
-
-    public void setEmpleadoEntityID(EmpleadoEntity EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
     }
 
 

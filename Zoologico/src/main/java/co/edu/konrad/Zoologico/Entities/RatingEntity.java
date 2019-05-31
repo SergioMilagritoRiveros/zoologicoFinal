@@ -19,18 +19,18 @@ public class RatingEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RatingID")
+    @Column(name = "RatingID",nullable=false)
     private Long id;
 
     /*
     *atributo puntuacion
      */
-    @Column(name = "Puntuacion")
+    @Column(name = "Puntuacion",nullable=false)
     private Long puntuacion;
     /*
     *atributo comentario
      */
-    @Column(name = "Comentario")
+    @Column(name = "Comentario",nullable=false)
     private String comentario;
 
     public Long getId() {

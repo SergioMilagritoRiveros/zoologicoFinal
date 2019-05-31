@@ -29,7 +29,7 @@ public class HorarioAlimentacionPersistence {
     *Buscar todas las entidades
      */
     public List<HorarioAlimentacionEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from HorarioAlimentacionEntity ");
+        Query todos = em.createQuery("select p from HorarioAlimentacionEntity p");
         return todos.getResultList();
     }
 

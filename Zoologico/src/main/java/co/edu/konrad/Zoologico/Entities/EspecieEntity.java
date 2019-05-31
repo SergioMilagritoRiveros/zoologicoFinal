@@ -24,13 +24,13 @@ public class EspecieEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EspecieID")
+    @Column(name = "EspecieID",nullable=false)
     private Long id;
     /*
     *atributo especie
      */
-    @Column(name = "Especie")
-    private String Especie;
+    @Column(name = "Especie",nullable=false)
+    private String especie;
 
     public EspecieEntity() {
     }
@@ -44,11 +44,13 @@ public class EspecieEntity implements Serializable {
     }
 
     public String getEspecie() {
-        return Especie;
+        return especie;
     }
 
-    public void setEspecie(String Especie) {
-        this.Especie = Especie;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
+
+    
 
 }

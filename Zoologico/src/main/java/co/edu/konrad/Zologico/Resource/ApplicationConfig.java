@@ -26,6 +26,7 @@ public class ApplicationConfig extends Application{
     
     private void addRestResourceClasses(Set<Class<?>> resources){
         resources.add(co.edu.konrad.Zologico.Resource.AnimalResource.class);
+        resources.add(co.edu.konrad.Zologico.Resource.CORSFilter.class);
         resources.add(co.edu.konrad.Zologico.Resource.EmpleadoResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.EspacioResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.EspecieResource.class);
@@ -38,7 +39,7 @@ public class ApplicationConfig extends Application{
         resources.add(co.edu.konrad.Zologico.Resource.TipoEmpleadoResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.TipoEspacioResource.class);
         resources.add(co.edu.konrad.Zologico.Resource.TipoIdentificacionResource.class);
-        resources.add(co.edu.konrad.Zologico.Resource.ZoologicoResource.class);
+        resources.add(co.edu.konrad.Zologico.Resource.UserResource.class);
     }
 }
 

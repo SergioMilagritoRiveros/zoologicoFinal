@@ -23,13 +23,13 @@ public class TipoIdentificacionEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="TipoIdentificacionID")
+    @Column(name="TipoIdentificacionID",nullable=false)
     private Long id;
     /*
     *atributo tipo identficacion
     */
-    @Column(name="TipoIdentificacion")
-    private String TipoIdentificacion;
+    @Column(name="TipoIdentificacion",nullable=false)
+    private String tipoIdentificacion;
 
     public TipoIdentificacionEntity() {
     }
@@ -43,11 +43,11 @@ public class TipoIdentificacionEntity implements Serializable {
     }
 
     public String getTipoIdentificacion() {
-        return TipoIdentificacion;
+        return tipoIdentificacion;
     }
 
     public void setTipoIdentificacion(String TipoIdentificacion) {
-        this.TipoIdentificacion = TipoIdentificacion;
+        this.tipoIdentificacion = TipoIdentificacion;
     }
 
 

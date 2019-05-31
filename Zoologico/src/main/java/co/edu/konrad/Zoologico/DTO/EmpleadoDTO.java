@@ -15,11 +15,11 @@ import java.util.List;
  * @author ArturoC
  */
 public class EmpleadoDTO {
-    
+
     private Long id;
-    private TipoEmpleadoEntity tipoEmpleadoID;
+    private Long tipoEmpleadoID;
     private String nombreEmpleado;
-    private TipoEmpleadoEntity tipoIdentificacionID;
+    private Long tipoIdentificacionID;
     private long numeroIdentificacion;
     private long numeroTelefono;
     private Date nacimiento;
@@ -28,14 +28,14 @@ public class EmpleadoDTO {
         this.id = empleado.getId();
         this.tipoEmpleadoID = empleado.getTipoEmpleadoID();
         this.nombreEmpleado = empleado.getNombreEmpleado();
-        this.tipoIdentificacionID = empleado.getTipoEmpleadoID();
+        this.tipoIdentificacionID = empleado.getTipoIdentificacionID();
         this.numeroIdentificacion = empleado.getNumeroIdentificacion();
         this.numeroTelefono = empleado.getNumeroTelefono();
         this.nacimiento = empleado.getNacimiento();
     }
-    
-    public  EmpleadoEntity toEntity(){
-         EmpleadoEntity entity = new  EmpleadoEntity();
+
+    public EmpleadoEntity toEntity() {
+        EmpleadoEntity entity = new EmpleadoEntity();
         entity.setId(this.id);
         entity.setNacimiento(this.nacimiento);
         entity.setNombreEmpleado(this.nombreEmpleado);
@@ -45,10 +45,10 @@ public class EmpleadoDTO {
         entity.setTipoIdentificacionID(this.tipoIdentificacionID);
         return entity;
     }
-    
-    public static List<EmpleadoDTO> toEmpleadoList(List<EmpleadoEntity> listaEmpleado){
+
+    public static List<EmpleadoDTO> toEmpleadoList(List<EmpleadoEntity> listaEmpleado) {
         List<EmpleadoDTO> listaEmpleadoDTO = new ArrayList<>();
-        for(EmpleadoEntity entity : listaEmpleado){
+        for (EmpleadoEntity entity : listaEmpleado) {
             listaEmpleadoDTO.add(new EmpleadoDTO(entity));
         }
         return listaEmpleadoDTO;
@@ -62,12 +62,20 @@ public class EmpleadoDTO {
         this.id = id;
     }
 
-    public TipoEmpleadoEntity getTipoEmpleadoID() {
+    public Long getTipoEmpleadoID() {
         return tipoEmpleadoID;
     }
 
-    public void setTipoEmpleadoID(TipoEmpleadoEntity tipoEmpleadoID) {
+    public void setTipoEmpleadoID(Long tipoEmpleadoID) {
         this.tipoEmpleadoID = tipoEmpleadoID;
+    }
+
+    public Long getTipoIdentificacionID() {
+        return tipoIdentificacionID;
+    }
+
+    public void setTipoIdentificacionID(Long tipoIdentificacionID) {
+        this.tipoIdentificacionID = tipoIdentificacionID;
     }
 
     public String getNombreEmpleado() {
@@ -76,14 +84,6 @@ public class EmpleadoDTO {
 
     public void setNombreEmpleado(String nombreEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
-    }
-
-    public TipoEmpleadoEntity getTipoIdentificacionID() {
-        return tipoIdentificacionID;
-    }
-
-    public void setTipoIdentificacionID(TipoEmpleadoEntity tipoIdentificacionID) {
-        this.tipoIdentificacionID = tipoIdentificacionID;
     }
 
     public long getNumeroIdentificacion() {
@@ -109,8 +109,5 @@ public class EmpleadoDTO {
     public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
     }
-    
-    
-    
-    
+
 }

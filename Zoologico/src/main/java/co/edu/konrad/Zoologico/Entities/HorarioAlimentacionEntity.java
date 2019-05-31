@@ -2,14 +2,12 @@
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 /**
  * entidad de horario de alimentacion
@@ -22,19 +20,20 @@ public class HorarioAlimentacionEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="HorarioAlimentacionID")
+    @Column(name="HorarioAlimentacionID",nullable=false)
     private Long id;
     /*
     *atributo hora desayuno
     */
-    @Column(name="HoraDesayuno")
-    private Date horaDesayuno;
+    @Column(name="HoraDesayuno",nullable=false)
+    
+    private String horaDesayuno;
     /*
     *atributo hora comida
     */
-    @Column(name="HoraComida")
-    @Temporal(TemporalType.DATE)
-    private Date horaComida;
+    @Column(name="HoraComida",nullable=false)
+   
+    private String horaComida;
 
     public HorarioAlimentacionEntity() {
     }
@@ -47,20 +46,20 @@ public class HorarioAlimentacionEntity implements Serializable {
         this.id = id;
     }
 
-    public Date getHoraDesayuno() {
+    public String getHoraDesayuno() {
         return horaDesayuno;
     }
 
-    public void setHoraDesayuno(Date horaDesayuno) {
+    public void setHoraDesayuno(String horaDesayuno) {
         this.horaDesayuno = horaDesayuno;
     }
 
-    public Date getHoraComida() {
+    public String getHoraComida() {
         return horaComida;
     }
 
-    public void setHoraComida(Date horaComida) {
+    public void setHoraComida(String horaComida) {
         this.horaComida = horaComida;
     }
-    
+
 }

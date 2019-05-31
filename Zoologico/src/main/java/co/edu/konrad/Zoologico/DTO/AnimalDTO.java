@@ -14,19 +14,18 @@ import java.util.List;
  * @author ArturoC
  */
 public class AnimalDTO {
+
     private Long AnimalID;
-    private TipoAnimalEntity tipoAnimalID;
+    private Long tipoAnimalID;
     private Long cantidadHabitad;
     private Long cantidadTotal;
-    private List<HorarioAlimentacionEntity> horarioAlimentacionID;
-    private EspacioEntity espaciosID;
-    private List<RatingEntity> RatingID;
-    private EmpleadoEntity EmpleadoEntityID;
+    private Long horarioAlimentacionID;
+    private Long espaciosID;
+    private Long empleadoEntityID;
     private String nombreCientifico;
 
     public AnimalDTO() {
     }
-    
 
     public AnimalDTO(AnimalEntity animal) {
         this.AnimalID = animal.getId();
@@ -35,26 +34,26 @@ public class AnimalDTO {
         this.cantidadTotal = animal.getCantidadTotal();
         this.horarioAlimentacionID = animal.getHorarioAlimentacionID();
         this.espaciosID = animal.getEspaciosID();
-        this.RatingID = animal.getRatingID();        
-        this.EmpleadoEntityID = animal.getEmpleadoEntityID();
+        this.empleadoEntityID = animal.getEmpleadoEntityID();
         this.nombreCientifico = animal.getNombreCientifico();
     }
-    
-    public AnimalEntity toEntity(){
+
+    public AnimalEntity toEntity() {
         AnimalEntity entity = new AnimalEntity();
         entity.setAnimal(this.tipoAnimalID);
         entity.setCantidadHabitad(this.cantidadHabitad);
         entity.setCantidadTotal(this.cantidadTotal);
-        entity.setEmpleadoEntityID(this.EmpleadoEntityID);
+        entity.setEmpleadoEntityID(this.empleadoEntityID);
         entity.setEspaciosID(this.espaciosID);
-        entity.setHorarioAlimentacionID(horarioAlimentacionID);
+        entity.setHorarioAlimentacionID(this.horarioAlimentacionID);
         entity.setId(this.AnimalID);
         entity.setNombreCientifico(this.nombreCientifico);
         return entity;
     }
-     public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimal){
+
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimal) {
         List<AnimalDTO> listaAnimalDTO = new ArrayList<>();
-        for(AnimalEntity entity : listaAnimal){
+        for (AnimalEntity entity : listaAnimal) {
             listaAnimalDTO.add(new AnimalDTO(entity));
         }
         return listaAnimalDTO;
@@ -68,12 +67,36 @@ public class AnimalDTO {
         this.AnimalID = AnimalID;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
+    }
+
+    public Long getHorarioAlimentacionID() {
+        return horarioAlimentacionID;
+    }
+
+    public void setHorarioAlimentacionID(Long horarioAlimentacionID) {
+        this.horarioAlimentacionID = horarioAlimentacionID;
+    }
+
+    public Long getEspaciosID() {
+        return espaciosID;
+    }
+
+    public void setEspaciosID(Long espaciosID) {
+        this.espaciosID = espaciosID;
+    }
+
+    public Long getEmpleadoEntityID() {
+        return empleadoEntityID;
+    }
+
+    public void setEmpleadoEntityID(Long EmpleadoEntityID) {
+        this.empleadoEntityID = EmpleadoEntityID;
     }
 
     public Long getCantidadHabitad() {
@@ -92,32 +115,6 @@ public class AnimalDTO {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public List<HorarioAlimentacionEntity> getHorarioAlimentacionID() {
-        return horarioAlimentacionID;
-    }
-
-    public void setHorarioAlimentacionID(List<HorarioAlimentacionEntity> horarioAlimentacionID) {
-        this.horarioAlimentacionID = horarioAlimentacionID;
-    }
-
-    
-
-    public EspacioEntity getEspaciosID() {
-        return espaciosID;
-    }
-
-    public void setEspaciosID(EspacioEntity espaciosID) {
-        this.espaciosID = espaciosID;
-    }
-
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
-    }
-
     public String getNombreCientifico() {
         return nombreCientifico;
     }
@@ -126,17 +123,4 @@ public class AnimalDTO {
         this.nombreCientifico = nombreCientifico;
     }
 
-   
-
-    public EmpleadoEntity getEmpleadoEntityID() {
-        return EmpleadoEntityID;
-    }
-
-    public void setEmpleadoEntityID(EmpleadoEntity EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
-    }
-    
-    
-    
-    
 }

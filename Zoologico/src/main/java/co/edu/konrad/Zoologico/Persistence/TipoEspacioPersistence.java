@@ -28,7 +28,7 @@ public class TipoEspacioPersistence {
     *Buscar todas las entidades
      */
     public List<TipoEspacioEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from TipoEspacioEntity ");
+        Query todos = em.createQuery("select p from TipoEspacioEntity p");
         return todos.getResultList();
     }
 

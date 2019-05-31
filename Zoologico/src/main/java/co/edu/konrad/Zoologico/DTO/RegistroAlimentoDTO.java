@@ -18,8 +18,8 @@ import java.util.List;
 public class RegistroAlimentoDTO {
     private Long id;
     private double cantidadAlimento;
-    private String TipoAlimento;
-    private TipoAnimalEntity tipoAnimalID;
+    private String tipoAlimento;
+    private Long tipoAnimalID;
 
     public RegistroAlimentoDTO() {
     }
@@ -28,7 +28,7 @@ public class RegistroAlimentoDTO {
     public RegistroAlimentoDTO(RegistroAlimentoEntity reg) {
         this.id = reg.getId();
         this.cantidadAlimento = reg.getCantidadAlimento();
-        this.TipoAlimento = reg.getTipoAlimento();
+        this.tipoAlimento = reg.getTipoAlimento();
         this.tipoAnimalID = reg.getTipoAnimalID();
     }
     
@@ -36,7 +36,7 @@ public class RegistroAlimentoDTO {
         RegistroAlimentoEntity entity = new RegistroAlimentoEntity();
         entity.setId(this.id);
         entity.setCantidadAlimento(this.cantidadAlimento);
-        entity.setTipoAlimento(this.TipoAlimento);
+        entity.setTipoAlimento(this.tipoAlimento);
         entity.setTipoAnimalID(this.tipoAnimalID);
         return entity;
     }
@@ -66,20 +66,22 @@ public class RegistroAlimentoDTO {
     }
 
     public String getTipoAlimento() {
-        return TipoAlimento;
+        return tipoAlimento;
     }
 
     public void setTipoAlimento(String TipoAlimento) {
-        this.TipoAlimento = TipoAlimento;
+        this.tipoAlimento = TipoAlimento;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
     }
+
+    
     
     
 }

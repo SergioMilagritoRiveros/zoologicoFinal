@@ -30,7 +30,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/TipoAnimal")  
 public class TipoAnimalResource {
     @EJB
-    private TipoAnimalLogic TipoAnimalLogic;
+    private TipoAnimalLogic tipoAnimalLogic;
 
     /**
      * Metodo que obtiene todos los datos de producto
@@ -38,7 +38,7 @@ public class TipoAnimalResource {
      */
     @GET
     public List<TipoAnimalDTO> getTipoAnimalList(){
-        List <TipoAnimalEntity> TipoAnimal = TipoAnimalLogic.obtenerTipoAnimal();
+        List <TipoAnimalEntity> TipoAnimal = tipoAnimalLogic.obtenerTipoAnimal();
         return TipoAnimalDTO.toTipoAnimalList(TipoAnimal);
     }
     
@@ -50,7 +50,7 @@ public class TipoAnimalResource {
     @GET
     @Path("{id: \\d+}")
     public TipoAnimalDTO getTipoAnimal(@PathParam("id") Long id) throws IllegalAccessException{
-       TipoAnimalEntity TipoAnimal =TipoAnimalLogic.obtenerTipoAnimalPorId(id);
+       TipoAnimalEntity TipoAnimal =tipoAnimalLogic.obtenerTipoAnimalPorId(id);
         if (TipoAnimal == null){
             throw new RuntimeException("El TipoAnimal no existe");
         } 
@@ -59,7 +59,7 @@ public class TipoAnimalResource {
     
     @POST
     public TipoAnimalDTO createProducto(TipoAnimalDTO fdto){ 
-        return new TipoAnimalDTO(TipoAnimalLogic.crearProducto(fdto.toEntity())); 
+        return new TipoAnimalDTO(tipoAnimalLogic.crearProducto(fdto.toEntity())); 
     } 
     
     
@@ -72,20 +72,20 @@ public class TipoAnimalResource {
     @PUT
     @Path("{id: \\d+}")
     public TipoAnimalDTO updateTipoAnimal(@PathParam("id") Long id,TipoAnimalDTO TipoAnimalDTO) throws IllegalAccessException{
-       TipoAnimalEntity TipoAnimalEntity =TipoAnimalLogic.obtenerTipoAnimalPorId(id);
+       TipoAnimalEntity TipoAnimalEntity =tipoAnimalLogic.obtenerTipoAnimalPorId(id);
         if(TipoAnimalEntity == null){
             throw new RuntimeException("El TipoAnimal no existe.");
         }
-        return new TipoAnimalDTO(TipoAnimalLogic.actualizarTipoAnimal(id,TipoAnimalDTO.toEntity()));
+        return new TipoAnimalDTO(tipoAnimalLogic.actualizarTipoAnimal(id,TipoAnimalDTO.toEntity()));
     }
     
     @DELETE
     @Path("{TipoAnimalID: \\d+}")
-    public void deleteShow(@PathParam("ShowID") Long id) throws IllegalAccessException{
-       TipoAnimalEntity TipoAnimalEntity =TipoAnimalLogic.obtenerTipoAnimalPorId(id);
+    public void deleteShow(@PathParam("TipoAnimalID") Long id) throws IllegalAccessException{
+       TipoAnimalEntity TipoAnimalEntity =tipoAnimalLogic.obtenerTipoAnimalPorId(id);
         if(TipoAnimalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+            throw new RuntimeException("El tipoanimal no existe.");
         }
-       TipoAnimalLogic.eliminarTipoAnimal(id);
+       tipoAnimalLogic.eliminarTipoAnimal(id);
     }
 }

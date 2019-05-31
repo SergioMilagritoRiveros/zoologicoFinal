@@ -26,26 +26,24 @@ public class RegistroAlimentoEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="RegistroAlimentoID")
+    @Column(name="RegistroAlimentoID",nullable=false)
     private Long id;
 
      /*
     *atributo cantidad alimento
     */
     
-    @Column(name="CantidadAlimento")
+    @Column(name="CantidadAlimento",nullable=false)
     private double cantidadAlimento;
     
     /*
     *atributo tipo alimento 
     */   
-    @Column(name="TipoAlimentoID")
-    private String TipoAlimento;
-    
-    
-    @ManyToOne  
-    @JoinColumn(name="TipoAnimalID")
-    private TipoAnimalEntity tipoAnimalID;
+    @Column(name="TipoAlimentoID",nullable=false)
+    private String tipoAlimento;
+     
+    @Column(name="TipoAnimalID")
+    private Long tipoAnimalID;
 
     public Long getId() {
         return id;
@@ -64,18 +62,20 @@ public class RegistroAlimentoEntity implements Serializable {
     }
 
     public String getTipoAlimento() {
-        return TipoAlimento;
+        return tipoAlimento;
     }
 
-    public void setTipoAlimento(String TipoAlimento) {
-        this.TipoAlimento = TipoAlimento;
+    public void setTipoAlimento(String tipoAlimento) {
+        this.tipoAlimento = tipoAlimento;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    
+
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
     }
     

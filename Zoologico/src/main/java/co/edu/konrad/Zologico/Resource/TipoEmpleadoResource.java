@@ -11,17 +11,23 @@ import co.edu.konrad.Zoologico.Entities.TipoEmpleadoEntity;
 import co.edu.konrad.Zoologico.Logic.TipoEmpleadoLogic;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
  * @author ArturoC
  */
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@Path("/TipoEmpleado")  
 public class TipoEmpleadoResource {
     @EJB
     private TipoEmpleadoLogic TipoEmpleadoLogic;
@@ -57,12 +63,7 @@ public class TipoEmpleadoResource {
     } 
     
     
-    /**
-     * Actualizar un producto
-     * @param id
-     * @param productoDTO
-     * @return productoDTO actualizado
-     */
+    
     @PUT
     @Path("{id: \\d+}")
     public TipoEmpleadoDTO updateTipoEmpleado(@PathParam("id") Long id,TipoEmpleadoDTO TipoEmpleadoDTO) throws IllegalAccessException{

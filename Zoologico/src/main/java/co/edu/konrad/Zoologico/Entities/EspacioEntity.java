@@ -22,30 +22,29 @@ public class EspacioEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EspacioID")
+    @Column(name = "EspacioID",nullable=false)
     private Long id;
     /*
     *atributo nombre del espacio
      */
-    @Column(name = "nombre_espacio")
+    @Column(name = "nombre_espacio",nullable=false)
     private String nombreEspacio;
     /*
     *atributo ubibcacion
      */
-    @Column(name = "Ubicacion")
+    @Column(name = "Ubicacion",nullable=false)
     private String ubicacion;
     /*
     *atributo disponibilidad
      */
   
-    @Column(name = "Disponibilidad")
+    @Column(name = "Disponibilidad",nullable=false)
     private Boolean disponibilidad;
     /*
     *atributo tipo de espacio
      */
- @ManyToOne
-    @JoinColumn(name = "TipoEspacioID")
-    private TipoEspacioEntity tipoEspacioID;
+    @Column(name = "TipoEspacioID")
+    private Long tipoEspacioID;
 
     public EspacioEntity() {
     }
@@ -82,11 +81,11 @@ public class EspacioEntity implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioEntity getTipoEspacioID() {
+    public Long getTipoEspacioID() {
         return tipoEspacioID;
     }
 
-    public void setTipoEspacioID(TipoEspacioEntity tipoEspacioID) {
+    public void setTipoEspacioID(Long tipoEspacioID) {
         this.tipoEspacioID = tipoEspacioID;
     }
 

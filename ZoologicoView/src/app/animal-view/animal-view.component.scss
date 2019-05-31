@@ -1,0 +1,98 @@
+.logo{
+   
+    width: 3%;
+    margin: 0 0 0 1%
+}
+.contenedorr {
+	height: 250px;
+	margin: auto;
+	width: 250px;
+	-webkit-perspective: 700;
+}
+
+.carta {
+	height: 100%;
+	width: 100%;
+	transition: all 1s;
+	transform-style: preserve-3d;
+	box-shadow: 0px 0px 5px black;
+	
+}
+
+.carta:hover{
+  transform: rotateY(180deg);
+}
+
+.lado{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+   background: #F0F0F0;
+  backface-visibility: hidden;
+}
+
+.frente{ background-color: crimson; }
+.frente h3 {
+   position: absolute;
+   font-size: 38px;
+   margin-top: 200px;
+   color: #fff;
+}
+
+img { height: 100%; width: 100%; }
+ul {
+	padding: 0;
+  margin:0;
+	list-style: none;
+	height: 204px;
+  
+}
+
+li {
+	text-decoration: none;
+	padding: 10px;
+  z-index:80;
+}
+
+
+.atras{
+	height: 100%;
+	width: 100%;
+  transform: rotateY(180deg);
+}
+
+.atras h3 {
+	display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.ec-stars-wrapper {
+	/* Espacio entre los inline-block (los hijos, los `a`) 
+	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+	font-size: 0;
+	/* Podríamos quitarlo, 
+		pero de esta manera (siempre que no le demos padding), 
+		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+		también se esté haciendo hover a alguna estrella */
+	display: inline-block;
+}
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 32px;
+	font-size: 2rem;
+	
+	color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+	color: rgb(39, 130, 228);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888;
+}

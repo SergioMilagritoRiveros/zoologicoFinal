@@ -31,18 +31,26 @@ public class TipoAnimalEntity implements Serializable {
     @Column(name = "TipoAnimalID")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "EspecieID")
-    private EspecieEntity EspecieID;
+    @Column(name = "EspecieID",nullable=false)
+    private Long especieID;
 
-    @ManyToOne
-    @JoinColumn(name = "GeneroID")
-    private GeneroEntity GeneroID;
+    @Column(name = "GeneroID",nullable=false)
+    private Long generoID;
     /*
     *atributo descripcion
      */
-    @Column(name = "Descripciion")
+    @Column(name = "Descripciion",nullable=false)
     private String Descripcion;
+
+    public TipoAnimalEntity() {
+    }
+
+    public TipoAnimalEntity(Long id, Long EspecieID, Long GeneroID, String Descripcion) {
+        this.id = id;
+        this.especieID = EspecieID;
+        this.generoID = GeneroID;
+        this.Descripcion = Descripcion;
+    }
 
     public Long getId() {
         return id;
@@ -52,23 +60,21 @@ public class TipoAnimalEntity implements Serializable {
         this.id = id;
     }
 
-    public EspecieEntity getEspecieID() {
-        return EspecieID;
+    public Long getEspecieID() {
+        return especieID;
     }
 
-    public void setEspecieID(EspecieEntity EspecieID) {
-        this.EspecieID = EspecieID;
+    public void setEspecieID(Long EspecieID) {
+        this.especieID = EspecieID;
     }
 
-    public GeneroEntity getGeneroID() {
-        return GeneroID;
+    public Long getGeneroID() {
+        return generoID;
     }
 
-    public void setGeneroID(GeneroEntity GeneroID) {
-        this.GeneroID = GeneroID;
+    public void setGeneroID(Long GeneroID) {
+        this.generoID = GeneroID;
     }
-
-   
 
     
     public String getDescripcion() {

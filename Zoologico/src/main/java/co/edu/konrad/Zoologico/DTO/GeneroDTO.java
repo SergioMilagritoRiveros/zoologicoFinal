@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class GeneroDTO {
      private Long id;
-    private String Genero;
+    private String genero;
 
     public GeneroDTO() {
     }
@@ -24,12 +24,12 @@ public class GeneroDTO {
 
     public GeneroDTO(GeneroEntity genero) {
         this.id = genero.getId();
-        this.Genero = genero.getGenero();
+        this.genero = genero.getGenero();
     }
     
     public GeneroEntity toEntity(){
         GeneroEntity entity = new GeneroEntity();
-        entity.setGenero(this.Genero);
+        entity.setGenero(this.genero);
         entity.setId(this.id);
         return entity;
     }
@@ -51,11 +51,11 @@ public class GeneroDTO {
     }
 
     public String getGenero() {
-        return Genero;
+        return genero;
     }
 
     public void setGenero(String Genero) {
-        this.Genero = Genero;
+        this.genero = Genero;
     }
     
     

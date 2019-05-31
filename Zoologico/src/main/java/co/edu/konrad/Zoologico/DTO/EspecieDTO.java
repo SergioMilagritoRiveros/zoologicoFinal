@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class EspecieDTO {
     private Long id;
-    private String Especie;
+    private String especie;
 
     public EspecieDTO() {
     }
@@ -23,12 +23,12 @@ public class EspecieDTO {
 
     public EspecieDTO(EspecieEntity especie) {
         this.id = especie.getId();
-        this.Especie = especie.getEspecie();
+        this.especie = especie.getEspecie();
     }
     
     public EspecieEntity toEntity(){
         EspecieEntity entity = new EspecieEntity();
-        entity.setEspecie(this.Especie);
+        entity.setEspecie(this.especie);
         entity.setId(this.id);
         return entity;
     }
@@ -50,11 +50,11 @@ public class EspecieDTO {
     }
 
     public String getEspecie() {
-        return Especie;
+        return especie;
     }
 
     public void setEspecie(String Especie) {
-        this.Especie = Especie;
+        this.especie = Especie;
     }
     
     

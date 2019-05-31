@@ -23,23 +23,23 @@ public class TipoEmpleadoEntity implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="TipoEmpleadoID")
+    @Column(name="TipoEmpleadoID",nullable=false)
     private Long id;
 
      /*
     *atributo horas diarias
     */
-    @Column(name="HorasDiarias")
-    private Long HorasDiarias;
+    @Column(name="HorasDiarias",nullable=false)
+    private Long horasDiarias;
     /*
     *atributo ocupacion
     */
-    @Column(name="Ocupacion")
+    @Column(name="Ocupacion",nullable=false)
     private String Ocupacion;
     /*
     *atributo salario
     */
-    @Column(name="Salario")
+    @Column(name="Salario",nullable=false)
     private double Salario;
 
     public TipoEmpleadoEntity() {
@@ -54,11 +54,11 @@ public class TipoEmpleadoEntity implements Serializable {
     }
 
     public Long getHorasDiarias() {
-        return HorasDiarias;
+        return horasDiarias;
     }
 
     public void setHorasDiarias(Long HorasDiarias) {
-        this.HorasDiarias = HorasDiarias;
+        this.horasDiarias = HorasDiarias;
     }
 
     public String getOcupacion() {

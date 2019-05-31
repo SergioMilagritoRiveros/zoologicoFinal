@@ -17,7 +17,7 @@ import java.util.List;
 public class TipoEspacioDTO {
     private Long id;
     private String nombreEspacio;
-    private String tamaño;
+    private String tamano;
     private Long dsponibilidadPersonas;
 
     public TipoEspacioDTO() {
@@ -27,7 +27,7 @@ public class TipoEspacioDTO {
     public TipoEspacioDTO(TipoEspacioEntity tip) {
         this.id = tip.getId();
         this.nombreEspacio = tip.getNombreEspacio();
-        this.tamaño = tip.getTamaño();
+        this.tamano = tip.getTamano();
         this.dsponibilidadPersonas = tip.getDsponibilidadPersonas();
     }
     
@@ -36,7 +36,7 @@ public class TipoEspacioDTO {
         entity.setId(this.id);
         entity.setDsponibilidadPersonas(this.dsponibilidadPersonas);
         entity.setNombreEspacio(this.nombreEspacio);
-        entity.setTamaño(this.tamaño);
+        entity.setTamano(this.tamano);
         return entity;
     }
     
@@ -64,12 +64,12 @@ public class TipoEspacioDTO {
         this.nombreEspacio = nombreEspacio;
     }
 
-    public String getTamaño() {
-        return tamaño;
+    public String getTamano() {
+        return tamano;
     }
 
-    public void setTamaño(String tamaño) {
-        this.tamaño = tamaño;
+    public void setTamano(String tamano) {
+        this.tamano = tamano;
     }
 
     public Long getDsponibilidadPersonas() {

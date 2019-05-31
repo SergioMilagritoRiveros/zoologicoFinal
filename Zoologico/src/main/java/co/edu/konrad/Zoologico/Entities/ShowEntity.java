@@ -28,27 +28,23 @@ public class ShowEntity implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ShowID")
+    @Column(name = "ShowID",nullable=false)
     private Long id;
     /*
     *atributo ratingID
      */ 
-    @OneToMany
-    @JoinColumn(name = "RatingID")
-    private List<RatingEntity> RatingID;
 
     /*
     *atributo EmpleadoID
      */
-    @ManyToOne
-    @JoinColumn(name = "EmpleadoID")
-    private EmpleadoEntity empleadoID;
+    @Column(name = "EmpleadoID",nullable=false)
+    private Long empleadoID;
 
     /*
     *atributo animalID
-     */@ManyToOne
-    @JoinColumn(name = "AnimalID")
-    private AnimalEntity animalID;
+     */
+    @Column(name = "AnimalID")
+    private Long animalID;
     /*
     *atributo espacio
      */
@@ -56,9 +52,9 @@ public class ShowEntity implements Serializable {
     private String espacio;
     /*
     *atributo espacioID
-     */ @ManyToOne
-    @JoinColumn(name = "EspaciosID")
-    private EspacioEntity EspaciosID;
+     */ 
+    @Column(name = "EspaciosID")
+    private Long espaciosID;
     /*
     *atributo cantidad
      */
@@ -73,31 +69,30 @@ public class ShowEntity implements Serializable {
         this.id = id;
     }
 
-    public List<RatingEntity> getRatingID() {
-        return RatingID;
-    }
-
-    public void setRatingID(List<RatingEntity> RatingID) {
-        this.RatingID = RatingID;
-    }
-
-    public EmpleadoEntity getEmpleadoID() {
+    public Long getEmpleadoID() {
         return empleadoID;
     }
 
-    public void setEmpleadoID(EmpleadoEntity empleadoID) {
+    public void setEmpleadoID(Long empleadoID) {
         this.empleadoID = empleadoID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public Long getAnimalID() {
         return animalID;
     }
 
-    public void setAnimalID(AnimalEntity animalID) {
+    public void setAnimalID(Long animalID) {
         this.animalID = animalID;
     }
 
- 
+    public Long getEspaciosID() {
+        return espaciosID;
+    }
+
+    public void setEspaciosID(Long espaciosID) {
+        this.espaciosID = espaciosID;
+    }
+
 
     public String getEspacio() {
         return espacio;
@@ -105,14 +100,6 @@ public class ShowEntity implements Serializable {
 
     public void setEspacio(String espacio) {
         this.espacio = espacio;
-    }
-
-    public EspacioEntity getEspaciosID() {
-        return EspaciosID;
-    }
-
-    public void setEspaciosID(EspacioEntity EspaciosID) {
-        this.EspaciosID = EspaciosID;
     }
 
     public Long getCantidad() {

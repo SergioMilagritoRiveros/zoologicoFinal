@@ -1,0 +1,119 @@
+<div style="margin-top: 5%;">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
+    style="text-align: center; align-items: center; align-content: center; margin: 3% 0% 3% 3%">Crear Especie</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Crear RegistroAlimento</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [(ngModel)]="idCrear" type="number" class="form-control" id="Id" name="crearid" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">CantidadAlimento:</label>
+              <input [(ngModel)]="cantidadAlimento" type="number" class="form-control" name="crearCantidadAlimento"
+                id="CantidadAlimento">
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAlimento:</label>
+              <input [(ngModel)]="tipoAlimento" type="number" class="form-control" name="crearTipoAlimento"
+                id="TipoAlimento">
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAnimal:</label>
+              <select [(ngModel)]="tipoAnimalCrear" id="TipoAnimal" name="tipoAnimalCrearf"
+                class="browser-default custom-select">
+                <option *ngFor="let item of tipoAnimal" value="{{item.id}}">{{item.tipoAnimal}}</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="actualizar" class="modal fade" role="dialog"
+    style="text-align: center; align-items: center; align-content: center;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Actualizar Especie</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Id:</label>
+              <input [(ngModel)]="idCrear" type="number" class="form-control" id="Id" name="crearid" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pwd">CantidadAlimento:</label>
+              <input [(ngModel)]="cantidadAlimento" type="number" class="form-control" name="crearCantidadAlimento"
+                id="CantidadAlimento">
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAlimento:</label>
+              <input [(ngModel)]="tipoAlimento" type="number" class="form-control" name="crearTipoAlimento"
+                id="TipoAlimento">
+            </div>
+            <div class="form-group">
+              <label for="pwd">TipoAnimal:</label>
+              <select [(ngModel)]="tipoAnimalCrear" id="TipoAnimal" name="tipoAnimalCrearf"
+                class="browser-default custom-select">
+                <option *ngFor="let item of tipoAnimal" value="{{item.id}}">{{item.tipoAnimal}}</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-warning" (click)="actualizar()">Actualizar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="tablex">
+    <table class="table" style="width: 100%; align-content: center; align-items: center; text-align: center;"
+      id="tabla">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">CantidadAlimento</th>
+          <th scope="col">TipoAlimento</th>
+          <th scope="col">TipoAnimal</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of informacion">
+        <th style="color: white">{{item.id}}</th>
+        <th>{{item.cantidadAlimento}}</th>
+        <th>{{item.tipoAlimento}}</th>
+        <th>{{item.tipoAnimalID.descripcion}}</th>
+        <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
+            style="width: 40%">Eliminar</button>
+          <button style="width: 10%;visibility: hidden;" disabled></button>
+          <button type="button" (click)="actualizarFormulario(item.id)" class="btn btn-warning" data-toggle="modal"
+            data-target="#actualizar"
+            style="text-align: center; align-items: center; align-content: center;width: 40%;">Actualizar
+            Especie</button>
+      </tr>
+    </table>
+  </div>
+</div>
