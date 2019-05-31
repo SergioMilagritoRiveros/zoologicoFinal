@@ -29,8 +29,15 @@ export class AnimalService {
 
     return this.http.delete(this.animales + '/' + id);
   }
-  postAnimales(id: number, animales: string) {
-    return this.http.post(this.animales, { animales:animales, id:id });
+  postAnimales(id: number, animales: string,
+    cantidadHabitad:number,cantitadTotal:number,
+    horarioAlimentacion:number,Espacios:number,
+    nombreCientifico:string,empleado:number
+    ) {
+    return this.http.post(this.animales, { id: id, animales: animales,
+      cantidadHabitad:cantidadHabitad,cantitadTotal:cantitadTotal,
+      horarioAlimentacion:horarioAlimentacion,Espacios:Espacios,
+      nombreCientifico:nombreCientifico,empleado:empleado });
   }
   putAnimales(id: number, animales: string) {
     return this.http.put(this.animales + '/' + id, { animales, id });

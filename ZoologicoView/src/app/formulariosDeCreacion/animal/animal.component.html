@@ -110,7 +110,7 @@
             </div>
             <div class="form-group">
               <label for="pwd">HorarioAlimentacion:</label>
-              <select [(ngModel)]="HorarioAlimentacionCrear" id="HorarioAlimentacion"
+              <select [(ngModel)]="HorarioAlimentacionCrear" id="HorarioAlimentacionID"
                 name="horarioAlimentacionActualizarf" class="browser-default custom-select">
                 <option *ngFor="let item of horarioAlimentacion" value="{{item.id}}">{{item.horarioAlimentacion}}
                 </option>
@@ -170,8 +170,17 @@
         <tr *ngFor="let item of informacion">
           <th style="color: white">{{item.id}}</th>
           <th>{{item.descripcion}}</th>
-          <th>{{item.especieID.especie}}</th>
-          <th>{{item.generoID.genero}}</th>
+          <th>
+          <div *ngFor="let item3 of horarioAlimentacion">
+              <th  *ngIf="item3.id==item.HorarioAlimentacionID">{{item3.horarioAlimentacion}}</th>
+          </th>
+         
+          <div *ngFor="let item2 of empleado">
+              <th  *ngIf="item2.id==item.espacio">{{item2.espacio}}</th>
+          </th>
+          <div *ngFor="let item of especie">
+              <th  *ngIf="item.id==item.empleado">{{item.empleado}}</th>
+          </th>
           <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
               style="width: 40%">Eliminar</button>
             <button style="width: 10%;visibility: hidden;" disabled></button>
