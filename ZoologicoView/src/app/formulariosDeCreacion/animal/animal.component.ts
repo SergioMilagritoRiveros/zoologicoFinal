@@ -6,7 +6,7 @@ import { HorarioAlimentacionService } from 'app/services/horarioAlimentacion/hor
 import { EspacioService } from 'app/services/Espacio/espacio.service';
 import { EmpleadoService } from 'app/services/Empleado/empleado.service';
 import { TouchSequence } from 'selenium-webdriver';
-
+declare var $:any;
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.component.html',
@@ -38,11 +38,11 @@ export class AnimalComponent implements OnInit {
       this._horarioAlientacionService.getHorarioAlimentacion().subscribe(data => this.horarioAlimentacion = data);
       this._espaciosService.getEspacios().subscribe(data => this.espacios = data);
       this._empleadoService.getEmpleados().subscribe(data => this.empleado = data);
-      this._animalService.getAnimaless().subscribe(data => {
-        console.log(data);
+      this._animalService.getAnimaless().then((data) => {
+      console.log(data),
         this.informacion = data;
-        this.idCrear = this.informacion.length + 1;
-      });
+        this.idCrear=this.informacion.length+1;
+    });
     }
 }
 eliminar(id: number) {
