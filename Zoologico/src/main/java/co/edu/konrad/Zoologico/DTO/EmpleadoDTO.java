@@ -23,6 +23,9 @@ public class EmpleadoDTO {
     private long numeroTelefono;
     private String nacimiento;
 
+    public EmpleadoDTO() {
+    }
+
     public EmpleadoDTO(EmpleadoEntity empleado) {
         this.id = empleado.getId();
         this.nombreEmpleado = empleado.getNombreEmpleado();
