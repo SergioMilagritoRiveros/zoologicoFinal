@@ -41,11 +41,9 @@ public class RegistroAlimentoEntity implements Serializable {
     */   
     @Column(name="TipoAlimentoID",nullable=false)
     private String TipoAlimento;
-    
-    
-    @ManyToOne  
-    @JoinColumn(name="TipoAnimalID")
-    private TipoAnimalEntity tipoAnimalID;
+     
+    @Column(name="TipoAnimalID")
+    private Long tipoAnimalID;
 
     public Long getId() {
         return id;
@@ -71,11 +69,11 @@ public class RegistroAlimentoEntity implements Serializable {
         this.TipoAlimento = TipoAlimento;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
     }
     

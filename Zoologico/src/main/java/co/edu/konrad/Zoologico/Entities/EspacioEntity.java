@@ -43,9 +43,8 @@ public class EspacioEntity implements Serializable {
     /*
     *atributo tipo de espacio
      */
- @ManyToOne
-    @JoinColumn(name = "TipoEspacioID")
-    private TipoEspacioEntity tipoEspacioID;
+    @Column(name = "TipoEspacioID")
+    private Long tipoEspacioID;
 
     public EspacioEntity() {
     }
@@ -82,11 +81,11 @@ public class EspacioEntity implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioEntity getTipoEspacioID() {
+    public Long getTipoEspacioID() {
         return tipoEspacioID;
     }
 
-    public void setTipoEspacioID(TipoEspacioEntity tipoEspacioID) {
+    public void setTipoEspacioID(Long tipoEspacioID) {
         this.tipoEspacioID = tipoEspacioID;
     }
 

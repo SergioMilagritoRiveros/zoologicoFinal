@@ -37,15 +37,14 @@ public class ShowEntity implements Serializable {
     /*
     *atributo EmpleadoID
      */
-    @ManyToOne
-    @JoinColumn(name = "EmpleadoID",nullable=false)
-    private EmpleadoEntity empleadoID;
+    @Column(name = "EmpleadoID",nullable=false)
+    private Long empleadoID;
 
     /*
     *atributo animalID
-     */@ManyToOne
-    @JoinColumn(name = "AnimalID")
-    private AnimalEntity animalID;
+     */
+    @Column(name = "AnimalID")
+    private Long animalID;
     /*
     *atributo espacio
      */
@@ -53,9 +52,9 @@ public class ShowEntity implements Serializable {
     private String espacio;
     /*
     *atributo espacioID
-     */ @ManyToOne
-    @JoinColumn(name = "EspaciosID")
-    private EspacioEntity EspaciosID;
+     */ 
+    @Column(name = "EspaciosID")
+    private Long EspaciosID;
     /*
     *atributo cantidad
      */
@@ -70,23 +69,30 @@ public class ShowEntity implements Serializable {
         this.id = id;
     }
 
-    public EmpleadoEntity getEmpleadoID() {
+    public Long getEmpleadoID() {
         return empleadoID;
     }
 
-    public void setEmpleadoID(EmpleadoEntity empleadoID) {
+    public void setEmpleadoID(Long empleadoID) {
         this.empleadoID = empleadoID;
     }
 
-    public AnimalEntity getAnimalID() {
+    public Long getAnimalID() {
         return animalID;
     }
 
-    public void setAnimalID(AnimalEntity animalID) {
+    public void setAnimalID(Long animalID) {
         this.animalID = animalID;
     }
 
- 
+    public Long getEspaciosID() {
+        return EspaciosID;
+    }
+
+    public void setEspaciosID(Long EspaciosID) {
+        this.EspaciosID = EspaciosID;
+    }
+
 
     public String getEspacio() {
         return espacio;
@@ -94,14 +100,6 @@ public class ShowEntity implements Serializable {
 
     public void setEspacio(String espacio) {
         this.espacio = espacio;
-    }
-
-    public EspacioEntity getEspaciosID() {
-        return EspaciosID;
-    }
-
-    public void setEspaciosID(EspacioEntity EspaciosID) {
-        this.EspaciosID = EspaciosID;
     }
 
     public Long getCantidad() {
