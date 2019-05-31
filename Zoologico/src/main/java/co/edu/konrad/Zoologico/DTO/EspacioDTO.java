@@ -14,43 +14,39 @@ import java.util.List;
  * @author ArturoC
  */
 public class EspacioDTO {
+
     private Long id;
     private String nombreEspacio;
     private String ubicacion;
     private Boolean disponibilidad;
-    private TipoEspacioDTO tipoEspacioID;
+    private Long tipoEspacioID;
 
     public EspacioDTO() {
     }
-    
 
     public EspacioDTO(EspacioEntity espacio) {
         this.id = espacio.getId();
         this.nombreEspacio = espacio.getNombreEspacio();
         this.ubicacion = espacio.getUbicacion();
         this.disponibilidad = espacio.getDisponibilidad();
-        if(espacio.getTipoEspacioID() != null){
-            TipoEspacioDTO e = new TipoEspacioDTO(espacio.getTipoEspacioID());
-            this.tipoEspacioID = e;
-        }
+        this.tipoEspacioID = espacio.getTipoEspacioID();
+
     }
-    
-    public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio){
+
+    public static List<EspacioDTO> toEspacioList(List<EspacioEntity> listaEspacio) {
         List<EspacioDTO> listaEspacioDTO = new ArrayList<>();
-        for(EspacioEntity entity : listaEspacio){
+        for (EspacioEntity entity : listaEspacio) {
             listaEspacioDTO.add(new EspacioDTO(entity));
         }
         return listaEspacioDTO;
     }
-    
-    public EspacioEntity toEntity(){
+
+    public EspacioEntity toEntity() {
         EspacioEntity entity = new EspacioEntity();
         entity.setDisponibilidad(this.disponibilidad);
         entity.setId(this.id);
         entity.setNombreEspacio(this.nombreEspacio);
-        if (this.tipoEspacioID != null) {
-            entity.setTipoEspacioID(this.tipoEspacioID.toEntity());
-        }
+        entity.setTipoEspacioID(this.tipoEspacioID);
         entity.setUbicacion(this.ubicacion);
         return entity;
     }
@@ -87,16 +83,14 @@ public class EspacioDTO {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoEspacioDTO getTipoEspacioID() {
+    public Long getTipoEspacioID() {
         return tipoEspacioID;
     }
 
-    public void setTipoEspacioID(TipoEspacioDTO tipoEspacioID) {
+    public void setTipoEspacioID(Long tipoEspacioID) {
         this.tipoEspacioID = tipoEspacioID;
     }
 
     
-    
-    
-    
+
 }

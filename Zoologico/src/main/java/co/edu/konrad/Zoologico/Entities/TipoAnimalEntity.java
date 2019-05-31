@@ -32,7 +32,7 @@ public class TipoAnimalEntity implements Serializable {
     private Long id;
 
     @Column(name = "EspecieID",nullable=false)
-    private EspecieEntity EspecieID;
+    private Long EspecieID;
 
     @Column(name = "GeneroID",nullable=false)
     private Long GeneroID;
@@ -45,7 +45,7 @@ public class TipoAnimalEntity implements Serializable {
     public TipoAnimalEntity() {
     }
 
-    public TipoAnimalEntity(Long id, EspecieEntity EspecieID, Long GeneroID, String Descripcion) {
+    public TipoAnimalEntity(Long id, Long EspecieID, Long GeneroID, String Descripcion) {
         this.id = id;
         this.EspecieID = EspecieID;
         this.GeneroID = GeneroID;
@@ -60,11 +60,11 @@ public class TipoAnimalEntity implements Serializable {
         this.id = id;
     }
 
-    public EspecieEntity getEspecieID() {
+    public Long getEspecieID() {
         return EspecieID;
     }
 
-    public void setEspecieID(EspecieEntity EspecieID) {
+    public void setEspecieID(Long EspecieID) {
         this.EspecieID = EspecieID;
     }
 

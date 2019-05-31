@@ -19,7 +19,7 @@ public class RegistroAlimentoDTO {
     private Long id;
     private double cantidadAlimento;
     private String TipoAlimento;
-    private TipoAnimalEntity tipoAnimalID;
+    private Long tipoAnimalID;
 
     public RegistroAlimentoDTO() {
     }
@@ -73,13 +73,15 @@ public class RegistroAlimentoDTO {
         this.TipoAlimento = TipoAlimento;
     }
 
-    public TipoAnimalEntity getTipoAnimalID() {
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalEntity tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
     }
+
+    
     
     
 }

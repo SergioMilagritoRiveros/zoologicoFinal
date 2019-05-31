@@ -14,57 +14,43 @@ import java.util.List;
  * @author ArturoC
  */
 public class ShowDTO {
+
     private Long id;
-    private EmpleadoDTO empleadoID;
-    private AnimalDTO animalID;
+    private Long empleadoID;
+    private Long animalID;
     private String espacio;
-    private EspacioDTO EspaciosID;
+    private Long EspaciosID;
     private Long cantidad;
 
     public ShowDTO() {
     }
-    
 
     public ShowDTO(ShowEntity show) {
         this.id = show.getId();
-        if(show.getEmpleadoID() != null){
-            EmpleadoDTO e = new EmpleadoDTO(show.getEmpleadoID());
-            this.empleadoID = e;
-        }
-        if(show.getAnimalID() != null){
-            AnimalDTO e = new AnimalDTO(show.getAnimalID());
-            this.animalID= e;
-        }
+        this.empleadoID = show.getEmpleadoID();
+        this.animalID = show.getAnimalID();
         this.espacio = show.getEspacio();
-        if(show.getEspaciosID() != null){
-            EspacioDTO e = new EspacioDTO(show.getEspaciosID());
-            this.EspaciosID= e;
-        }
+        this.EspaciosID = show.getEspaciosID();
         this.cantidad = show.getCantidad();
     }
-    
-    public static List<ShowDTO> toShowList(List<ShowEntity> listaShow){
+
+    public static List<ShowDTO> toShowList(List<ShowEntity> listaShow) {
         List<ShowDTO> listaShowDTO = new ArrayList<>();
-        for(ShowEntity entity : listaShow){
+        for (ShowEntity entity : listaShow) {
             listaShowDTO.add(new ShowDTO(entity));
         }
         return listaShowDTO;
     }
-    
-    public ShowEntity toEntity(){
+
+    public ShowEntity toEntity() {
         ShowEntity entity = new ShowEntity();
         entity.setId(this.id);
-        if (this.animalID != null) {
-            entity.setAnimalID(this.animalID.toEntity());
-        }
+        entity.setAnimalID(this.animalID);
         entity.setCantidad(this.cantidad);
-        if (this.empleadoID != null) {
-            entity.setEmpleadoID(this.empleadoID.toEntity());
-        }
+        entity.setEmpleadoID(this.empleadoID);
         entity.setEspacio(this.espacio);
-        if (this.EspaciosID != null) {
-            entity.setEspaciosID(this.EspaciosID.toEntity());
-        }
+        entity.setEspaciosID(this.EspaciosID);
+
         return entity;
     }
 
@@ -76,27 +62,27 @@ public class ShowDTO {
         this.id = id;
     }
 
-    public EmpleadoDTO getEmpleadoID() {
+    public Long getEmpleadoID() {
         return empleadoID;
     }
 
-    public void setEmpleadoID(EmpleadoDTO empleadoID) {
+    public void setEmpleadoID(Long empleadoID) {
         this.empleadoID = empleadoID;
     }
 
-    public AnimalDTO getAnimalID() {
+    public Long getAnimalID() {
         return animalID;
     }
 
-    public void setAnimalID(AnimalDTO animalID) {
+    public void setAnimalID(Long animalID) {
         this.animalID = animalID;
     }
 
-    public EspacioDTO getEspaciosID() {
+    public Long getEspaciosID() {
         return EspaciosID;
     }
 
-    public void setEspaciosID(EspacioDTO EspaciosID) {
+    public void setEspaciosID(Long EspaciosID) {
         this.EspaciosID = EspaciosID;
     }
 
@@ -115,6 +101,5 @@ public class ShowDTO {
     public void setCantidad(Long cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
+
 }

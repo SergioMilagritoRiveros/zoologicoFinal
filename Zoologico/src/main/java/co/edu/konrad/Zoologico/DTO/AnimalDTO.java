@@ -14,65 +14,46 @@ import java.util.List;
  * @author ArturoC
  */
 public class AnimalDTO {
+
     private Long AnimalID;
-    private TipoAnimalDTO tipoAnimalID;
+    private Long tipoAnimalID;
     private Long cantidadHabitad;
     private Long cantidadTotal;
-    private HorarioAlimentacionDTO horarioAlimentacionID;
-    private EspacioDTO espaciosID;
-    private EmpleadoDTO EmpleadoEntityID;
+    private Long horarioAlimentacionID;
+    private Long espaciosID;
+    private Long EmpleadoEntityID;
     private String nombreCientifico;
 
     public AnimalDTO() {
     }
-    
 
     public AnimalDTO(AnimalEntity animal) {
         this.AnimalID = animal.getId();
-        if(animal.getAnimal() != null){
-            TipoAnimalDTO e = new TipoAnimalDTO(animal.getAnimal());
-            this.tipoAnimalID = e;
-        }
+        this.tipoAnimalID = animal.getAnimal();
         this.cantidadHabitad = animal.getCantidadHabitad();
         this.cantidadTotal = animal.getCantidadTotal();
-        if(animal.getHorarioAlimentacionID() != null){
-             HorarioAlimentacionDTO e = new  HorarioAlimentacionDTO(animal.getHorarioAlimentacionID());
-            this.horarioAlimentacionID= e;
-        }
-        if(animal.getEspaciosID() != null){
-            EspacioDTO e = new EspacioDTO(animal.getEspaciosID());
-            this.espaciosID= e;
-        }
-        if(animal.getEmpleadoEntityID() != null){
-            EmpleadoDTO e = new EmpleadoDTO(animal.getEmpleadoEntityID());          
-            this.EmpleadoEntityID= e;
-        }
+        this.horarioAlimentacionID = animal.getHorarioAlimentacionID();
+        this.espaciosID = animal.getEspaciosID();
+        this.EmpleadoEntityID = animal.getEmpleadoEntityID();
         this.nombreCientifico = animal.getNombreCientifico();
     }
-    
-    public AnimalEntity toEntity(){
+
+    public AnimalEntity toEntity() {
         AnimalEntity entity = new AnimalEntity();
-        if (this.tipoAnimalID != null) {
-            entity.setAnimal(this.tipoAnimalID.toEntity());
-        }
+        entity.setAnimal(this.tipoAnimalID);
         entity.setCantidadHabitad(this.cantidadHabitad);
         entity.setCantidadTotal(this.cantidadTotal);
-        if (this.EmpleadoEntityID != null) {
-            entity.setEmpleadoEntityID(this.EmpleadoEntityID.toEntity());
-        }
-        if (this.espaciosID != null) {
-            entity.setEspaciosID(this.espaciosID.toEntity());
-        }
-        if (this.horarioAlimentacionID != null) {
-            entity.setHorarioAlimentacionID(this.horarioAlimentacionID.toEntity());
-        }
+        entity.setEmpleadoEntityID(this.EmpleadoEntityID);
+        entity.setEspaciosID(this.espaciosID);
+        entity.setHorarioAlimentacionID(this.horarioAlimentacionID);
         entity.setId(this.AnimalID);
         entity.setNombreCientifico(this.nombreCientifico);
         return entity;
     }
-     public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimal){
+
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimal) {
         List<AnimalDTO> listaAnimalDTO = new ArrayList<>();
-        for(AnimalEntity entity : listaAnimal){
+        for (AnimalEntity entity : listaAnimal) {
             listaAnimalDTO.add(new AnimalDTO(entity));
         }
         return listaAnimalDTO;
@@ -86,12 +67,36 @@ public class AnimalDTO {
         this.AnimalID = AnimalID;
     }
 
-    public TipoAnimalDTO getTipoAnimalID() {
+    public Long getTipoAnimalID() {
         return tipoAnimalID;
     }
 
-    public void setTipoAnimalID(TipoAnimalDTO tipoAnimalID) {
+    public void setTipoAnimalID(Long tipoAnimalID) {
         this.tipoAnimalID = tipoAnimalID;
+    }
+
+    public Long getHorarioAlimentacionID() {
+        return horarioAlimentacionID;
+    }
+
+    public void setHorarioAlimentacionID(Long horarioAlimentacionID) {
+        this.horarioAlimentacionID = horarioAlimentacionID;
+    }
+
+    public Long getEspaciosID() {
+        return espaciosID;
+    }
+
+    public void setEspaciosID(Long espaciosID) {
+        this.espaciosID = espaciosID;
+    }
+
+    public Long getEmpleadoEntityID() {
+        return EmpleadoEntityID;
+    }
+
+    public void setEmpleadoEntityID(Long EmpleadoEntityID) {
+        this.EmpleadoEntityID = EmpleadoEntityID;
     }
 
     public Long getCantidadHabitad() {
@@ -110,30 +115,6 @@ public class AnimalDTO {
         this.cantidadTotal = cantidadTotal;
     }
 
-    public HorarioAlimentacionDTO getHorarioAlimentacionID() {
-        return horarioAlimentacionID;
-    }
-
-    public void setHorarioAlimentacionID(HorarioAlimentacionDTO horarioAlimentacionID) {
-        this.horarioAlimentacionID = horarioAlimentacionID;
-    }
-
-    public EspacioDTO getEspaciosID() {
-        return espaciosID;
-    }
-
-    public void setEspaciosID(EspacioDTO espaciosID) {
-        this.espaciosID = espaciosID;
-    }
-
-    public EmpleadoDTO getEmpleadoEntityID() {
-        return EmpleadoEntityID;
-    }
-
-    public void setEmpleadoEntityID(EmpleadoDTO EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
-    }
-
     public String getNombreCientifico() {
         return nombreCientifico;
     }
@@ -142,7 +123,4 @@ public class AnimalDTO {
         this.nombreCientifico = nombreCientifico;
     }
 
-        
-    
-    
 }

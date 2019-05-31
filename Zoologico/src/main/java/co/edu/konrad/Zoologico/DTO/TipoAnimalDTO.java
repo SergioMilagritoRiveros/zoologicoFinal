@@ -14,44 +14,35 @@ import java.util.List;
  * @author ArturoC
  */
 public class TipoAnimalDTO {
-    private Long id; 
-    private EspecieDTO EspecieID;
-    private GeneroDTO GeneroID;
+
+    private Long id;
+    private Long EspecieID;
+    private Long GeneroID;
     private String Descripcion;
 
     public TipoAnimalDTO() {
     }
-    
 
     public TipoAnimalDTO(TipoAnimalEntity tip) {
         this.id = tip.getId();
-        if(tip.getEspecieID() != null){
-            EspecieDTO e = new EspecieDTO();
-            this.EspecieID = e;
-        }
-        if (tip.getGeneroID() != null) {
-            GeneroDTO e = new GeneroDTO();
-            this.GeneroID = e;
-        }        
+        this.EspecieID = tip.getEspecieID();
+        this.GeneroID = tip.getGeneroID();
         this.Descripcion = tip.getDescripcion();
     }
-    
-    public TipoAnimalEntity toEntity(){
+
+    public TipoAnimalEntity toEntity() {
         TipoAnimalEntity entity = new TipoAnimalEntity();
         entity.setId(this.id);
         entity.setDescripcion(this.Descripcion);
-        if (this.EspecieID != null) {
-            entity.setEspecieID(this.EspecieID.toEntity());
-        }
-        if (this.GeneroID != null) {
-            entity.setGeneroID(this.GeneroID.toEntity());
-        }
+        entity.setEspecieID(this.EspecieID);
+        entity.setGeneroID(this.GeneroID);
+
         return entity;
     }
-    
-    public static List<TipoAnimalDTO> toTipoAnimalList(List<TipoAnimalEntity> listaTipoAnimal){
+
+    public static List<TipoAnimalDTO> toTipoAnimalList(List<TipoAnimalEntity> listaTipoAnimal) {
         List<TipoAnimalDTO> listaTipoAnimalDTO = new ArrayList<>();
-        for(TipoAnimalEntity entity : listaTipoAnimal){
+        for (TipoAnimalEntity entity : listaTipoAnimal) {
             listaTipoAnimalDTO.add(new TipoAnimalDTO(entity));
         }
         return listaTipoAnimalDTO;
@@ -65,21 +56,24 @@ public class TipoAnimalDTO {
         this.id = id;
     }
 
-    public EspecieDTO getEspecieID() {
+    public Long getEspecieID() {
         return EspecieID;
     }
 
-    public void setEspecieID(EspecieDTO EspecieID) {
+    public void setEspecieID(Long EspecieID) {
         this.EspecieID = EspecieID;
     }
 
-    public GeneroDTO getGeneroID() {
+    public Long getGeneroID() {
         return GeneroID;
     }
 
-    public void setGeneroID(GeneroDTO GeneroID) {
+    public void setGeneroID(Long GeneroID) {
         this.GeneroID = GeneroID;
     }
+
+    
+    
 
     public String getDescripcion() {
         return Descripcion;
@@ -89,9 +83,4 @@ public class TipoAnimalDTO {
         this.Descripcion = Descripcion;
     }
 
-   
-
-    
-    
-    
 }
