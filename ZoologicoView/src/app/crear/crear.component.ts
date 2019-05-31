@@ -18,6 +18,7 @@ export const CREAR: RouteInfo[] = [
   { path: '/registroAlimento', title: 'Registro Alimento', icon: 'backup', class: '' },
   { path: '/espacio', title: 'Espacio', icon: 'backup', class: '' },
   { path: '/empleado', title: 'Empleado', icon: 'backup', class: '' },
+  { path: '/animal', title: 'Animal', icon: 'backup', class: '' },
 ];
 @Component({
   selector: 'app-crear',

@@ -30,17 +30,13 @@
               <label for="email"> Ubicacion:</label>
               <input [(ngModel)]="ubicacionCrear" type="text" class="form-control" id="Ubicacion" name="ubicacioncrearf">
             </div>
-            <div class="form-group">
-              <label for="pwd">Disponibilidad:</label>
-              <input [(ngModel)]="descripcionCrear" name="descripcionCrearf" type="text" class="form-control"
-                id="Descripcion">
-            </div>
+            
 
             <div class="form-group">
               <label for="pwd">TipoEspacio:</label>
               <select [(ngModel)]="tipoEspacioCrear" id="tipoEspacio" name="especieCrearf"
                 class="browser-default custom-select">
-                <option *ngFor="let item of especie" value="{{item.id}}">{{item.especie}}</option>
+                <option *ngFor="let item of tipoespaciolist" value="{{item.id}}">{{item.nombreEspacio}}</option>
               </select>
             </div>
             <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
@@ -110,7 +106,7 @@
           <th scope="col">#</th>
           <th scope="col">NombreEspacio</th>
           <th scope="col">Ubicacion</th>
-          <th scope="col">Disponibilidad</th>
+          
           <th scope="col">TipoEspacio</th>
           <th scope="col">Opciones</th>
         </tr>
@@ -119,8 +115,11 @@
         <th>{{item.id}}</th>
         <th>{{item.nombreEspacio}}</th>
         <th>{{item.ubicacion}}</th>
-        <th>{{item.disponibilidad}}</th>
-        <th>{{item.TipoEspacioID.tipoEspacio}}</th>
+        <th>
+          <div *ngFor="let item3 of tipoespaciolist">
+            <th *ngIf="item3.id==item.tipoEspacioID">{{item3.nombreEspacio}}</th>
+          </div>
+        </th>
         <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
             style="width: 40%">Eliminar</button>
           <button style="width: 10%;visibility: hidden;" disabled></button>

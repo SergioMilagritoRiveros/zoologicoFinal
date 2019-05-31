@@ -18,7 +18,7 @@ public class EspacioDTO {
     private Long id;
     private String nombreEspacio;
     private String ubicacion;
-    private Boolean disponibilidad;
+
     private Long tipoEspacioID;
 
     public EspacioDTO() {
@@ -28,7 +28,7 @@ public class EspacioDTO {
         this.id = espacio.getId();
         this.nombreEspacio = espacio.getNombreEspacio();
         this.ubicacion = espacio.getUbicacion();
-        this.disponibilidad = espacio.getDisponibilidad();
+        
         this.tipoEspacioID = espacio.getTipoEspacioID();
 
     }
@@ -43,7 +43,7 @@ public class EspacioDTO {
 
     public EspacioEntity toEntity() {
         EspacioEntity entity = new EspacioEntity();
-        entity.setDisponibilidad(this.disponibilidad);
+      
         entity.setId(this.id);
         entity.setNombreEspacio(this.nombreEspacio);
         entity.setTipoEspacioID(this.tipoEspacioID);
@@ -75,13 +75,7 @@ public class EspacioDTO {
         this.ubicacion = ubicacion;
     }
 
-    public Boolean getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(Boolean disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
+   
 
     public Long getTipoEspacioID() {
         return tipoEspacioID;
