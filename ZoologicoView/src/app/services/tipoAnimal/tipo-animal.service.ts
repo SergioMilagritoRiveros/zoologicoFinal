@@ -21,10 +21,10 @@ deleteTipoAnimal (id: number) {
   
   return this.http.delete(this.tipoAnimal+'/'+id);
 }
-postTipoAnimal(tipoanimaldesc:TipoAnimal){
+postTipoAnimal(descripcion: string, especieID: number, generoID: number, id: number){
   
-  console.log('objeto: ',tipoanimaldesc);
-  return this.http.post(this.tipoAnimal,tipoanimaldesc);
+  console.log('objeto: ',{descripcion: descripcion, especieID: especieID, generoID: generoID, id: id});
+  return this.http.post(this.tipoAnimal,{descripcion: descripcion, especieID: especieID, generoID: generoID, id: id});
 }
 putTipoAnimal(id:number, tipoAnimal:string){
   return this.http.put(this.tipoAnimal+'/'+id,{tipoAnimal,id});

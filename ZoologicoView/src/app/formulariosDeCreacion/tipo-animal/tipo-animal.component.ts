@@ -21,8 +21,8 @@ export class TipoAnimalComponent implements OnInit {
   descripcionCrear: string = '';
   especieCrear: number;
   generoCrear: number;
-  especieDesc: any;
-  generoDesc: any;
+  especieDesc: number;
+  generoDesc: number;
   constructor(private _tipoAnimalService: TipoAnimalService, private _especieService: EspecieService, private _generoService: GeneroService, private _UserService: UserService, private router: Router) { }
 
   ngOnInit() {
@@ -44,33 +44,19 @@ export class TipoAnimalComponent implements OnInit {
     });
   }
   crear() {
-    var tipoanimalID: number = this.idCrear;
-    var tipoAnimalDesc: string = this.descripcionCrear;
+    
 
-    this._especieService.getEspeciesid(this.especieCrear).subscribe(data => {
-
-      this.especieDesc = data;
-      this._generoService.getGenerosid(this.generoCrear).subscribe(data2 => {
-        this.generoDesc = data2;
-        console.log('especie', this.especieDesc, 'genero', this.generoDesc)
-        this._tipoAnimalService.postTipoAnimal({
-          Descripcion: tipoAnimalDesc,
-          EspecieID: this.especieDesc,
-          GeneroID: this.generoDesc,
-          id: this.idCrear
-        }).subscribe(data => {
+        this._tipoAnimalService.postTipoAnimal(this.descripcionCrear,this.especieCrear, this.generoCrear,this.idCrear).subscribe(data => {
 
           this.ngOnInit();
           $('#tablex').load();
           $('#createFormulario').load();
         });
-      });
-
-    });
+     
 
 
 
-    console.log('objeto: { descripcion:' + tipoAnimalDesc + ', especieID: {Especie: ' + this.especieDesc.especie + ', id:' + this.especieDesc.id + ' }')
+  
 
 
   }
@@ -79,5 +65,9 @@ export class TipoAnimalComponent implements OnInit {
   }
   actualizar() {
 
+  }
+  generodesc(id:number){
+    
+    return this.genero;
   }
 }

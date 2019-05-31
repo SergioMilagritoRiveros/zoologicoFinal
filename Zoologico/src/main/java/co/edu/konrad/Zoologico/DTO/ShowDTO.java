@@ -19,7 +19,7 @@ public class ShowDTO {
     private Long empleadoID;
     private Long animalID;
     private String espacio;
-    private Long EspaciosID;
+    private Long espaciosID;
     private Long cantidad;
 
     public ShowDTO() {
@@ -30,7 +30,7 @@ public class ShowDTO {
         this.empleadoID = show.getEmpleadoID();
         this.animalID = show.getAnimalID();
         this.espacio = show.getEspacio();
-        this.EspaciosID = show.getEspaciosID();
+        this.espaciosID = show.getEspaciosID();
         this.cantidad = show.getCantidad();
     }
 
@@ -49,7 +49,7 @@ public class ShowDTO {
         entity.setCantidad(this.cantidad);
         entity.setEmpleadoID(this.empleadoID);
         entity.setEspacio(this.espacio);
-        entity.setEspaciosID(this.EspaciosID);
+        entity.setEspaciosID(this.espaciosID);
 
         return entity;
     }
@@ -79,11 +79,11 @@ public class ShowDTO {
     }
 
     public Long getEspaciosID() {
-        return EspaciosID;
+        return espaciosID;
     }
 
     public void setEspaciosID(Long EspaciosID) {
-        this.EspaciosID = EspaciosID;
+        this.espaciosID = EspaciosID;
     }
 
     public String getEspacio() {

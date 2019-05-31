@@ -30,7 +30,7 @@ public class GeneroEntity implements Serializable {
     *atributo tipo genero
     */
     @Column(name="Genero",nullable=false)
-    private String Genero;
+    private String genero;
 
     public GeneroEntity() {
     }
@@ -44,11 +44,12 @@ public class GeneroEntity implements Serializable {
     }
 
     public String getGenero() {
-        return Genero;
+        return genero;
     }
 
-    public void setGenero(String Genero) {
-        this.Genero = Genero;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
-    
+
+   
 }

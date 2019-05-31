@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class TipoEmpleadoDTO {
     private Long id;
-    private Long HorasDiarias;
+    private Long horasDiarias;
     private String Ocupacion;
     private double Salario;
 
@@ -25,7 +25,7 @@ public class TipoEmpleadoDTO {
 
     public TipoEmpleadoDTO(TipoEmpleadoEntity tip) {
         this.id = tip.getId();
-        this.HorasDiarias = tip.getHorasDiarias();
+        this.horasDiarias = tip.getHorasDiarias();
         this.Ocupacion = tip.getOcupacion();
         this.Salario = tip.getSalario();
     }
@@ -33,7 +33,7 @@ public class TipoEmpleadoDTO {
     public TipoEmpleadoEntity toEntity(){
        TipoEmpleadoEntity entity = new TipoEmpleadoEntity();
         entity.setId(this.id);
-        entity.setHorasDiarias(this.HorasDiarias);
+        entity.setHorasDiarias(this.horasDiarias);
         entity.setOcupacion(this.Ocupacion);
         entity.setSalario(this.Salario);
         return entity;
@@ -56,11 +56,11 @@ public class TipoEmpleadoDTO {
     }
 
     public Long getHorasDiarias() {
-        return HorasDiarias;
+        return horasDiarias;
     }
 
     public void setHorasDiarias(Long HorasDiarias) {
-        this.HorasDiarias = HorasDiarias;
+        this.horasDiarias = HorasDiarias;
     }
 
     public String getOcupacion() {

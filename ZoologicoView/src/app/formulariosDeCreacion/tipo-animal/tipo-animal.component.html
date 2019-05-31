@@ -109,8 +109,14 @@
       <tr *ngFor="let item of informacion">
         <th style="color: white">{{item.id}}</th>
         <th>{{item.descripcion}}</th>
-        <th>{{item.especieID.especie}}</th>
-        <th>{{item.generoID.genero}}</th>
+        <th>
+        <div *ngFor="let item3 of especie">
+          <th  *ngIf="item3.id==item.especieID">{{item3.especie}}</th>
+        </div></th>
+        <th>
+        <div *ngFor="let item2 of genero">
+        <th  *ngIf="item2.id==item.generoID">{{item2.genero}}</th></div></th>
+  
         <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
             style="width: 40%">Eliminar</button>
           <button style="width: 10%;visibility: hidden;" disabled></button>

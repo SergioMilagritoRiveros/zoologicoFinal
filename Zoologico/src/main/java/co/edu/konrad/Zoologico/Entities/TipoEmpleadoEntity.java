@@ -30,7 +30,7 @@ public class TipoEmpleadoEntity implements Serializable {
     *atributo horas diarias
     */
     @Column(name="HorasDiarias",nullable=false)
-    private Long HorasDiarias;
+    private Long horasDiarias;
     /*
     *atributo ocupacion
     */
@@ -54,11 +54,11 @@ public class TipoEmpleadoEntity implements Serializable {
     }
 
     public Long getHorasDiarias() {
-        return HorasDiarias;
+        return horasDiarias;
     }
 
     public void setHorasDiarias(Long HorasDiarias) {
-        this.HorasDiarias = HorasDiarias;
+        this.horasDiarias = HorasDiarias;
     }
 
     public String getOcupacion() {

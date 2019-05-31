@@ -59,7 +59,7 @@ public class AnimalEntity implements Serializable {
     private String nombreCientifico;
 
     @Column(name="empleadoID",nullable=false)
-    private Long EmpleadoEntityID;
+    private Long empleadoEntityID;
 
     public Long getId() {
         return id;
@@ -110,12 +110,14 @@ public class AnimalEntity implements Serializable {
     }
 
     public Long getEmpleadoEntityID() {
-        return EmpleadoEntityID;
+        return empleadoEntityID;
     }
 
-    public void setEmpleadoEntityID(Long EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
+    public void setEmpleadoEntityID(Long empleadoEntityID) {
+        this.empleadoEntityID = empleadoEntityID;
     }
+
+   
 
 
 

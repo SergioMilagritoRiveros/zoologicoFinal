@@ -30,7 +30,7 @@ public class EspecieEntity implements Serializable {
     *atributo especie
      */
     @Column(name = "Especie",nullable=false)
-    private String Especie;
+    private String especie;
 
     public EspecieEntity() {
     }
@@ -44,11 +44,13 @@ public class EspecieEntity implements Serializable {
     }
 
     public String getEspecie() {
-        return Especie;
+        return especie;
     }
 
-    public void setEspecie(String Especie) {
-        this.Especie = Especie;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
+
+    
 
 }

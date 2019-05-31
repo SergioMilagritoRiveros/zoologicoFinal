@@ -29,7 +29,7 @@ public class TipoIdentificacionEntity implements Serializable {
     *atributo tipo identficacion
     */
     @Column(name="TipoIdentificacion",nullable=false)
-    private String TipoIdentificacion;
+    private String tipoIdentificacion;
 
     public TipoIdentificacionEntity() {
     }
@@ -43,11 +43,11 @@ public class TipoIdentificacionEntity implements Serializable {
     }
 
     public String getTipoIdentificacion() {
-        return TipoIdentificacion;
+        return tipoIdentificacion;
     }
 
     public void setTipoIdentificacion(String TipoIdentificacion) {
-        this.TipoIdentificacion = TipoIdentificacion;
+        this.tipoIdentificacion = TipoIdentificacion;
     }
 
 

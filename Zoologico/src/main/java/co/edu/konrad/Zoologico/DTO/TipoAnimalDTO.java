@@ -16,8 +16,8 @@ import java.util.List;
 public class TipoAnimalDTO {
 
     private Long id;
-    private Long EspecieID;
-    private Long GeneroID;
+    private Long especieID;
+    private Long generoID;
     private String Descripcion;
 
     public TipoAnimalDTO() {
@@ -25,8 +25,8 @@ public class TipoAnimalDTO {
 
     public TipoAnimalDTO(TipoAnimalEntity tip) {
         this.id = tip.getId();
-        this.EspecieID = tip.getEspecieID();
-        this.GeneroID = tip.getGeneroID();
+        this.especieID = tip.getEspecieID();
+        this.generoID = tip.getGeneroID();
         this.Descripcion = tip.getDescripcion();
     }
 
@@ -34,8 +34,8 @@ public class TipoAnimalDTO {
         TipoAnimalEntity entity = new TipoAnimalEntity();
         entity.setId(this.id);
         entity.setDescripcion(this.Descripcion);
-        entity.setEspecieID(this.EspecieID);
-        entity.setGeneroID(this.GeneroID);
+        entity.setEspecieID(this.especieID);
+        entity.setGeneroID(this.generoID);
 
         return entity;
     }
@@ -57,19 +57,19 @@ public class TipoAnimalDTO {
     }
 
     public Long getEspecieID() {
-        return EspecieID;
+        return especieID;
     }
 
     public void setEspecieID(Long EspecieID) {
-        this.EspecieID = EspecieID;
+        this.especieID = EspecieID;
     }
 
     public Long getGeneroID() {
-        return GeneroID;
+        return generoID;
     }
 
     public void setGeneroID(Long GeneroID) {
-        this.GeneroID = GeneroID;
+        this.generoID = GeneroID;
     }
 
     

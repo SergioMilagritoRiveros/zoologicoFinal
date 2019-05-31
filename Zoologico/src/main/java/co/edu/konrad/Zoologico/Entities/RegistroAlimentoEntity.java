@@ -40,7 +40,7 @@ public class RegistroAlimentoEntity implements Serializable {
     *atributo tipo alimento 
     */   
     @Column(name="TipoAlimentoID",nullable=false)
-    private String TipoAlimento;
+    private String tipoAlimento;
      
     @Column(name="TipoAnimalID")
     private Long tipoAnimalID;
@@ -62,12 +62,14 @@ public class RegistroAlimentoEntity implements Serializable {
     }
 
     public String getTipoAlimento() {
-        return TipoAlimento;
+        return tipoAlimento;
     }
 
-    public void setTipoAlimento(String TipoAlimento) {
-        this.TipoAlimento = TipoAlimento;
+    public void setTipoAlimento(String tipoAlimento) {
+        this.tipoAlimento = tipoAlimento;
     }
+
+    
 
     public Long getTipoAnimalID() {
         return tipoAnimalID;

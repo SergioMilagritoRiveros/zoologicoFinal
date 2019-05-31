@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class TipoIdentificacionDTO {
     private Long id;
-    private String TipoIdentificacion;
+    private String tipoIdentificacion;
 
     public TipoIdentificacionDTO() {
     }
@@ -23,13 +23,13 @@ public class TipoIdentificacionDTO {
 
     public TipoIdentificacionDTO(TipoIdentificacionEntity tip) {
         this.id = tip.getId();
-        this.TipoIdentificacion = tip.getTipoIdentificacion();
+        this.tipoIdentificacion = tip.getTipoIdentificacion();
     }
     
     public TipoIdentificacionEntity toEntity(){
         TipoIdentificacionEntity entity = new TipoIdentificacionEntity();
         entity.setId(this.id);
-        entity.setTipoIdentificacion(this.TipoIdentificacion);
+        entity.setTipoIdentificacion(this.tipoIdentificacion);
         return entity;
     }
     
@@ -50,11 +50,11 @@ public class TipoIdentificacionDTO {
     }
 
     public String getTipoIdentificacion() {
-        return TipoIdentificacion;
+        return tipoIdentificacion;
     }
 
     public void setTipoIdentificacion(String TipoIdentificacion) {
-        this.TipoIdentificacion = TipoIdentificacion;
+        this.tipoIdentificacion = TipoIdentificacion;
     }
     
     

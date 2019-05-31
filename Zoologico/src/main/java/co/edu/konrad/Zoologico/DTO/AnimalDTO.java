@@ -21,7 +21,7 @@ public class AnimalDTO {
     private Long cantidadTotal;
     private Long horarioAlimentacionID;
     private Long espaciosID;
-    private Long EmpleadoEntityID;
+    private Long empleadoEntityID;
     private String nombreCientifico;
 
     public AnimalDTO() {
@@ -34,7 +34,7 @@ public class AnimalDTO {
         this.cantidadTotal = animal.getCantidadTotal();
         this.horarioAlimentacionID = animal.getHorarioAlimentacionID();
         this.espaciosID = animal.getEspaciosID();
-        this.EmpleadoEntityID = animal.getEmpleadoEntityID();
+        this.empleadoEntityID = animal.getEmpleadoEntityID();
         this.nombreCientifico = animal.getNombreCientifico();
     }
 
@@ -43,7 +43,7 @@ public class AnimalDTO {
         entity.setAnimal(this.tipoAnimalID);
         entity.setCantidadHabitad(this.cantidadHabitad);
         entity.setCantidadTotal(this.cantidadTotal);
-        entity.setEmpleadoEntityID(this.EmpleadoEntityID);
+        entity.setEmpleadoEntityID(this.empleadoEntityID);
         entity.setEspaciosID(this.espaciosID);
         entity.setHorarioAlimentacionID(this.horarioAlimentacionID);
         entity.setId(this.AnimalID);
@@ -92,11 +92,11 @@ public class AnimalDTO {
     }
 
     public Long getEmpleadoEntityID() {
-        return EmpleadoEntityID;
+        return empleadoEntityID;
     }
 
     public void setEmpleadoEntityID(Long EmpleadoEntityID) {
-        this.EmpleadoEntityID = EmpleadoEntityID;
+        this.empleadoEntityID = EmpleadoEntityID;
     }
 
     public Long getCantidadHabitad() {

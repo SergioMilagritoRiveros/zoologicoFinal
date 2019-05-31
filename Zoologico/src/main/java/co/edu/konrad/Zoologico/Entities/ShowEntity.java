@@ -54,7 +54,7 @@ public class ShowEntity implements Serializable {
     *atributo espacioID
      */ 
     @Column(name = "EspaciosID")
-    private Long EspaciosID;
+    private Long espaciosID;
     /*
     *atributo cantidad
      */
@@ -86,11 +86,11 @@ public class ShowEntity implements Serializable {
     }
 
     public Long getEspaciosID() {
-        return EspaciosID;
+        return espaciosID;
     }
 
-    public void setEspaciosID(Long EspaciosID) {
-        this.EspaciosID = EspaciosID;
+    public void setEspaciosID(Long espaciosID) {
+        this.espaciosID = espaciosID;
     }
 
 
