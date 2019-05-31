@@ -30,7 +30,7 @@ public class RatingEntity implements Serializable {
     /*
     *atributo comentario
      */
-    @Column(name = "Comentario",nullable=false)
+    @Column(name = "Comentario")
     private String comentario;
 
     public Long getId() {

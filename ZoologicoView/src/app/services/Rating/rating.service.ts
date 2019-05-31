@@ -23,7 +23,8 @@ export class RatingService {
     return this.http.delete(this.rating +'/'+id);
   }
   postRating (id2:number, puntuacion2:number,comentarios2:string){
-    return this.http.post(this.rating,{id:id2,puntuacion:puntuacion2,comentarios:comentarios2} );
+    alert(comentarios2);
+    return this.http.post(this.rating,{comentarios:comentarios2,id:id2,puntuacion:puntuacion2} );
   }
   putRating (idhor:number, puntuacion2:string,comentarios2:string){
     return this.http.put(this.rating +'/'+idhor,{id:idhor,puntuacion:puntuacion2,comentarios:comentarios2});
