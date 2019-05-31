@@ -28,7 +28,7 @@ public class ShowPersistence {
     *Buscar todas las entidades
      */
     public List<ShowEntity> encontrarTodos() {
-        Query todos = em.createQuery("select p from ShowEntity ");
+        Query todos = em.createQuery("select p from ShowEntity p");
         return todos.getResultList();
     }
 
