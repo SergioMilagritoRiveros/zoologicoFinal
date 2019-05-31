@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShowService } from 'app/services/Show/show.service';
 import { UserService } from 'app/services/user/user.service';
 import { Router } from '@angular/router';
-
+declare var $:any;
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',
@@ -59,4 +59,4 @@ export class ShowComponent implements OnInit {
     } 
 
   }
-}
+
