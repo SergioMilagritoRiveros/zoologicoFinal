@@ -20,8 +20,16 @@ deleteEspacio (id: number) {
   
   return this.http.delete(this.espacio+'/'+id);
 }
-postEspacio(id:number, espacio:string){
-  return this.http.post(this.espacio,{espacio,id});
+postEspacio(
+  id: number,
+  nombreEspacio: string,
+  tipoEspacioID: number,
+  ubicacion: string){
+  return this.http.post(this.espacio,{
+    id: id,
+    nombreEspacio: nombreEspacio,
+    tipoEspacioID: tipoEspacioID,
+    ubicacion: ubicacion,});
 }
 putEspacio(id:number, espacio:string){
   return this.http.put(this.espacio+'/'+id,{espacio,id});

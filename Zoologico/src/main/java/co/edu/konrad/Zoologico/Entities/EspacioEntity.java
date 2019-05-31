@@ -38,8 +38,6 @@ public class EspacioEntity implements Serializable {
     *atributo disponibilidad
      */
   
-    @Column(name = "Disponibilidad",nullable=false)
-    private Boolean disponibilidad;
     /*
     *atributo tipo de espacio
      */
@@ -73,13 +71,6 @@ public class EspacioEntity implements Serializable {
         this.ubicacion = Ubicacion;
     }
 
-    public boolean getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(boolean disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
 
     public Long getTipoEspacioID() {
         return tipoEspacioID;

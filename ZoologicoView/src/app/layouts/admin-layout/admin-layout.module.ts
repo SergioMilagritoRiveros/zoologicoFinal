@@ -26,6 +26,7 @@ import {
   MatSelectModule
 } from '@angular/material';
 import { from } from 'rxjs';
+import { AnimalComponent } from 'app/formulariosDeCreacion/animal/animal.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -51,7 +52,8 @@ import { from } from 'rxjs';
     ShowComponent,
     RegistroAlimentoComponent,
     EspacioComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
+    AnimalComponent
   ]
 })
 

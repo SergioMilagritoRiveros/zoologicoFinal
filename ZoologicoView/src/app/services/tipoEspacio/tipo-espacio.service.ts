@@ -9,6 +9,16 @@ export class TipoEspacioService {
   constructor(private http: HttpClient) { }
   tipoEspacio = '/Zoologico/api/TipoEspacio';
 
+  async getTipoEspaciosw2() {
+    try {
+     let response = await this.http
+       .get(this.tipoEspacio)
+       .toPromise();
+     return response;
+   } catch (error) {
+     await error;
+   }
+ }
 getTipoEspacios() {
   return this.http.get(this.tipoEspacio);
 } 
