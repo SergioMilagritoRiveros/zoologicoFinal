@@ -21,7 +21,7 @@ deleteGenero (id: number) {
   return this.http.delete(this.genero+'/'+id);
 }
 postGenero(id:number, genero:string){
-  return this.http.post(this.genero,{genero,id});
+  return this.http.post(this.genero,{genero:genero,id:id});
 }
 putGenero(id:number, genero:string){
   return this.http.put(this.genero+'/'+id,{genero,id});

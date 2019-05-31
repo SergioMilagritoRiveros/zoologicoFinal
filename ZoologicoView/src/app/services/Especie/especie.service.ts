@@ -22,7 +22,7 @@ deleteEspecie (id: number) {
   return this.http.delete(this.especie+'/'+id);
 }
 postEspecie(id:number, especie:string){
-  return this.http.post(this.especie,{especie,id});
+  return this.http.post(this.especie,{especie:especie,id:id});
 }
 putEspecie(id:number, especie:string){
   return this.http.put(this.especie+'/'+id,{especie,id});

@@ -29,7 +29,7 @@ export class ShowService {
     return this.http.delete(this.show + '/' + id);
   }
   postShow(id: number, show: string) {
-    return this.http.post(this.show, { show, id });
+    return this.http.post(this.show, { show:show, id:id });
   }
   putShow(id: number, show: string) {
     return this.http.put(this.show + '/' + id, { show, id });

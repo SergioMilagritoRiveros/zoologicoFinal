@@ -30,7 +30,7 @@ export class AnimalService {
     return this.http.delete(this.animales + '/' + id);
   }
   postAnimales(id: number, animales: string) {
-    return this.http.post(this.animales, { animales, id });
+    return this.http.post(this.animales, { animales:animales, id:id });
   }
   putAnimales(id: number, animales: string) {
     return this.http.put(this.animales + '/' + id, { animales, id });

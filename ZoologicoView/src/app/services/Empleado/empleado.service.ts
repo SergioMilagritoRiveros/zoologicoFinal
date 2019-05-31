@@ -21,7 +21,7 @@ deleteEmpleado (id: number) {
   return this.http.delete(this.empleado+'/'+id);
 }
 postEmpleado(id:number, empleado:string){
-  return this.http.post(this.empleado,{empleado,id});
+  return this.http.post(this.empleado,{empleado:empleado,id:id});
 }
 putEmpleado(id:number, empleado:string){
   return this.http.put(this.empleado+'/'+id,{empleado,id});

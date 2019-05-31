@@ -22,7 +22,7 @@ deleteTipoIdentificacion (id: number) {
   return this.http.delete(this.tipoIdentificacion+'/'+id);
 }
 postTipoIdentificacion(id:number, tipoIdentificacion:string){
-  return this.http.post(this.tipoIdentificacion,{tipoIdentificacion,id});
+  return this.http.post(this.tipoIdentificacion,{tipoIdentificacion:tipoIdentificacion,id:id});
 }
 putTipoIdentificacion(id:number, tipoIdentificacion:string){
   return this.http.put(this.tipoIdentificacion+'/'+id,{tipoIdentificacion,id});
