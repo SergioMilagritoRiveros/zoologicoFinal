@@ -7,7 +7,7 @@ import { IndexComponent } from './index/index.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
-import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
+import { AnimalViewComponent } from './animal-view/animal-view.component';
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
 const routes: Routes =[
@@ -17,7 +17,7 @@ const routes: Routes =[
   },
   {
     path:'animelesView',
-    component:AnimalesViewComponent
+    component:AnimalViewComponent
   },
   {
     path:'showsView',

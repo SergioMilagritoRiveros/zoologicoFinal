@@ -12,8 +12,15 @@ export class AnimalService {
   }
   animales = '/Zoologico/api/Animal';
 
-  getAnimaless() {
-    return this.http.get(this.animales);
+  async getAnimaless() {
+     try {
+      let response = await this.http
+        .get(this.animales)
+        .toPromise();
+      return response;
+    } catch (error) {
+      await error;
+    }
   }
   getAnimalessid(id: number) {
     return this.http.get(this.animales + '/' + id);

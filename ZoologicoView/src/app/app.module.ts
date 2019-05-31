@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
-import { AnimalesViewComponent } from './AnimalesView/AnimalesView.component';
+import { AnimalViewComponent } from './animal-view/animal-view.component';
 
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
@@ -30,7 +30,7 @@ import { EmpleadoComponent } from './formulariosDeCreacion/empleado/empleado.com
     AdminLayoutComponent,
     UserLayaoutComponent,
     IndexComponent,
-    AnimalesViewComponent,
+    AnimalViewComponent,
     RatingComponent,
     ShowsViewComponent,
     EmpleadoComponent
