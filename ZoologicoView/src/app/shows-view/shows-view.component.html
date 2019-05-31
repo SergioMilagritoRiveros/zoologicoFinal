@@ -17,41 +17,41 @@
         <a class="nav-link" href="/showsView">Shows<span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    
 
-    
+
+
   </div>
 </nav>
 <div class="container">
-    <div class="row">
-      <div class="col-sm-3"  style="margin-top: 10px;"  *ngFor="let item of informacion">
-        <div class="contenedorr">
-    
-          <div class="carta ">
-            <div class="lado frente">
-              <h3>{{item.nombreCientifico}}</h3>
-              <img src="https://source.unsplash.com/1600x900/?{{item.Espacio}},show,Zoo" alt="">
-            </div>
-    
-            <div class="lado atras">
-              <h3>{{item.nombreCientifico}}</h3>
-              <ul>
-                <li>Cantidad en habitad {{item.cantidadTotal}}</li>
-                <li>rating {{item.rating}}</li>
-                <li><strong>CALIFICACION:</strong></li>
-                <li>
-                  <div class="ec-stars-wrapper">
-                    <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-                    <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                    <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                    <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                    <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
+  <div class="row">
+    <div class="col-sm-3" style="margin-top: 10px;" *ngFor="let item of informacion">
+      <div class="contenedorr">
+
+        <div class="carta ">
+          <div class="lado frente">
+            <h3>{{item.nombreCientifico}}</h3>
+            <img src="https://source.unsplash.com/1600x900/?{{item.Espacio}},show,Zoo" alt="">
+          </div>
+
+          <div class="lado atras">
+            <h3>{{item.nombreCientifico}}</h3>
+            <ul>
+              <li>Cantidad en habitad {{item.cantidadTotal}}</li>
+              <li>rating {{item.rating}}</li>
+              <li><strong>CALIFICACION:</strong></li>
+              <li>
+                <div class="ec-stars-wrapper">
+                  <a (click)="crear(1)" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                  <a (click)="crear(2)" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                  <a (click)="crear(3)" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                  <a (click)="crear(4)" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                  <a (click)="crear(5)" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    </div>
+  </div>
+</div>

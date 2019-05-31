@@ -17,16 +17,17 @@ import java.util.List;
 public class EmpleadoDTO {
 
     private Long id;
-    private Long tipoEmpleadoID;
     private String nombreEmpleado;
     private Long tipoIdentificacionID;
     private long numeroIdentificacion;
     private long numeroTelefono;
-    private Date nacimiento;
+    private String nacimiento;
+
+    public EmpleadoDTO() {
+    }
 
     public EmpleadoDTO(EmpleadoEntity empleado) {
         this.id = empleado.getId();
-        this.tipoEmpleadoID = empleado.getTipoEmpleadoID();
         this.nombreEmpleado = empleado.getNombreEmpleado();
         this.tipoIdentificacionID = empleado.getTipoIdentificacionID();
         this.numeroIdentificacion = empleado.getNumeroIdentificacion();
@@ -41,7 +42,6 @@ public class EmpleadoDTO {
         entity.setNombreEmpleado(this.nombreEmpleado);
         entity.setNumeroIdentificacion(this.numeroIdentificacion);
         entity.setNumeroTelefono(this.numeroTelefono);
-        entity.setTipoEmpleadoID(this.tipoEmpleadoID);
         entity.setTipoIdentificacionID(this.tipoIdentificacionID);
         return entity;
     }
@@ -62,13 +62,6 @@ public class EmpleadoDTO {
         this.id = id;
     }
 
-    public Long getTipoEmpleadoID() {
-        return tipoEmpleadoID;
-    }
-
-    public void setTipoEmpleadoID(Long tipoEmpleadoID) {
-        this.tipoEmpleadoID = tipoEmpleadoID;
-    }
 
     public Long getTipoIdentificacionID() {
         return tipoIdentificacionID;
@@ -102,11 +95,11 @@ public class EmpleadoDTO {
         this.numeroTelefono = numeroTelefono;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
     }
 

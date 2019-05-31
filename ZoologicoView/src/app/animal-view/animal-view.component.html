@@ -42,12 +42,12 @@
             <li>rating {{item.rating}}</li>
             <li><strong>CALIFICACION:</strong></li>
             <li>
-              <div class="ec-stars-wrapper">
-                <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-                <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+              <div class="ec-stars-wrapper"> 
+                <a (click)="crear(1)"  data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                <a (click)="crear(2)" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                <a (click)="crear(3)" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                <a (click)="crear(4)" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                <a (click)="crear(5)" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
               </div>
             </li>
           </ul>
