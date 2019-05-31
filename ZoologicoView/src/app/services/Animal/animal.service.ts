@@ -31,7 +31,6 @@ export class AnimalService {
   }
   postAnimales(idCrear, cantidadHabitad, CantidadTotalAnimalCrear, HorarioAlimentacionCrear, espacioCrear, empleadoCrear, nombreCientifico, tipoAnimalformu
   ) {
-    alert(idCrear);
     return this.http.post(this.animales, {
       animalID: idCrear, cantidadHabitad: cantidadHabitad,
       cantidadTotal: CantidadTotalAnimalCrear, empleadoEntityID: empleadoCrear,

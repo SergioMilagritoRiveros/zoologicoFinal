@@ -55,7 +55,6 @@ export class AnimalComponent implements OnInit {
       console.log(data),
         this.informacion = data;
       this.idCrear = this.informacion.length + 1;
-      alert(this.idCrear);
       $('#id').val(this.informacion.length + 1);
     });
   }
