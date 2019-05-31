@@ -13,7 +13,7 @@ export class AnimalService {
   animales = '/Zoologico/api/Animal';
 
   async getAnimaless() {
-     try {
+    try {
       let response = await this.http
         .get(this.animales)
         .toPromise();
@@ -29,15 +29,16 @@ export class AnimalService {
 
     return this.http.delete(this.animales + '/' + id);
   }
-  postAnimales(id: number, animales: string,
-    cantidadHabitad:number,cantitadTotal:number,
-    horarioAlimentacion:number,Espacios:number,
-    nombreCientifico:string,empleado:number
-    ) {
-    return this.http.post(this.animales, { id: id, animales: animales,
-      cantidadHabitad:cantidadHabitad,cantitadTotal:cantitadTotal,
-      horarioAlimentacion:horarioAlimentacion,Espacios:Espacios,
-      nombreCientifico:nombreCientifico,empleado:empleado });
+  postAnimales(idCrear, cantidadHabitad, CantidadTotalAnimalCrear, HorarioAlimentacionCrear, espacioCrear, empleadoCrear, nombreCientifico, tipoAnimalformu
+  ) {
+    alert(idCrear);
+    return this.http.post(this.animales, {
+      animalID: idCrear, cantidadHabitad: cantidadHabitad,
+      cantidadTotal: CantidadTotalAnimalCrear, empleadoEntityID: empleadoCrear,
+      espaciosID: espacioCrear, horarioAlimentacionID: HorarioAlimentacionCrear,
+      nombreCientifico: nombreCientifico, tipoAnimalID: tipoAnimalformu
+    });
+
   }
   putAnimales(id: number, animales: string) {
     return this.http.put(this.animales + '/' + id, { animales, id });

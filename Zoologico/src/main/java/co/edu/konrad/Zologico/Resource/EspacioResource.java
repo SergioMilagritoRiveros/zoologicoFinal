@@ -56,7 +56,7 @@ public class EspacioResource {
         } 
         return new EspacioDTO(espacio);
     }
-    
+    @POST
     public EspacioDTO createProducto(EspacioDTO fdto){ 
         return new EspacioDTO(espacioLogic.crearProducto(fdto.toEntity())); 
     } 

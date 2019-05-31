@@ -29,7 +29,7 @@ postEspacio(
     id: id,
     nombreEspacio: nombreEspacio,
     tipoEspacioID: tipoEspacioID,
-    ubicacion: ubicacion,});
+    ubicacion: ubicacion});
 }
 putEspacio(id:number, espacio:string){
   return this.http.put(this.espacio+'/'+id,{espacio,id});
