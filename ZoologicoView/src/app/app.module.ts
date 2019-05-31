@@ -9,10 +9,9 @@ import { IndexComponent } from './index/index.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayaoutComponent } from './layouts/user-layaout/user-layaout.component';
 import { AnimalViewComponent } from './animal-view/animal-view.component';
-
 import { RatingComponent } from './formulariosDeCreacion/rating/rating.component';
 import { ShowsViewComponent } from './shows-view/shows-view.component';
-import { EmpleadoComponent } from './formulariosDeCreacion/empleado/empleado.component';
+
 
 
 
@@ -33,7 +32,6 @@ import { EmpleadoComponent } from './formulariosDeCreacion/empleado/empleado.com
     AnimalViewComponent,
     RatingComponent,
     ShowsViewComponent,
-    EmpleadoComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

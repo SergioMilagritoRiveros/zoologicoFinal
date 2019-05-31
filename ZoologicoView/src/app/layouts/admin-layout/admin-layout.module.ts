@@ -15,6 +15,7 @@ import { TipoEspacioComponent } from '../../formulariosDeCreacion/tipo-espacio/t
 import { ShowComponent } from '../../formulariosDeCreacion/show/show.component';
 import { RegistroAlimentoComponent } from '../../formulariosDeCreacion/registro-alimento/registro-alimento.component';
 import { EspacioComponent } from '../../formulariosDeCreacion/espacio/espacio.component';
+import { EmpleadoComponent } from '../../formulariosDeCreacion/empleado/empleado.component';
 
 import {
   MatButtonModule,
@@ -49,7 +50,8 @@ import { from } from 'rxjs';
     TipoIdentificacionComponent,
     ShowComponent,
     RegistroAlimentoComponent,
-    EspacioComponent
+    EspacioComponent,
+    EmpleadoComponent
   ]
 })
 

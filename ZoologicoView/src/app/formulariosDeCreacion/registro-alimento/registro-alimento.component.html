@@ -25,14 +25,13 @@
             </div>
             <div class="form-group">
               <label for="pwd">TipoAlimento:</label>
-              <input [(ngModel)]="tipoAlimento" type="number" class="form-control" name="crearTipoAlimento"
+              <input [(ngModel)]="tipoAlimento" type="string" class="form-control" name="crearTipoAlimento"
                 id="TipoAlimento">
             </div>
             <div class="form-group">
               <label for="pwd">TipoAnimal:</label>
-              <select [(ngModel)]="tipoAnimalCrear" id="TipoAnimal" name="tipoAnimalCrearf"
-                class="browser-default custom-select">
-                <option *ngFor="let item of tipoAnimal" value="{{item.id}}">{{item.tipoAnimal}}</option>
+              <select [(ngModel)]="tipoanimalcrar" name="tipoanimalcrars" id="tipoanimalcrars" class="browser-default custom-select">
+                <option *ngFor="let item of tipoanimal23234" value="{{item.id}}">{{item.descripcion}}</option>
               </select>
             </div>
             <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
@@ -105,7 +104,12 @@
         <th style="color: white">{{item.id}}</th>
         <th>{{item.cantidadAlimento}}</th>
         <th>{{item.tipoAlimento}}</th>
-        <th>{{item.tipoAnimalID.descripcion}}</th>
+        <th>
+          <div *ngFor="let item3 of tipoanimal23234">
+            <th *ngIf="item3.id==item.tipoAnimalID">{{item3.descripcion}}</th>
+          </div>
+        </th>
+          <th>
         <th><button id="{{item.id}}" (click)="eliminar(item.id)" class="btn btn-danger"
             style="width: 40%">Eliminar</button>
           <button style="width: 10%;visibility: hidden;" disabled></button>

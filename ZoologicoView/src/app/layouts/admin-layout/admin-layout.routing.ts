@@ -12,6 +12,7 @@ import { TipoEspacioComponent } from '../../formulariosDeCreacion/tipo-espacio/t
 import { ShowComponent } from '../../formulariosDeCreacion/show/show.component';
 import { RegistroAlimentoComponent } from '../../formulariosDeCreacion/registro-alimento/registro-alimento.component';
 import { EspacioComponent } from '../../formulariosDeCreacion/espacio/espacio.component';
+import { EmpleadoComponent } from '../../formulariosDeCreacion/empleado/empleado.component';
 export const AdminLayoutRoutes: Routes = [
 
     { path: 'dashboard', component: DashboardComponent },
@@ -26,5 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'show', component: ShowComponent },
     { path: 'registroAlimento', component: RegistroAlimentoComponent },
     { path: 'espacio', component: EspacioComponent },
+    { path: 'empleado', component: EmpleadoComponent }
 
 ];

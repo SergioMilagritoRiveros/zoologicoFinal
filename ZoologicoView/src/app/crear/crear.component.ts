@@ -13,11 +13,11 @@ export const CREAR: RouteInfo[] = [
   { path: '/tipoAnimal', title: 'Tipo Animal', icon: 'backup', class: '' },
   { path: '/horarioAlimentacion', title: 'Horario de Alimentacion', icon: 'backup', class: '' },
   { path: '/tipoIdentificacion', title: 'Tipo de Identificacion', icon: 'backup', class: '' },
-  { path: '/tipoEmpleado', title: 'Tipo de Empleado', icon: 'backup', class: '' },
   { path: '/tipoEspacio', title: 'Tipo de Espacio', icon: 'backup', class: '' },
   { path: '/show', title: 'Show', icon: 'backup', class: '' },
   { path: '/registroAlimento', title: 'Registro Alimento', icon: 'backup', class: '' },
   { path: '/espacio', title: 'Espacio', icon: 'backup', class: '' },
+  { path: '/empleado', title: 'Empleado', icon: 'backup', class: '' },
 ];
 @Component({
   selector: 'app-crear',

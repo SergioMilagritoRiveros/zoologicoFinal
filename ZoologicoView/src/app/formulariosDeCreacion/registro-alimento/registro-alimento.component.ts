@@ -3,6 +3,8 @@ import { RegistroAlimentoService } from 'app/services/RegistroAlimento/registro-
 import { UserService } from 'app/services/user/user.service';
 import { Router } from '@angular/router';
 import { TipoAnimal } from 'app/interfaces/tipoanimal.interface';
+import { TipoAnimalService } from 'app/services/tipoAnimal/tipo-animal.service';
+import { async } from '@angular/core/testing';
 declare var $:any;
 @Component({
   selector: 'app-registro-alimento',
@@ -10,8 +12,10 @@ declare var $:any;
   styleUrls: ['./registro-alimento.component.scss']
 })
 export class RegistroAlimentoComponent implements OnInit {
+  tipoanimal23234:any;
   informacion: any;
   idCrear: number;
+  tipoanimalcrar:number;
   cantidadAlimento:number;
   tipoAlimento:string;
   tipoAnimalCrear:TipoAnimal;
@@ -31,7 +35,7 @@ export class RegistroAlimentoComponent implements OnInit {
     }
   };
 
-  constructor(private _registroAlimentoService: RegistroAlimentoService, private _UserService: UserService, private router: Router) { }
+  constructor(private _registroAlimentoService: RegistroAlimentoService, private _UserService: UserService, private router: Router,private _tipoanimalservice:TipoAnimalService) { }
 
   ngOnInit() {
     if (this._UserService.getuser() == 0) {
@@ -41,6 +45,11 @@ export class RegistroAlimentoComponent implements OnInit {
       console.log(data),
         this.informacion = data,
         this.idCrear = this.informacion.length + 1
+    });
+    this._tipoanimalservice.gerregistroasync().then((data) => {
+      console.log(data),
+        this.tipoanimal23234 = data;
+
     });
   }
   eliminar(id: number) {
@@ -54,7 +63,7 @@ export class RegistroAlimentoComponent implements OnInit {
   crear() {
     this.registroAlimentoCrear = $('#geenro').val();
     if (this.registroAlimentoCrear != '') {
-      this._registroAlimentoService.postRegistroAlimento(this.idCrear, this.registroAlimentoCrear).subscribe(data => {
+      this._registroAlimentoService.postRegistroAlimento(this.cantidadAlimento,this.idCrear,this.tipoAlimento,this.tipoanimalcrar).subscribe(data => {
         this.ngOnInit();
         $('#tablex').load();
         $('#crearf').load();

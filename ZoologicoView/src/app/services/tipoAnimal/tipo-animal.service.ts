@@ -10,7 +10,16 @@ export class TipoAnimalService {
 
   }
   tipoAnimal = '/Zoologico/api/TipoAnimal';
-
+  async gerregistroasync() {
+    try {
+     let response = await this.http
+       .get(this.tipoAnimal)
+       .toPromise();
+     return response;
+   } catch (error) {
+     await error;
+   }
+  }
 getTipoAnimals() {
   return this.http.get(this.tipoAnimal);
 } 
