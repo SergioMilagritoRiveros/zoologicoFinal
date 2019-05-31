@@ -1,16 +1,13 @@
 package co.edu.konrad.Zoologico.Entities;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
-import javax.persistence.Temporal;
 
 /**
  *
@@ -28,8 +25,7 @@ public class EmpleadoEntity implements Serializable {
     private Long id;
 
 
-    @Column(name = "TipoEmpleadoID",nullable=false)
-    private Long tipoEmpleadoID;
+
 
     @Column(name = "Nombre",nullable=false)
     private String nombreEmpleado;
@@ -49,21 +45,13 @@ public class EmpleadoEntity implements Serializable {
     *atributo fecha nacimiento
      */
     @Column(name = "FechaNacimiento")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date nacimiento;
+    private String nacimiento;
 
     public Long getId() {
         return id;
     }
 
-    public Long getTipoEmpleadoID() {
-        return tipoEmpleadoID;
-    }
-
-    public void setTipoEmpleadoID(Long tipoEmpleadoID) {
-        this.tipoEmpleadoID = tipoEmpleadoID;
-    }
-
+  
     public Long getTipoIdentificacionID() {
         return tipoIdentificacionID;
     }
@@ -100,12 +88,13 @@ public class EmpleadoEntity implements Serializable {
         this.numeroTelefono = numeroTelefono;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
     }
+
 
 }

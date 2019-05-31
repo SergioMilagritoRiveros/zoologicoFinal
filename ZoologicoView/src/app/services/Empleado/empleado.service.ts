@@ -20,8 +20,20 @@ deleteEmpleado (id: number) {
   
   return this.http.delete(this.empleado+'/'+id);
 }
-postEmpleado(id:number, empleado:string){
-  return this.http.post(this.empleado,{empleado,id});
+postEmpleado(  
+  id: number,
+  nacimiento: string,
+  nombreEmpleado: string,
+  numeroIdentificacion:number,
+  numeroTelefono: number,
+  tipoIdentificacionID: number
+){
+  return this.http.post(this.empleado,{id: id,
+    nacimiento: nacimiento,
+    nombreEmpleado: nombreEmpleado,
+    numeroIdentificacion:numeroIdentificacion,
+    numeroTelefono: numeroTelefono,
+    tipoIdentificacionID: tipoIdentificacionID});
 }
 putEmpleado(id:number, empleado:string){
   return this.http.put(this.empleado+'/'+id,{empleado,id});
